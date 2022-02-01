@@ -6,8 +6,16 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[create new]
   end
   resources :bookings, only: %i[index show edit destroy update]
+  get '/users/:id/bookings', to: 'bookings#mybookings', as: 'mybookings'
 end
 
+# get '/patients/:id', to: 'patients#show'
+
+# resources :users do
+#     resources :bookings
+#     resources :cars, get: ':user_id/cars', :as => 'carros' ,to: 'cars#mycars'
+
+# end
 
 # /	GET	pages	home
 # /tours	GET	offers	index
