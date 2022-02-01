@@ -10,10 +10,71 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_01_171530) do
+ActiveRecord::Schema.define(version: 2022_02_01_175935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "agencies", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "tax_number"
+    t.string "address"
+    t.string "state"
+    t.string "country"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_agencies_on_user_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "quantity"
+    t.bigint "user_id", null: false
+    t.bigint "tour_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tour_id"], name: "index_bookings_on_tour_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "question"
+    t.text "answer"
+    t.bigint "user_id", null: false
+    t.bigint "tour_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tour_id"], name: "index_comments_on_tour_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.float "rating"
+    t.bigint "user_id", null: false
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "tours", force: :cascade do |t|
+    t.float "price"
+    t.string "destination"
+    t.string "title_tour"
+    t.text "description"
+    t.string "duration"
+    t.bigint "agency_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["agency_id"], name: "index_tours_on_agency_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +93,12 @@ ActiveRecord::Schema.define(version: 2022_02_01_171530) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "agencies", "users"
+  add_foreign_key "bookings", "tours"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "comments", "tours"
+  add_foreign_key "comments", "users"
+  add_foreign_key "reviews", "bookings"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "tours", "agencies"
 end
