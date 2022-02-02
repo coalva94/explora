@@ -8,21 +8,18 @@
 
 users = [{ email: "crdsis@gmail.com", first_name: "Cristopher", last_name: "Huaroc", phone_number: "965547415",
            document_number: "70025447", password: "123456" },
-
          { email: "carlos@gmail.com", first_name: "Carlos", last_name: "Alva", phone_number: "963321547",
            document_number: "70545474", password: "123456" },
-
          { email: "horlando1@gmail.com", first_name: "Horlando", last_name: "Cespedes", phone_number: "961214715",
            document_number: "70547847", password: "123456" },
-
-         { email: "andres123@gmail.com", first_name: "Andres", last_name: "Muñoz", phone_number: "965554789",
+         { email: "andres1@gmail.com", first_name: "Andres", last_name: "Muñoz", phone_number: "965554789",
            document_number: "70074125", password: "123456" }]
 
 agencies = [{ name: "palpa SAC", email: "horlando1@gmail.com", tax_number: "20321247854",
               address: "Francisco Bolognesi 367, Nasca 11401", state: "Nazca", country: "Perú", user_id: 1 },
             { name: "InkaTour", email: "crdsis@gmail.com", tax_number: "20321456842",
               address: "Pza. Plaza San Francisco #138", state: "Cusco", country: "Perú", user_id: 2 },
-            { name: "Ica tour SAC", email: "andres123@gmail.com", tax_number: "20321458987",
+            { name: "Ica tour SAC", email: "andres1@gmail.com", tax_number: "20321458987",
               address: "Av. Grau Nº 148", state: "Ica", country: "Perú", user_id: 3 }]
 
 tours = [{ price: 110.00, destination: "Nazca",
