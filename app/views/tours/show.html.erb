@@ -1,0 +1,188 @@
+<div class="container-fluid">
+
+  <div class="container-border-bottom">
+
+    <h1 id="productTitle" class="font-weight-bold mb-0"></h1> <%= @tour.title_tour %> </h1>
+
+    <div class="mt-2 mb-3 d-md-flex align-items-top">
+      <div class="star-rating d-inline-flex pr-3 small">
+        <input type="radio" name="stars" id="star-a" value="5"/>
+        <label for="star-a"></label>
+        <input type="radio" name="stars" id="star-b" value="4"/>
+        <label for="star-b"></label>
+        <input type="radio" name="stars" id="star-c" value="3"/>
+        <label for="star-c"></label>
+        <input type="radio" name="stars" id="star-d" value="2"/>
+        <label for="star-d"></label>
+        <input type="radio" name="stars" id="star-e" value="1"/>
+        <label for="star-e"></label>
+        <a href="#" class="product-user-review-count">"100 Reviews"</a>
+        </div>
+      <div class="d-none d-md-inline-block small pr-3"> | </div>
+      <div class="small mr-md-4"> "Cusco, Peru" </div>
+
+      <div class="share-and-save">
+        <div class="share">
+          <span class="mr-1 text-body share-button">Share</span>
+        </div>
+        <div class="save">
+          <span class="mr-1 text-body share-button">Save to Wishlist</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-check-availability-wrapper">
+      <div class="hero">
+        <div class="hero-thumbnails">
+        </div>
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="..." class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="check-availability">
+      <div class="information-text">
+        <div class="offer">
+          <p>SPECIAL OFFER</p>
+        </div>
+        <div class="price-from">
+          <p>from $306.90</p>
+        </div>
+        <div class="before-save-price">
+          <p class="text-decoration-line-through">$341</p>
+          <p>Save $34.10</p>
+        </div>
+        <div>
+          <p>Lowest Price Guarantee</p>
+        </div>
+        <div>
+          <p>Select Date and Travelers</p>
+        </div>
+      </div>
+
+      <%# <div class="cols-xs-12 col-md-4"> %>
+        <%#= simple_form_for [current_user, @booking] do |f| %>
+        <%#= f.input :start_date, input_html: { class: "form-control datepicker", id: "FechaInicio", type: "date", style:"border-radius:10px;"} %>
+        <%#= f.input :end_date, input_html: { class: "form-control datepicker", id: "FechaFin", type: "date", style:"border-radius:10px;"} %>
+        <%#= f.submit : Check Availability  %>
+        <%# end %>
+      <%# </div> %>
+      <div>
+        "Non-refundable
+        <p>You will not receive a refund if you cancel. <a href="#">Learn more</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-lg-4">
+
+    <div class="col-lg-3 px-0 pr-2">
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Cusco Tours
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Attractions
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Recommendations
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Nearby
+              </button>
+            </h5>
+          </div>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-9">
+      <div class="basic-info-container d-md-flex flex-md-wrap">
+
+        <div class="d-flex d-md-inline-flex align-items-center text-nowrap mr-md-4 pb-2 pt-2">
+          <svg class="mr-2"> <%# aqui va icono %> </svg>
+          <span class="basic-info-link">Safety Measures</span>
+        </div>
+
+        <div class="d-flex d-md-inline-flex align-items-center text-nowrap mr-md-4 pb-2 pt-2">
+          <svg class="mr-2"> <%# aqui va icono %> </svg>
+          <span class="basic-info-link">14 hours (Approx) </span>
+        </div>
+
+        <div class="d-flex d-md-inline-flex align-items-center text-nowrap mr-md-4 pb-2 pt-2">
+          <svg class="mr-2"> <%# aqui va icono %> </svg>
+          <span class="basic-info-link">Safety Measures</span>
+        </div>
+
+        <div class="d-flex d-md-inline-flex align-items-center text-nowrap mr-md-4 pb-2 pt-2">
+          <svg class="mr-2"> <%# aqui va icono %> </svg>
+          <span class="basic-info-link">Safety Measures</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
