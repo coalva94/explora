@@ -13,8 +13,11 @@
   </head>
 
   <body>
+    <%= render 'shared/navbar'%>
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= render 'shared/footer' %>
   </body>
+  <script src="https://kit.fontawesome.com/4825ae8b8d.js" crossorigin="anonymous"></script>
 </html>
