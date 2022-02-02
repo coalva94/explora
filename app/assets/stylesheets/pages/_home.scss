@@ -1,1 +1,18 @@
 // Specific CSS for your home-page
+#carouselExampleIndicators{
+  height:50vh;
+  img{
+     height:50vh;
+    width: 100%;
+  }
+}
+.overlay{
+  background-color: #ffffff;
+  opacity: 0.8;
+  border-radius: 1rem;
+}
+.overlay{
+  p{
+    font-weight: 300;
+  }
+}
