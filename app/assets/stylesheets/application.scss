@@ -10,4 +10,12 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/navbar";
 @import "pages/index";
+@import "components/footer";
+html {
+	font-size: 62.5%;
+}
+body{
+  background-color: #ffffff;
+}
