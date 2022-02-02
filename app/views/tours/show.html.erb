@@ -15,27 +15,27 @@
           <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
               <h6 class="my-0">Costo Unitario:</h6>
-              <small class="text-muted">Excursión de un día a Machu Picchu desde Cusco (InkaTours)</small>
+              <small class="text-muted">Precio del tour por persona</small>
             </div>
-            <span class="text-muted d-flex align-items-center">S/350.00</span>
+            <span class="text-muted d-flex align-items-center"><%= @tour.price %></span>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
               <h6 class="my-0">Cantidad de Viajeros</h6>
               <small class="text-muted">Personas que viviran la experiencia</small>
             </div>
-            <span class="text-muted d-flex align-items-center">3</span>
+            <span class="text-muted d-flex align-items-center"><%= cant = 3 %></span>
           </li>
           <li class="list-group-item d-flex justify-content-between bg-light">
             <div class="text-success">
               <h6 class="my-0">Cupon de Descuento</h6>
               <small>FLASHCARD2022</small>
             </div>
-            <span class="text-success d-flex align-items-center">-S/10</span>
+            <span class="text-success d-flex align-items-center">-<%= desc = 10.00 %></span>
           </li>
           <li class="list-group-item d-flex justify-content-between">
             <span>Total S/</span>
-            <strong>1040.00</strong>
+            <strong><%= (@tour.price * cant) - desc %></strong>
           </li>
         </ul>
 
@@ -58,9 +58,8 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title text-center"><strong>Excursión de un día a Machu Picchu desde Cusco (InkaTours)</strong></h5>
-                <p class="card-text">Machu Picchu Day Trip te permite experimentar la espectacular
-                    Ciudadela de Machu Picchu en solo un día con un guía local..</p>
+                <h5 class="card-title text-center"><strong><%= @tour.title_tour %></strong></h5>
+                <p class="card-text"><%= @tour.description %></p>
                 <p class="card-text text-right"><small class="text-muted">05/02/2022 - 07/02/2022</small></p>
               </div>
             </div>
