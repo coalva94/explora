@@ -3,82 +3,103 @@
 
   <div class="container-border-bottom">
 
-    <h1 id="productTitle" class="font-weight-bold mb-0"></h1> <%= @tour.title_tour %> </h1>
+    <h1 id="productTitle" class="font-weight-bold mb-0"> <%= @tour.title_tour %> </h1>
 
-    <div class="mt-2 mb-3 d-md-flex align-items-top">
-      <div class="star-rating d-inline-flex pr-3 small">
-        <input type="radio" name="stars" id="star-a" value="5"/>
-        <label for="star-a"></label>
-        <input type="radio" name="stars" id="star-b" value="4"/>
-        <label for="star-b"></label>
-        <input type="radio" name="stars" id="star-c" value="3"/>
-        <label for="star-c"></label>
-        <input type="radio" name="stars" id="star-d" value="2"/>
-        <label for="star-d"></label>
-        <input type="radio" name="stars" id="star-e" value="1"/>
-        <label for="star-e"></label>
-        <a href="#" class="product-user-review-count">"100 Reviews"</a>
-        </div>
-      <div class="d-none d-md-inline-block small pr-3"> | </div>
-      <div class="small mr-md-4"> "Cusco, Peru" </div>
+  <div class="row mb-4">
 
-      <div class="share-and-save">
-        <div class="share">
-          <span class="mr-1 text-body share-button">Share</span>
-        </div>
-        <div class="save">
-          <span class="mr-1 text-body share-button">Save to Wishlist</span>
-        </div>
+    <div class="col-md-9 d-md-flex flex-md-wrap align-items-center">
+      <div class="star-rating d-flex d-md-inline-flex align-items-center text-nowrap mr-md-4 pb-2">
+        <%# @booking.rating.to_i.times do  %>
+        <%# <span class="glyphicon glyphicon-star"></span>
+        <%# <% end %>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"><span class="mr-2" style="color: rgba(0, 0, 0, 0.5);">(5.0)</span> </i>
+      </div>
+      <a href="#" class="product-user-review-count visible text-dark">"100 Reviews"</a>
+      <div class="d-none d-md-inline-block px-3"> | </div>
+      <div class="mr-md-4"> "Cusco, Peru" </div>
+    </div>
+    <div class="col-md-3">
+      <div class="share-and-save list-inline">
+        <ul class="list-inline-item">
+          <i class="far fa-share-square"></i>
+          <li class="list-inline-item">Share</li>
+        </ul>
+        <ul class="list-inline-item">
+          <i class="far fa-heart"></i>
+          <li class="list-inline-item">Save to Wishlist</li>
+        </ul>
       </div>
     </div>
+  </div>
 
-    <div class="hero-check-availability-wrapper">
-      <div class="hero">
-        <div class="hero-thumbnails">
+      <div class="row">
+
+        <div class="col-md-1 d-flex flex-column">
+        "thumbnails van aqui"
         </div>
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
-              <img src="..." class="d-block w-100" alt="...">
+
+
+        <div class="col-md-7">
+          <div id="custCarousel" class="carousel slide" data-ride="carousel" align="center">
+            <!-- slides -->
+            <div class="carousel-inner">
+              <div class="carousel-item active"> <img src="https://images.unsplash.com/photo-1543385426-191664295b58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=995&q=80" alt="Hills"> </div>
+              <div class="carousel-item"> <img src="https://images.unsplash.com/photo-1548820650-643ad1d637b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80" alt="Hills"> </div>
+              <div class="carousel-item"> <img src="https://images.unsplash.com/photo-1525987112488-57890dee55a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1559&q=80" alt="Hills"> </div>
+              <div class="carousel-item"> <img src="https://images.unsplash.com/photo-1584031752283-59849645c0e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Hills"> </div>
             </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <img src="..." class="d-block w-100" alt="...">
+            <!-- Left right -->
+            <a class="carousel-control-prev" href="#custCarousel" data-slide="prev"> <span class="carousel-control-prev-icon"></span> </a>
+            <a class="carousel-control-next" href="#custCarousel" data-slide="next"> <span class="carousel-control-next-icon"></span> </a>
+            <a class="carousel-control-prev" href="#custCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#custCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+              <span class="sr-only">Next</span>
+            </a>
+                  <!-- Thumbnails -->
+            <ol class="carousel-indicators col-md-4">
+              <li class="list-inline-item active"> <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#custCarousel"> <img src="https://i.imgur.com/weXVL8M.jpg" class="img-fluid"> </a> </li>
+              <li class="list-inline-item"> <a id="carousel-selector-1" data-slide-to="1" data-target="#custCarousel"> <img src="https://i.imgur.com/Rpxx6wU.jpg" class="img-fluid"> </a> </li>
+              <li class="list-inline-item"> <a id="carousel-selector-2" data-slide-to="2" data-target="#custCarousel"> <img src="https://i.imgur.com/83fandJ.jpg" class="img-fluid"> </a> </li>
+              <li class="list-inline-item"> <a id="carousel-selector-2" data-slide-to="3" data-target="#custCarousel"> <img src="https://i.imgur.com/JiQ9Ppv.jpg" class="img-fluid"> </a> </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+        <div class="check-availability">
+          <div class="information-text">
+            <div class="offer">
+              <p>SPECIAL OFFER</p>
             </div>
-            <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="...">
+            <div class="price-from">
+              <p>from $306.90</p>
+            </div>
+            <div class="before-save-price">
+              <p class="text-decoration-line-through">$341</p>
+              <p>Save $34.10</p>
+            </div>
+            <div>
+              <p>Lowest Price Guarantee</p>
+            </div>
+            <div>
+              <p>Select Date and Travelers</p>
+            </div>
+            <button type="button" class="btn btn-danger p-3 w-100 rounded">Check Availability</button>
+            <div>
+              "Non-refundable
+              <p>You will not receive a refund if you cancel. <a href="#" class="text-dark">Learn more</a></p>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
-      </div>
-    </div>
-
-    <div class="check-availability">
-      <div class="information-text">
-        <div class="offer">
-          <p>SPECIAL OFFER</p>
         </div>
-        <div class="price-from">
-          <p>from $306.90</p>
-        </div>
-        <div class="before-save-price">
-          <p class="text-decoration-line-through">$341</p>
-          <p>Save $34.10</p>
-        </div>
-        <div>
-          <p>Lowest Price Guarantee</p>
-        </div>
-        <div>
-          <p>Select Date and Travelers</p>
-        </div>
-      </div>
 
       <%# <div class="cols-xs-12 col-md-4"> %>
         <%#= simple_form_for [current_user, @booking] do |f| %>
@@ -87,12 +108,10 @@
         <%#= f.submit : Check Availability  %>
         <%# end %>
       <%# </div> %>
-      <div>
-        "Non-refundable
-        <p>You will not receive a refund if you cancel. <a href="#">Learn more</a></p>
+
       </div>
     </div>
-  </div>
+
 
   <div class="row mt-lg-4">
 
@@ -101,8 +120,8 @@
         <div class="card">
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Cusco Tours
+              <button class="btn btn-link text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h2>Cusco Tours</h2>
               </button>
             </h5>
           </div>
@@ -116,8 +135,8 @@
         <div class="card">
           <div class="card-header" id="headingTwo">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Attractions
+              <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <h2>Attractions</h2>
               </button>
             </h5>
           </div>
@@ -130,8 +149,8 @@
         <div class="card">
           <div class="card-header" id="headingThree">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Recommendations
+              <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <h2>Recommendations</h2>
               </button>
             </h5>
           </div>
@@ -144,8 +163,8 @@
         <div class="card">
           <div class="card-header" id="headingFour">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                Nearby
+              <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <h2>Nearby</h2>
               </button>
             </h5>
           </div>
@@ -158,33 +177,198 @@
       </div>
     </div>
 
-    <div class="col-lg-9">
-      <div class="basic-info-container d-md-flex flex-md-wrap">
+    <div class=" col-lg-9">
 
+      <div class="basic-info-container d-md-flex flex-md-wrap justify-content-around">
         <div class="d-flex d-md-inline-flex align-items-center text-nowrap mr-md-4 pb-2 pt-2">
-          <svg class="mr-2"> <%# aqui va icono %> </svg>
-          <span class="basic-info-link">Safety Measures</span>
+          <i class="fas fa-clinic-medical mr-2" ></i>
+          <span>Safety Measures</span>
         </div>
-
         <div class="d-flex d-md-inline-flex align-items-center text-nowrap mr-md-4 pb-2 pt-2">
-          <svg class="mr-2"> <%# aqui va icono %> </svg>
-          <span class="basic-info-link">14 hours (Approx) </span>
+          <i class="far fa-clock mr-2"></i>
+          <span>14 hours (Approx.)</span>
         </div>
-
         <div class="d-flex d-md-inline-flex align-items-center text-nowrap mr-md-4 pb-2 pt-2">
-          <svg class="mr-2"> <%# aqui va icono %> </svg>
-          <span class="basic-info-link">Safety Measures</span>
+          <i class="fas fa-car mr-2"></i>
+          <span>Hotel pickup offered</span>
         </div>
-
         <div class="d-flex d-md-inline-flex align-items-center text-nowrap mr-md-4 pb-2 pt-2">
-          <svg class="mr-2"> <%# aqui va icono %> </svg>
-          <span class="basic-info-link">Safety Measures</span>
+          <i class="far fa-comments mr-2"></i>
+          <span>Offered in: English and 1 more</span>
         </div>
-
       </div>
+
+      <div class="cards-title-container">
+        <div class="title">
+          <h2>Explore our promoted experiences</h2>
+        </div>
+
+        <div class="cards-container d-flex">
+          <div class="card-container">
+            <i class="far fa-heart" id="card-heart"></i>
+            <img src="https://images.unsplash.com/photo-1567597243073-2d274aabecec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="plant photo">
+            <div class="card-content">
+              <div>
+                <h2><a href="#" class="text-dark stretched-link">Huayna Picchu and Machu Picchu Full Day</a></h2>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">37</span> </i>
+                <p>13 hours</p>
+                <h2 class="price text-dark">from <strong>$429.00</strong></h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container">
+            <i class="far fa-heart" id="card-heart"></i>
+            <img src="https://images.unsplash.com/photo-1415804941191-bc0c3bbac10d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="plant photo">
+            <div class="card-content">
+              <div>
+                <h2><a href="#" class="text-dark stretched-link">Machu Picchu  Private Guided Tour</a></h2>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">135</span> </i>
+                <p>3 hours 30 minutes</p>
+                <h2 class="price text-dark">from <strong>163.00</strong></h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-container">
+            <i class="far fa-heart" id="card-heart"></i>
+            <img src="https://images.unsplash.com/photo-1619901702452-dd99cbf9e025?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80" alt="plant photo">
+            <div class="card-content">
+              <div>
+                <h2><a href="#" class="text-dark stretched-link">Rainbow Mountain in One Day</a></h2>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">276</span> </i>
+                <p>12 hours</p>
+                <h2 class="price text-dark">from <strong>$85.00</strong></h2>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="overview mt-3">
+        <div>
+          <h2>Overview</h2>
+          <div>
+          <p>Spend a day exploring the Inca citadel of Machu Picchu during this all-inclusive day trip leaving from Cusco. Discover this renowned mountaintop Inca site with a guide, learning about its construction, history, and what daily life was like for its residents. The trip’s relaxed, non-strenuous pace is a great option for first-time visitors, families, and solo travelers alike, and features three different train ride options. The trip also includes round-trip hotel transport, transfer from Cusco to Machu Picchu (via train and bus), and the site entrance fee.</p>
+          </div>
+        </div>
+
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <h2>What's included?</h2>
+                </button>
+              </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <h2>Departure & Return</h2>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <h2>What To Expect</h2>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  <h2>Additional Info</h2>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFive">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  <h2>Cancellation Policy</h2>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingSix">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  <h2>Frequently Asked Questions</h2>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingSeven">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                  <h2>Traveler Photos</h2>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-
   </div>
-
 </div>
-
