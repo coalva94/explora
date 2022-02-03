@@ -25,7 +25,11 @@
         <li class="nav-item active">
           <%= link_to "Mis Reservas", '' , class: "nav-link" %>
         </li>
-
+          <% if current_user.agency %>
+            <li>
+             <%= link_to "Mi agencia", agency_path(current_user.agency), class:  "nav-link" %>
+            </li>
+          <% end %>
         <li class="nav-item active">
           <%= link_to "Afiliate a nosotros", '', class: "nav-link" %>
         </li>
@@ -37,6 +41,7 @@
             <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
+
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
