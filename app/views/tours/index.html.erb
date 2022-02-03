@@ -2,6 +2,11 @@
   <% @tours.each do |tour| %>
     <div class="row card-tour mt-4">
       <div class="col-3">
+        <% if tour.agency.name == 'touragencia' %>
+          <% tour.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 100, width: 100, crop: :fill %>
+          <% end %>
+        <% end %>
       </div>
       <div class="col-7">
         <h3><%=tour.title_tour%> </h3>
