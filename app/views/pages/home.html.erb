@@ -80,9 +80,18 @@
 <%#  FIN POR QUE USAR EXPLORA%>
 
 <%#  INICIO CERCA DE TU UBICACION %>
-<div class="container mt-4 mb-4">
+<div class="container testimonial-group mt-4 mb-4">
   <p class="text-center" style="font-size:3rem" >Recomendados cerca de ti</p>
-
+  <div class="row flex-nowrap">
+    <% @tours_near.each do |tour|%>
+    <div class="card-near col-6 col-md-4">
+      <img src="https://media.tacdn.com/media/attractions-splice-spp-360x240/0a/56/b4/34.jpg" class="d-block">
+      <i class="fas fa-map-marked-alt"> <%= tour.destination%> </i>
+      <p style="font-size:1.5rem; font-weight: 500; display:block;"><%= tour.title_tour%></p>
+      <p>Precio <span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
+    </div>
+    <% end%>
+  </div>
 </div>
 <%#  FIN CERCA DE TU UBICACION %>
 

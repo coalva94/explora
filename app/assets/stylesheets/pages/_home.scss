@@ -29,9 +29,29 @@ border-radius: 1rem;
 a{
   color: white;
   font-size: 2rem;
-}
+ }
 a:hover{
   text-decoration: none;
   color:antiquewhite;
+      }
 }
+
+// scrooll
+/* The heart of the matter */
+/* The heart of the matter */
+.testimonial-group > .row {
+  overflow-x: auto;
+  white-space: nowrap;
 }
+.testimonial-group > .row > .col-sm-4 {
+  display: inline-block;
+  float: none;
+}
+.card-near{
+
+  p{
+    font-size:1.2rem;
+  }
+
+}
+/* Decorations */
