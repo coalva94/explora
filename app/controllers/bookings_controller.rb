@@ -10,4 +10,15 @@ class BookingsController < ApplicationController
       render :new
     end
   end
+
+  # /bookings/
+  def show
+    @tour = Tour.find(params[:id])
+  end
+
+  # solo dejar ingrsar a estas vistas un usario logeado
+  def index
+    @bookings = current_user.bookings
+
+  end
 end

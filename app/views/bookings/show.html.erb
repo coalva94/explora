@@ -1,9 +1,8 @@
 <%# aca tiene que ir las reservacion a realizar! %>
 <body class="bg-light">
   <div class="container">
-    <div class="py-5 text-center">
-      <h2>Formulario de Pago</h2>
-      <p class="lead">Bienvenido a nuestro formulario de pago</p>
+    <div class="py-2 text-center">
+      <h2>FORMULARIO DE PAGO</h2>
     </div>
 
     <div class="row">
@@ -38,7 +37,6 @@
             <strong><%= (@tour.price * cant) - desc %></strong>
           </li>
         </ul>
-
         <form class="card p-2">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Cupon de descuento">
@@ -54,13 +52,13 @@
         <div class="card mb-3" style="max-width: 100%;">
           <div class="row no-gutters">
             <div class="col-md-4">
-              <img src="https://blogs.incarail.com/hubfs/Imported_Blog_Media/CuscoRainBlog-1.png" class="img-thumbnail mt-4" alt=". ..">
+              <img src="https://blogs.incarail.com/hubfs/Imported_Blog_Media/CuscoRainBlog-1.png" class="img-thumbnail d-flex justify-content-center align-items-center " alt=". ..">
             </div>
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title text-center"><strong><%= @tour.title_tour %></strong></h5>
                 <p class="card-text"><%= @tour.description %></p>
-                <p class="card-text text-right"><small class="text-muted">05/02/2022 - 07/02/2022</small></p>
+                <p class="card-text text-right"><small class="text-muted"><%= @tour.agency.name %></small></p>
               </div>
             </div>
           </div>
@@ -144,7 +142,7 @@
           </div>
           <hr class="mb-4">
 
-          <h4 class="mb-3">Método de pag#o</h4>
+          <h4 class="mb-3">Método de pago</h4>
 
           <div class="d-block my-3">
             <div class="custom-control custom-radio">
@@ -158,30 +156,31 @@
           </div>
           <div class="row">
             <div class="col-md-12 mb-4">
-              <label for="cc-number">Credit card number</label>
+              <label for="cc-number">Número de tarjeta de crédito</label>
               <input type="text" class="form-control" id="cc-number" placeholder="" required>
               <div class="invalid-feedback">
-                Credit card number is required
+                Número de tarjeta de crédito es requerido
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6 mb-4">
-              <label for="cc-expiration">Expiration</label>
+              <label for="cc-expiration">Expiracion</label>
               <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
               <div class="invalid-feedback">
-                Expiration date required
+                Dato de expiración es requerido
               </div>
             </div>
             <div class="col-md-6 mb-4">
               <label for="cc-cvv">CVV</label>
               <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
               <div class="invalid-feedback">
-                Security code required
+                Código de seguridad es requerido
               </div>
             </div>
           </div>
           <hr class="mb-4">
+          <%= link_to "Reserva", bookings_path, class:"btn btn-primary"%>
           <button class="btn btn-primary btn-lg btn-block" type="submit">Reserva Ahora</button>
         </form>
       </div>
