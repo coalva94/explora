@@ -17,7 +17,7 @@
       </div>
       <div class="col-2 pt-5 align-items-center" style="text-align:center;">
         <p>Precio <span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
-          <%= link_to "Ver Más",'', :class => "btn btn-success "%>
+          <%= link_to "Ver Más",tour_path(tour), :class => "btn btn-success "%>
       </div>
     </div>
   <% end %>

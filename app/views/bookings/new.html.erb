@@ -64,7 +64,17 @@
           </div>
         </div>
         <h4 class="mb-3">Datos requeridos:</h4>
-        <form class="needs-validation" novalidate>
+
+        <%= simple_form_for @booking ,url: tour_bookings_path, method: :post do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+            <%= f.input :start_date,label: 'Fecha a reservar', placeholder: '22/10/2010' %>
+            <%= f.input :quantity,label: 'Cantidad de reservas', placeholder: '1' %>
+            <%= f.button :submit ,'Reservar ahora', class: "btn btn-success p-3 w-100 rounded" %>
+        <% end %>
+
+        <%#  INICIO COMENTANDO INPUTS CON LOS ESTILO DE BOOTSTRAP %>
+        <%# <form class="needs-validation" novalidate>
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">Nombre</label>
@@ -181,8 +191,10 @@
           </div>
           <hr class="mb-4">
           <%= link_to "Reserva", bookings_path, class:"btn btn-primary"%>
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Reserva Ahora</button>
-        </form>
+          <%# <button class="btn btn-primary btn-lg btn-block" type="submit">Reserva Ahora</button>
+        </form> %>
+        <%#  FIIIN COMENTANDO INPUTS CON LOS ESTILO DE BOOTSTRAP %>
+
       </div>
     </div>
   </div>
