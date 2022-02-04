@@ -1,12 +1,12 @@
 <div class="container tour-index">
   <% @tours.each do |tour| %>
-    <div class="row card-tour mt-4">
-      <div class="col-3">
-        <% if tour.agency.name == 'touragencia' %>
+    <div class="row card-tour mt-4 pt-5 pb-5">
+      <div class="col-3 d-flex justify-content-center align-items-center ">
+        <%# if tour.agency.name == 'touragencia' %>
           <% tour.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 100, width: 100, crop: :fill %>
+          <%= cl_image_tag tour.photos.first.key,:style => "width:100%;" %>
           <% end %>
-        <% end %>
+        <%# end %>
       </div>
       <div class="col-7">
         <h3><%=tour.title_tour%> </h3>
@@ -15,7 +15,7 @@
         <p>Brindado por: <%=tour.agency.name%> </p>
 
       </div>
-      <div class="col-2 pt-5" style="text-align:center;">
+      <div class="col-2 pt-5 align-items-center" style="text-align:center;">
         <p>Precio <span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
           <%= link_to "Ver Más",'', :class => "btn btn-success "%>
       </div>
