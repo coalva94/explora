@@ -1,7 +1,6 @@
 <div class="container-fluid mt-5">
-
   <div class="container-border-bottom">
-    <h1 id="productTitle" class="font-weight-bold mb-0"> <%= @tour.title_tour %> </h1>
+    <h1 id="productTitle" class="font-weight-bold mb-0 pt-5"> <%= @tour.title_tour %> </h1>
 
     <div class="row mb-4">
       <div class="col-md-9 d-md-flex flex-md-wrap align-items-center">
@@ -70,7 +69,7 @@
               <div class="card">
                 <div class="card-header" id="headingOne">
                   <h2 class="mb-0">
-                    <button class="btn btn-link text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="btn btn-link text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                       <h2>Servicios incluidos</h2>
                     </button>
                   </h2>
@@ -78,14 +77,33 @@
 
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <div>
+                      <i class="fas fa-check d-inline"></i>
+                      <p class="d-inline">Tour guiado en español.</p>
+                    </div>
+                    <div>
+                      <i class="fas fa-check d-inline"></i>
+                      <p class="d-inline">Recogida y regreso al hotel. </p>
+                    </div>
+                    <div>
+                      <i class="fas fa-check d-inline"></i>
+                      <p class="d-inline">Boleto de tren de ida y vuelta seleccionado.</p>
+                    </div>
+                    <div>
+                      <i class="fas fa-times d-inline"></i>
+                      <p class="d-inline">Almuerzo</p>
+                    </div>
+                    <div>
+                      <i class="fas fa-times d-inline"></i>
+                      <p class="d-inline">Propinas</p>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" id="headingTwo">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                       <h2>Salida y regreso</h2>
                     </button>
                   </h2>
@@ -101,7 +119,7 @@
               <div class="card">
                 <div class="card-header" id="headingThree">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                       <h2>Qué esperar</h2>
                     </button>
                   </h2>
@@ -115,49 +133,67 @@
               <div class="card">
                 <div class="card-header" id="headingFour">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                       <h2>Información adicional</h2>
                     </button>
                   </h2>
                 </div>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <ul>
+                      <li>La confirmación se recibirá cuando se realice la reserva.</li>
+                      <li>No está adaptado para personas en silla de ruedas.</li>
+                      <li>No es adecuado para viajeros con afecciones cardíacas u otros problemas médicos graves.</li>
+                      <li>La mayoría de viajeros pueden participar en la experiencia.</li>
+                    </ul>
                   </div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" id="headingFive">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                       <h2>Política de cancelación</h2>
                     </button>
                   </h2>
                 </div>
                 <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    Esta experiencia <strong>NO</strong> es reembolsable y no se puede cambiar por ningún motivo. Si la cancela o pide una modificación, no se le devolverá el importe abonado. Obtenga <a href="#" class=" text-dark">más información</a> sobre las cancelaciones.
                   </div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" id="headingSix">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                       <h2>Preguntas frecuentes</h2>
                     </button>
                   </h2>
                 </div>
                 <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    <div class="faq">
+                      <p class="question"><strong>P:</strong>¿Dónde está el punto de encuentro?</p>
+                      <p class="answer ml-3"><strong>R:</strong> El punto de encuentro para este tour es nuestra oficina central en Cusco ubicada en la Av. El Sol 817.</p>
+                    </div>
+                    <br>
+                    <div class="faq">
+                      <p class="question"><strong>P:</strong>¿Se necesita equipo de montaña?</p>
+                      <p class="answer ml-3"><strong>R:</strong> No es necesario. El tour es apto para viajeros comúnes.</p>
+                    </div>
+                    <br>
+                    <div class="faq">
+                      <p class="question"><strong>P:</strong>¿Qué necesitan llevar los viajeros?</p>
+                      <p class="answer ml-3"><strong>R:</strong> Se recomienda llevar una chaqueta para la lluvia, zapatos cómodos, sombrero y protector solar..</p>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" id="headingSeven">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                       <h2>Fotos de los viajeros</h2>
                     </button>
                   </h2>
@@ -180,11 +216,11 @@
               <div class="card-body">
                 <h1 class="h3 mb-3 text-center">Reserva tus tours con Explora</h1>
                 <h4 class="h4 mb-3">Ingresa fecha y número de acompañantes</h4>
-                  <form>
+                  <form class="my-3">
 
                     <div class="row px-3">
                       <div class="col-sm-6 px-0">
-                        FECHA: <input class="br0" id="startDate" />
+                        FECHA: <input type="date" class="br0" id="startDate" />
                       </div>
                     </div>
 
@@ -194,6 +230,7 @@
                           <label class="mb-0 mt-3"exampleFormControlSelect1">ACOMPAÑANTES
                           </label>
                             <select class="form-control" ="exampleFormControlSelect1">
+                              <option>0</option>
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -223,18 +260,19 @@
 
           <div class="col-sm-10 mx-auto">
             <div class="row no-gutters">
-              <div class="col-md-6 d-flex align-items-center">
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
                 <p class="my-0 px-3"><strong>Ahorra con Explora</strong></p>
               </div>
               <div class="col-md-5 border-left border-secondary">
                 <div class="card-body">
-                  <p class="card-text ml-5"><strong>Afiliate <span>&gt;</span></strong></p>
+                  <p class="card-text ml-5"><strong> <a>Afiliate</a> <span>&gt;</span></strong></p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
 
   </div>
@@ -242,58 +280,57 @@
   <br>
 
   <div class="reviews container-fluid container py-3 mt-4">
-      <h2 class="h2 text-center">Opiniones de otros aventureros</h2>
-      <br>
-      <div class="row mt-4 d-flex justify-content-between">
+      <h2 class="h2 text-center" style="font-size:3rem">Opiniones de otros aventureros</h2>
+      <div class="row mt-4 d-flex justify-content-around">
 
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="card mb-3 border-0">
-            <div class="">
+            <div class="ml-2 mt-3">
               <div class="d-flex">
                   <img src="https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
-                  <div class="d-flex flex-column">
-                      <h5 class="mt-0 mb-1">María</h5>
-                      <p>Perú</p>
+                  <div class="d-flex flex-column m-3">
+                      <h3 class="mt-0 mb-1"><strong>María</strong></h3>
+                      <h4>Perú</h4>
                   </div>
               </div>
             </div>
-            <div class="card-body pl-0">
+            <div class="card-body pl-0 ml-3">
               <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
               <p class="card-text">Hice el tour de Machu Picchu con un grupo de amigos y fue la mejor experiencia de nuestras vidas. Regresaré pronto!...</p>
             </div>
           </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="card mb-3 border-0">
-            <div class="">
+            <div class="ml-2 mt-3">
               <div class="d-flex">
                   <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
-                  <div class="d-flex flex-column">
-                      <h5 class="mt-0 mb-1">Carlos</h5>
-                      <p>España</p>
+                  <div class="d-flex flex-column m-3">
+                      <h3 class="mt-0 mb-1"><strong>Carlos</strong></h3>
+                      <h4>España</h4>
                   </div>
               </div>
             </div>
-            <div class="card-body pl-0">
+            <div class="card-body pl-0 ml-3">
               <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
               <p class="card-text">Excelente! La organización muy buena. Hacer la reserva por internet fue muy práctico. La agencia fue muy profesional...</p>
             </div>
           </div>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="card mb-3 border-0">
-            <div class="">
+            <div class="ml-2 mt-3">
               <div class="d-flex">
                   <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
-                  <div class="d-flex flex-column">
-                      <h5 class="mt-0 mb-1">Alexis</h5>
-                      <p>Estados Unidos</p>
+                  <div class="d-flex flex-column m-3">
+                      <h3 class="mt-0 mb-1"><strong>Alexis</strong></h3>
+                      <h4>Estados Unidos</h4>
                   </div>
               </div>
             </div>
-            <div class="card-body pl-0">
+            <div class="card-body pl-0 ml-3">
               <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
               <p class="card-text">Excelente experiencia! El guía estuvo excelente, muy amable y conocedor. Realmente ha valido la pena. Súper recomendado...</p>
             </div>
@@ -307,7 +344,7 @@
   <div class="similar-experiences row mt-lg-4 d-flex justify-content-center">
     <div class="cards-title-container">
       <div class="title text-center">
-        <h2>Experiencias similares</h2>
+        <h2 style="font-size:3rem">Experiencias similares</h2>
       </div>
 
       <div class="cards-container d-flex">
@@ -322,7 +359,8 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">37</span> </i>
-              <p>13 horas</p>
+
+              <p><i class="far fa-clock" style="color: #D1D1D1"></i> 13 horas</p>
               <h2 class="price text-dark">desde <strong>$429.00</strong></h2>
             </div>
           </div>
@@ -339,8 +377,25 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">135</span> </i>
-              <p>3 horas 30 minutos</p>
-              <h2 class="price text-dark">desde <strong>163.00</strong></h2>
+              <p><i class="far fa-clock" style="color: #D1D1D1"></i> 3 horas 30 minutos</p>
+              <h2 class="price text-dark">desde <strong>$163.00</strong></h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <i class="far fa-heart" id="card-heart"></i>
+          <img src="https://images.unsplash.com/photo-1584136779221-6b58314700d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="plant photo">
+          <div class="card-content">
+            <div>
+              <h2><a href="#" class="text-dark stretched-link">Laguna Humantay 2 Días</a></h2>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">180</span> </i>
+              <p><i class="far fa-clock" style="color: #D1D1D1"></i> 10 horas</p>
+              <h2 class="price text-dark">desde <strong>$150.00</strong></h2>
             </div>
           </div>
         </div>
@@ -356,11 +411,16 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">276</span> </i>
-              <p>12 horas</p>
+              <p><i class="far fa-clock" style="color: #D1D1D1"></i> 12 horas</p>
               <h2 class="price text-dark">desde <strong>$85.00</strong></h2>
             </div>
           </div>
         </div>
+      </div>
+      <div class="row mt-2 mb-5 d-flex justify-content-end">
+        <button class="btn btn-link">
+          <span class="h6 text-dark"><strong>Mostrar todos (2,000+) &gt;</span></strong>
+        </button>
       </div>
     </div>
   </div>
