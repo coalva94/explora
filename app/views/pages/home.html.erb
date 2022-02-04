@@ -16,8 +16,8 @@
     <div class="carousel-item">
       <img class="d-block w-100" src="https://volawaytravel.pe/wp-content/uploads/2018/09/turismo-peru-puno.jpg" alt="Third slide">
     </div>
-    <div class="container container-search row ">
-      <div class="overlay col-xs-10 col-md-5 overlay-search ml-4 pt-4 pb-5 pl-4 pr-4">
+    <div class="container container-search ml-3 row ">
+      <div class="overlay col-xs-10 col-md-5  overlay-search ml-4 pt-4 pb-5 pl-4 pr-4">
         <div class="row ">
           <div class="col">
             <p>Descubre increibles lugares, en todas partes</p>
@@ -58,22 +58,22 @@
     <div class="col-6 col-md-3  why-explora">
       <img src="http://imgfz.com/i/oZePCya.png" alt="">
       <h4 class="title">Experiencias Calificadas</h4>
-      <p class="description">Todos nuestros Tours tienen calificacioens y comentarios  dejados por anteriores viajeros.</p>
+      <p class="description-why-explora">Todos nuestros Tours tienen calificacioens y comentarios  dejados por anteriores viajeros.</p>
     </div>
     <div class="col-6 col-md-3  why-explora">
       <img src="http://imgfz.com/i/XKtgoGW.png" alt="">
       <h4 class="title">Experiencias Memorables</h4>
-      <p class="description">Navega y reserva tours y actividades tan increíbles que querrás contárselo a tus amigos.</p>
+      <p class="description-why-explora">Navega y reserva tours y actividades tan increíbles que querrás contárselo a tus amigos.</p>
     </div>
     <div class="col-6 col-md-3 why-explora">
       <img src="http://imgfz.com/i/xlDEwnP.png" alt="">
       <h4 class="title">Máximiza tu presupuesto</h4>
-      <p class="description">Nuestra variada oferta satisface cualquier plan o presupuesto</p>
+      <p class="description-why-explora">Nuestra variada oferta satisface cualquier plan o presupuesto</p>
     </div>
     <div class="col-6 col-md-3 why-explora">
       <img src="http://imgfz.com/i/XRdOjBr.png" alt="">
       <h4 class="title">Tu sastifación es nuestro foco</h4>
-      <p class="description">El aseguramiento de tu satisfaccion guian cada decisión tomada</p>
+      <p class="description-why-explora">El aseguramiento de tu satisfaccion guian cada decisión tomada</p>
     </div>
   </div>
 </div>
@@ -85,10 +85,12 @@
   <div class="row flex-nowrap">
     <% @tours_near.each do |tour|%>
     <div class="card-near col-6 col-md-4">
-      <img src="https://media.tacdn.com/media/attractions-splice-spp-360x240/0a/56/b4/34.jpg" class="d-block">
-      <i class="fas fa-map-marked-alt"> <%= tour.destination%> </i>
-      <p style="font-size:1.5rem; font-weight: 500; display:block;"><%= tour.title_tour%></p>
-      <p>Precio <span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
+      <a href="<%= tour_path(tour)%>">
+        <img src="https://media.tacdn.com/media/attractions-splice-spp-360x240/0a/56/b4/34.jpg" class="d-block mt-3">
+        <i class="fas fa-map-marked-alt"> <%= tour.destination%> </i>
+        <p style="font-size:1.5rem; font-weight: 500; display:block;"><%= tour.title_tour%></p>
+        <p>Precio <span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
+      </a>
     </div>
     <% end%>
   </div>
@@ -100,12 +102,12 @@
 <div class="container mb-5">
   <p class="text-center" style="font-size:3rem" >Elige a donde ir</p>
   <div class="row mt-3">
-    <div class="col-6 col-md-3">
+    <div class="col-6 col-md-3 mb-4">
       <div class="card-choose d-flex justify-content-center align-items-center" style="background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/fc/ba/cusco.jpg?w=700&h=500&s=1')">
         <a href="">Cuzco</a>
       </div>
     </div>
-    <div class="col-6 col-md-3">
+    <div class="col-6 col-md-3 mb-4">
       <div class="card-choose d-flex justify-content-center align-items-center" style="background-image: url('https://t4.ftcdn.net/jpg/02/77/79/95/360_F_277799562_EXkcA6BpakgJXLxhyJRyBwGJ2sR8IHTN.jpg')">
         <a href="">Arequipa</a>
       </div>

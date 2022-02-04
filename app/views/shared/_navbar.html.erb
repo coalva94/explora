@@ -23,16 +23,17 @@
     <%# Agregarun if que verifique que scurrent_user existe current_user.present? %>
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Mis Reservas", '' , class: "nav-link" %>
+          <%= link_to "Mis Reservas", bookings_path , class: "nav-link" %>
         </li>
           <% if current_user.agency %>
             <li>
              <%= link_to "Mi agencia", agency_path(current_user.agency), class:  "nav-link" %>
             </li>
+             <% else %>
+            <li class="nav-item active">
+              <%= link_to "Afiliate a nosotros", '', class: "nav-link" %>
+            </li>
           <% end %>
-        <li class="nav-item active">
-          <%= link_to "Afiliate a nosotros", '', class: "nav-link" %>
-        </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8JyScJ3XAm0g9mNMQ1Ws7EI6LoVgs7_HDXg&usqp=CAU", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
