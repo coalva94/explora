@@ -1,0 +1,54 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon pl-5 pr-5 pb-0">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "https://i.ibb.co/GpQP5Pn/Screen-Shot-2022-02-02-at-15-44-59.png" %>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <h4> Hola,
+      <%= current_user.first_name.capitalize%>
+    </h4>
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Reserva Ahora!", tours_path, class: "nav-link" %>
+      </li>
+      <li>
+      <a href="" class="nav-link"> <i class="fa fa-question-circle-o" aria-hidden="true"></i> Centro de Ayuda</a>
+      </li>
+    <%# Agregarun if que verifique que scurrent_user existe current_user.present? %>
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to "Mis Reservas", bookings_path , class: "nav-link" %>
+        </li>
+          <% if current_user.agency %>
+            <li>
+             <%= link_to "Mi agencia", agency_path(current_user.agency), class:  "nav-link" %>
+            </li>
+             <% else %>
+            <li class="nav-item active">
+              <%= link_to "Afiliate a nosotros", '', class: "nav-link" %>
+            </li>
+          <% end %>
+        <li class="nav-item dropdown">
+          <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8JyScJ3XAm0g9mNMQ1Ws7EI6LoVgs7_HDXg&usqp=CAU", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+            <%= link_to "Cambiar Contraseña", "#", class: "dropdown-item" %>
+            <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>

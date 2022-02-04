@@ -1,0 +1,22 @@
+.container-fluid{
+  background-color: #f2f2f2;
+  .card-create-tour{
+    background-color: white;
+    p{
+      font-size: 2.5rem;
+  }
+  }
+
+}
+.form-group{
+  margin-top:2rem;
+  label{
+    font-size: 1.5rem;
+  }
+  input{
+    font-size: 1.5rem;
+  }
+  textarea{
+    font-size: 1.5rem;
+  }
+}

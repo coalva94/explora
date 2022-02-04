@@ -11,12 +11,13 @@ class ToursController < ApplicationController
 
   def new
     @tour = Tour.new
+    @tour.agency = current_user.agency
   end
 
   def create
     @tour = Tour.new(find_params)
-    @tour.agency = current_user
-    # authorize @car
+    @tour.agency = current_user.agency
+
     if @tour.save
       redirect_to tours_path
     else
@@ -56,8 +57,7 @@ class ToursController < ApplicationController
       :title_tour,
       :description,
       :duration,
-      # photos: []
+      photos: []
     )
   end
-
 end

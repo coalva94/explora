@@ -1,1 +1,66 @@
 // Specific CSS for your home-page
+#carouselExampleIndicators{
+  height:50vh;
+  img{
+     height:50vh;
+    width: 100%;
+  }
+}
+.overlay{
+  background-color: #ffffff;
+  opacity: 0.8;
+  border-radius: 1rem;
+}
+.overlay{
+  p{
+    font-weight: 300;
+  }
+}
+.input-group{
+    opacity: 1;
+    background-color: white !important;
+}
+.card-choose{
+width: 100%;
+height: 20rem;
+background-size: cover;
+background-position: center;
+border-radius: 1rem;
+a{
+  color: white;
+  font-size: 2rem;
+ }
+a:hover{
+  text-decoration: none;
+  color:antiquewhite;
+      }
+}
+
+// scrooll
+/* The heart of the matter */
+/* The heart of the matter */
+.testimonial-group > .row {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.testimonial-group > .row > .col-sm-4 {
+  display: inline-block;
+  float: none;
+}
+.card-near{
+  border-radius:10px;
+  p{
+    font-size:1.2rem;
+    color:black;
+  }
+  i{
+    color: black;
+  }
+}
+.description-why-explora{
+  font-size:1.6rem;
+}
+.card-near:hover{
+  box-shadow:  0px 0px 10px 0px #333 inset;
+}
+/* Decorations */

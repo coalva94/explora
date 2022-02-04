@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: %i[index show edit destroy update]
   get '/users/:id/bookings', to: 'bookings#mybookings', as: 'mybookings'
+
+  resources :agencies do
+    resources :tours
+  end
+
 end
 
 # get '/patients/:id', to: 'patients#show'

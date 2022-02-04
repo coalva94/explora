@@ -1,0 +1,541 @@
+<div class="container-fluid mt-5">
+  <div class="container-border-bottom">
+    <h1 id="productTitle" class="font-weight-bold mb-0 pt-5"> <%= @tour.title_tour %> </h1>
+
+    <div class="row mb-4">
+      <div class="col-md-9 d-md-flex flex-md-wrap align-items-center">
+        <div class="star-rating d-flex d-md-inline-flex align-items-center text-nowrap mr-md-4 pb-2">
+          <%# @booking.rating.to_i.times do  %>
+          <%# <span class="glyphicon glyphicon-star"></span>
+          <%# <% end %>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"><span class="mr-2" style="color: rgba(0, 0, 0, 0.5);">(5.0)</span> </i>
+        </div>
+
+
+        <!-- Large modal -->
+        <a href="#" class="product-user-review-count visible text-dark" data-toggle="modal" data-target=".bd-example-modal-lg">100 Reseñas"</a>
+
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content d-flex justify-content-center">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Reseñas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="review-card border-bottom">
+                <div class="col-8 card mb-3 border-0">
+                  <div class="ml-2 mt-3">
+                    <div class="d-flex">
+                        <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
+                        <div class="d-flex flex-column m-3">
+                            <h3 class="mt-0 mb-1"><strong>Alexis</strong></h3>
+                            <h4>Estados Unidos</h4>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="card-body pl-0 ml-3">
+                    <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
+                    <p class="card-text">Excelente experiencia! El guía estuvo excelente, muy amable y conocedor. Realmente ha valido la pena. Súper recomendado...</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-card border-bottom">
+                <div class="col-8 card mb-3 border-0">
+                  <div class="ml-2 mt-3">
+                    <div class="d-flex">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
+                        <div class="d-flex flex-column m-3">
+                            <h3 class="mt-0 mb-1"><strong>Carlos</strong></h3>
+                            <h4>España</h4>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="card-body pl-0 ml-3">
+                    <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
+                    <p class="card-text">Excelente! La organización muy buena. Hacer la reserva por internet fue muy práctico. La agencia fue muy profesional...</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-card border-bottom">
+                <div class="col-8 card mb-3 border-0">
+                  <div class="ml-2 mt-3">
+                    <div class="d-flex">
+                        <img src="https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
+                        <div class="d-flex flex-column m-3">
+                            <h3 class="mt-0 mb-1"><strong>María</strong></h3>
+                            <h4>Perú</h4>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="card-body pl-0 ml-3">
+                    <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
+                    <p class="card-text">Hice el tour de Machu Picchu con un grupo de amigos y fue la mejor experiencia de nuestras vidas. Regresaré pronto!...</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Reseñas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                  <div class="card mb-3 border-0">
+                    <div class="ml-2 mt-3">
+                      <div class="d-flex">
+                          <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
+                          <div class="d-flex flex-column m-3">
+                              <h3 class="mt-0 mb-1"><strong>Alexis</strong></h3>
+                              <h4>Estados Unidos</h4>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="card-body pl-0 ml-3">
+                      <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
+                      <p class="card-text">Excelente experiencia! El guía estuvo excelente, muy amable y conocedor. Realmente ha valido la pena. Súper recomendado...</p>
+                    </div>
+                  </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-none d-md-inline-block px-3"> | </div>
+        <div class="mr-md-4"> "Cusco, Peru" </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="share-and-save list-inline">
+          <ul class="list-inline-item">
+            <i class="far fa-share-square"></i>
+            <li class="list-inline-item">Share</li>
+          </ul>
+          <ul class="list-inline-item">
+            <i class="far fa-heart"></i>
+            <li class="list-inline-item">Save to Wishlist</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-container">
+      <div class="gallery">
+        <figure class="gallery__item gallery__item--1">
+          <img src="https://images.unsplash.com/photo-1548820650-643ad1d637b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80" alt="Gallery image 1" class="gallery__img">
+        </figure>
+        <figure class="gallery__item gallery__item--2">
+          <img src="https://images.unsplash.com/photo-1543385426-191664295b58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=995&q=80" alt="Gallery image 2" class="gallery__img">
+        </figure>
+        <figure class="gallery__item gallery__item--3">
+          <img src="https://images.unsplash.com/photo-1483519915753-2ace655a51e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Gallery image 3" class="gallery__img">
+        </figure>
+        <figure class="gallery__item gallery__item--4">
+          <img src="https://images.unsplash.com/photo-1525987112488-57890dee55a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1559&q=80" alt="Gallery image 4" class="gallery__img">
+        </figure>
+        <figure class="gallery__item gallery__item--5">
+          <img src="https://images.unsplash.com/photo-1584031752283-59849645c0e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Gallery image 5" class="gallery__img">
+        </figure>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="overview col-md-7 mt-3">
+        <div class="row d-flex justify-content-end">
+          <div class="description-container col-10">
+            <div>
+              <h2>Descripción</h2>
+              <div>
+              <p>Pase un día explorando la ciudadela inca de Machu Picchu durante este viaje de un día con todo incluido desde Cusco. Descubra este famoso sitio Inca en la cima de la montaña con una guía, y aprenda sobre su construcción, historia y cómo era la vida cotidiana de sus residentes. El ritmo relajado y no extenuante del viaje es una excelente opción para los visitantes primerizos, las familias y los que viajan solos por igual, y cuenta con tres opciones diferentes de viaje en tren. El viaje también incluye transporte de ida y vuelta al hotel, traslado desde Cusco a Machu Picchu (en tren y autobús), y la tarifa de entrada al sitio.</p>
+              </div>
+            </div>
+
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <h2>Servicios incluidos</h2>
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div>
+                      <i class="fas fa-check d-inline"></i>
+                      <p class="d-inline">Tour guiado en español.</p>
+                    </div>
+                    <div>
+                      <i class="fas fa-check d-inline"></i>
+                      <p class="d-inline">Recogida y regreso al hotel. </p>
+                    </div>
+                    <div>
+                      <i class="fas fa-check d-inline"></i>
+                      <p class="d-inline">Boleto de tren de ida y vuelta seleccionado.</p>
+                    </div>
+                    <div>
+                      <i class="fas fa-times d-inline"></i>
+                      <p class="d-inline">Almuerzo</p>
+                    </div>
+                    <div>
+                      <i class="fas fa-times d-inline"></i>
+                      <p class="d-inline">Propinas</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <h2>Salida y regreso</h2>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <strong>Punto de partida:</strong>
+                    <p>Se incluye la recogida de los viajeros
+                    Esta actividad incluye el traslado de ida y vuelta desde su hotel, apartamento o su casa.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      <h2>Qué esperar</h2>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      <h2>Información adicional</h2>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <ul>
+                      <li>La confirmación se recibirá cuando se realice la reserva.</li>
+                      <li>No está adaptado para personas en silla de ruedas.</li>
+                      <li>No es adecuado para viajeros con afecciones cardíacas u otros problemas médicos graves.</li>
+                      <li>La mayoría de viajeros pueden participar en la experiencia.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      <h2>Política de cancelación</h2>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Esta experiencia <strong>NO</strong> es reembolsable y no se puede cambiar por ningún motivo. Si la cancela o pide una modificación, no se le devolverá el importe abonado. Obtenga <a href="#" class=" text-dark">más información</a> sobre las cancelaciones.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      <h2>Preguntas frecuentes</h2>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div class="faq">
+                      <p class="question"><strong>P:</strong>¿Dónde está el punto de encuentro?</p>
+                      <p class="answer ml-3"><strong>R:</strong> El punto de encuentro para este tour es nuestra oficina central en Cusco ubicada en la Av. El Sol 817.</p>
+                    </div>
+                    <br>
+                    <div class="faq">
+                      <p class="question"><strong>P:</strong>¿Se necesita equipo de montaña?</p>
+                      <p class="answer ml-3"><strong>R:</strong> No es necesario. El tour es apto para viajeros comúnes.</p>
+                    </div>
+                    <br>
+                    <div class="faq">
+                      <p class="question"><strong>P:</strong>¿Qué necesitan llevar los viajeros?</p>
+                      <p class="answer ml-3"><strong>R:</strong> Se recomienda llevar una chaqueta para la lluvia, zapatos cómodos, sombrero y protector solar..</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                      <h2>Fotos de los viajeros</h2>
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-container col-md-4">
+        <div class="row">
+          <div class="col-sm-10 mx-auto">
+            <div class="card border-0">
+              <div class="card-body">
+                <h1 class="h3 mb-3 text-center">Reserva tus tours con Explora</h1>
+                <h4 class="h4 mb-3">Ingresa fecha y número de acompañantes</h4>
+                  <form class="my-3">
+
+                    <div class="row px-3">
+                      <div class="col-sm-6 px-0">
+                        FECHA: <input type="date" class="br0" id="startDate" />
+                      </div>
+                    </div>
+
+                    <div class="row px-3">
+                      <div class="col-sm-6 pl-1 br0">
+                        <div class="form-group">
+                          <label class="mb-0 mt-3"exampleFormControlSelect1">ACOMPAÑANTES
+                          </label>
+                            <select class="form-control" ="exampleFormControlSelect1">
+                              <option>0</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                              <option>11</option>
+                              <option>12</option>
+                              <option>13</option>
+                              <option>14</option>
+                              <option>15</option>
+                              <option>16</option>
+                            </select>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+
+                  <a href="<%=new_tour_booking_path(@tour) %> " class="btn btn-danger p-3 w-100 rounded">Comprobar disponibilidad</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-10 mx-auto">
+            <div class="row no-gutters">
+              <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <p class="my-0 px-3"><strong>Ahorra con Explora</strong></p>
+              </div>
+              <div class="col-md-5 border-left border-secondary">
+                <div class="card-body">
+                  <p class="card-text ml-5"><strong> <a>Afiliate</a> <span>&gt;</span></strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="reviews container-fluid container py-3 mt-4">
+      <h2 class="h2 text-center" style="font-size:3rem">Opiniones de otros aventureros</h2>
+      <div class="row mt-4 d-flex justify-content-around">
+
+        <div class="col-md-4">
+          <div class="card mb-3 border-0">
+            <div class="ml-2 mt-3">
+              <div class="d-flex">
+                  <img src="https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
+                  <div class="d-flex flex-column m-3">
+                      <h3 class="mt-0 mb-1"><strong>María</strong></h3>
+                      <h4>Perú</h4>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body pl-0 ml-3">
+              <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
+              <p class="card-text">Hice el tour de Machu Picchu con un grupo de amigos y fue la mejor experiencia de nuestras vidas. Regresaré pronto!...</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-3 border-0">
+            <div class="ml-2 mt-3">
+              <div class="d-flex">
+                  <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
+                  <div class="d-flex flex-column m-3">
+                      <h3 class="mt-0 mb-1"><strong>Carlos</strong></h3>
+                      <h4>España</h4>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body pl-0 ml-3">
+              <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
+              <p class="card-text">Excelente! La organización muy buena. Hacer la reserva por internet fue muy práctico. La agencia fue muy profesional...</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-3 border-0">
+            <div class="ml-2 mt-3">
+              <div class="d-flex">
+                  <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
+                  <div class="d-flex flex-column m-3">
+                      <h3 class="mt-0 mb-1"><strong>Alexis</strong></h3>
+                      <h4>Estados Unidos</h4>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body pl-0 ml-3">
+              <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
+              <p class="card-text">Excelente experiencia! El guía estuvo excelente, muy amable y conocedor. Realmente ha valido la pena. Súper recomendado...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <br>
+
+  <div class="similar-experiences row mt-lg-4 d-flex justify-content-center">
+    <div class="cards-title-container">
+      <div class="title text-center">
+        <h2 style="font-size:3rem">Experiencias similares</h2>
+      </div>
+
+      <div class="cards-container d-flex">
+        <div class="card-container">
+          <i class="far fa-heart" id="card-heart"></i>
+          <img src="https://images.unsplash.com/photo-1567597243073-2d274aabecec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="plant photo">
+          <div class="card-content">
+            <div>
+              <h2><a href="#" class="text-dark stretched-link">Huayna Picchu y Machu Picchu Día Completo</a></h2>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">37</span> </i>
+
+              <p><i class="far fa-clock" style="color: #D1D1D1"></i> 13 horas</p>
+              <h2 class="price text-dark">desde <strong>$429.00</strong></h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <i class="far fa-heart" id="card-heart"></i>
+          <img src="https://images.unsplash.com/photo-1415804941191-bc0c3bbac10d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="plant photo">
+          <div class="card-content">
+            <div>
+              <h2><a href="#" class="text-dark stretched-link">Tour Privado Machu Picchu</a></h2>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">135</span> </i>
+              <p><i class="far fa-clock" style="color: #D1D1D1"></i> 3 horas 30 minutos</p>
+              <h2 class="price text-dark">desde <strong>$163.00</strong></h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <i class="far fa-heart" id="card-heart"></i>
+          <img src="https://images.unsplash.com/photo-1584136779221-6b58314700d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="plant photo">
+          <div class="card-content">
+            <div>
+              <h2><a href="#" class="text-dark stretched-link">Laguna Humantay 2 Días</a></h2>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">180</span> </i>
+              <p><i class="far fa-clock" style="color: #D1D1D1"></i> 10 horas</p>
+              <h2 class="price text-dark">desde <strong>$150.00</strong></h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <i class="far fa-heart" id="card-heart"></i>
+          <img src="https://images.unsplash.com/photo-1619901702452-dd99cbf9e025?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80" alt="plant photo">
+          <div class="card-content">
+            <div>
+              <h2><a href="#" class="text-dark stretched-link">Montaña 7 Colores en un día</a></h2>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">276</span> </i>
+              <p><i class="far fa-clock" style="color: #D1D1D1"></i> 12 horas</p>
+              <h2 class="price text-dark">desde <strong>$85.00</strong></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-2 mb-5 d-flex justify-content-end">
+        <button class="btn btn-link">
+          <span class="h6 text-dark"><strong>Mostrar todos (2,000+) &gt;</span></strong>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
