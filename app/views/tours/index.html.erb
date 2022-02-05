@@ -2,20 +2,20 @@
   <% @tours.each do |tour| %>
     <div class="row card-tour mt-4 pt-5 pb-5">
       <div class="col-3 d-flex justify-content-center align-items-center ">
-        <%# if tour.agency.name == 'touragencia' %>
-          <% tour.photos.each do |photo| %>
+
+          <%# tour.photos.each do |photo| %>
           <%= cl_image_tag tour.photos.first.key,:style => "width:100%;" %>
-          <% end %>
-        <%# end %>
+          <%# end %>
+
       </div>
-      <div class="col-7">
+      <div class="col-6">
         <h3><%=tour.title_tour%> </h3>
         <p><%=tour.description%>  </p>
         <p>Duración: <%=tour.duration %> </p>
         <p>Brindado por: <%=tour.agency.name%> </p>
 
       </div>
-      <div class="col-2 pt-5 align-items-center" style="text-align:center;">
+      <div class="col-3 pt-5 align-items-center" style="text-align:center;">
         <p>Precio <span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
           <%= link_to "Ver Más",tour_path(tour), :class => "btn btn-success "%>
       </div>

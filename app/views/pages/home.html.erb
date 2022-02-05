@@ -20,7 +20,7 @@
       <div class="overlay offset-md-3 col-xs-10 col-md-6  overlay-search ml-4 mr-4 pt-4 pb-5 pl-4 pr-4">
         <div class="row ">
           <div class="col">
-            <p class="p-col-overlay">Descubre increibles lugares, en todas partes</p>
+            <p class="p-col-overlay ">Descubre increibles lugares, en todas partes</p>
           </div>
         </div>
         <div class="row">
@@ -84,11 +84,12 @@
   <p class="text-center" style="font-size:3rem" >Recomendados cerca de ti</p>
   <div class="row flex-nowrap">
     <% @tours_near.each do |tour|%>
-    <div class="card-near col-6 col-md-4">
-      <a href="<%= tour_path(tour)%>">
-        <img src="https://media.tacdn.com/media/attractions-splice-spp-360x240/0a/56/b4/34.jpg" class="d-block mt-3">
+    <div class="card-near col-6 col-md-4 ml-3">
+      <a href="<%= tour_path(tour)%>" class="d-block w-100">
+          <%= cl_image_tag tour.photos.first.key,:style => "width:100%;", :class => "d-block mt-3 w-100"%>
+        <%# <img src="https://media.tacdn.com/media/attractions-splice-spp-360x240/0a/56/b4/34.jpg" class="d-block mt-3 w-100"> %>
         <i class="fas fa-map-marked-alt"> <%= tour.destination%> </i>
-        <p style="font-size:1.5rem; font-weight: 500; display:block;"><%= tour.title_tour%></p>
+        <p class="title-card-recomend" style="font-size:1.5rem; font-weight: 500; display:block;"><%= tour.title_tour%></p>
         <p>Precio <span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
       </a>
     </div>

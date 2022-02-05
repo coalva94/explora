@@ -11,7 +11,7 @@
 }
 .overlay{
   background-color: #ffffff;
-  opacity: 0.8;
+  opacity: 0.85;
   border-radius: 1rem;
 }
 .overlay{
@@ -73,7 +73,13 @@ a:hover{
   color: #2A2D32;
 }
 .card-near:hover{
-  box-shadow:  0px 0px 10px 0px #333 inset;
+  box-shadow:  0px 0px 5px 0px #186B6D inset;
+}
+.card-choose{
+  filter: brightness(70%);
+}
+.title-card-recomend{
+  white-space:normal;
 }
 /* media queries */
 @media only screen and (min-width: 300px) and (max-width: 700px){
@@ -95,4 +101,8 @@ a:hover{
   .overlay-search{
   height:40vh;
   }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 3000px){
+
 }
