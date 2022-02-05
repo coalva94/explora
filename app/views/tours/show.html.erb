@@ -148,21 +148,22 @@
 
     <div class="gallery-container">
       <div class="gallery">
-        <figure class="gallery__item gallery__item--1">
-          <img src="https://images.unsplash.com/photo-1548820650-643ad1d637b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80" alt="Gallery image 1" class="gallery__img">
-        </figure>
-        <figure class="gallery__item gallery__item--2">
-          <img src="https://images.unsplash.com/photo-1543385426-191664295b58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=995&q=80" alt="Gallery image 2" class="gallery__img">
-        </figure>
-        <figure class="gallery__item gallery__item--3">
-          <img src="https://images.unsplash.com/photo-1483519915753-2ace655a51e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="Gallery image 3" class="gallery__img">
-        </figure>
-        <figure class="gallery__item gallery__item--4">
-          <img src="https://images.unsplash.com/photo-1525987112488-57890dee55a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1559&q=80" alt="Gallery image 4" class="gallery__img">
-        </figure>
-        <figure class="gallery__item gallery__item--5">
-          <img src="https://images.unsplash.com/photo-1584031752283-59849645c0e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Gallery image 5" class="gallery__img">
-        </figure>
+        <%# <% @tour.photos.each do |photo| %>
+          <figure class="gallery__item gallery__item--1">
+            <%= cl_image_tag @tour.photos[0].key, height: 300, width: 400, crop: :fill,class: 'gallery__img',alt: "Gallery image 1" %>
+          </figure>
+          <figure class="gallery__item gallery__item--2">
+            <%= cl_image_tag @tour.photos[1].key, height: 300, width: 400, crop: :fill,class: 'gallery__img',alt: "Gallery image 2" %>
+          </figure>
+          <figure class="gallery__item gallery__item--3">
+            <%= cl_image_tag @tour.photos[2].key, height: 300, width: 400, crop: :fill,class: 'gallery__img',alt: "Gallery image 3" %>
+          </figure>
+          <figure class="gallery__item gallery__item--4">
+            <%= cl_image_tag @tour.photos[3].key, height: 300, width: 400, crop: :fill,class: 'gallery__img',alt: "Gallery image 4" %>
+          </figure>
+          <figure class="gallery__item gallery__item--5">
+            <%= cl_image_tag @tour.photos[4].key, height: 300, width: 400, crop: :fill,class: 'gallery__img',alt: "Gallery image 5" %>
+          </figure>
       </div>
     </div>
 
@@ -461,7 +462,7 @@
       </div>
 
       <div class="cards-container d-flex">
-        <div class="card-container">
+        <%# <div class="card-container">
           <i class="far fa-heart" id="card-heart"></i>
           <img src="https://images.unsplash.com/photo-1567597243073-2d274aabecec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="plant photo">
           <div class="card-content">
@@ -528,7 +529,27 @@
               <h2 class="price text-dark">desde <strong>$85.00</strong></h2>
             </div>
           </div>
-        </div>
+        </div> %>
+        <% @tours.sample(4).each do |e| %>
+          <div class="card-container py-3">
+            <i class="far fa-heart" id="card-heart"></i>
+            <%= cl_image_tag e.photos.first.key, height: 300, width: 400, crop: :fill %>
+            <div class="card-content" style="height: 38%;">
+              <div class="d-flex flex-column">
+                <div class="flex-grow-1">
+                  <h2 class="title"><a href="#" class="text-dark stretched-link"><%= e.title_tour %></a></h2>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">37</span> </i>
+                  <p><i class="far fa-clock" style="color: #D1D1D1"></i> <%= e.duration %> </p>
+                </div>
+                <h2 class="price text-dark">desde <strong>$ <%= e.price %></strong></h2>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
       <div class="row mt-2 mb-5 d-flex justify-content-end">
         <button class="btn btn-link">
