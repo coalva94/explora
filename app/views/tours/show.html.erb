@@ -462,74 +462,6 @@
       </div>
 
       <div class="cards-container d-flex">
-        <%# <div class="card-container">
-          <i class="far fa-heart" id="card-heart"></i>
-          <img src="https://images.unsplash.com/photo-1567597243073-2d274aabecec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="plant photo">
-          <div class="card-content">
-            <div>
-              <h2><a href="#" class="text-dark stretched-link">Huayna Picchu y Machu Picchu Día Completo</a></h2>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">37</span> </i>
-
-              <p><i class="far fa-clock" style="color: #D1D1D1"></i> 13 horas</p>
-              <h2 class="price text-dark">desde <strong>$429.00</strong></h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-container">
-          <i class="far fa-heart" id="card-heart"></i>
-          <img src="https://images.unsplash.com/photo-1415804941191-bc0c3bbac10d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="plant photo">
-          <div class="card-content">
-            <div>
-              <h2><a href="#" class="text-dark stretched-link">Tour Privado Machu Picchu</a></h2>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">135</span> </i>
-              <p><i class="far fa-clock" style="color: #D1D1D1"></i> 3 horas 30 minutos</p>
-              <h2 class="price text-dark">desde <strong>$163.00</strong></h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-container">
-          <i class="far fa-heart" id="card-heart"></i>
-          <img src="https://images.unsplash.com/photo-1584136779221-6b58314700d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="plant photo">
-          <div class="card-content">
-            <div>
-              <h2><a href="#" class="text-dark stretched-link">Laguna Humantay 2 Días</a></h2>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">180</span> </i>
-              <p><i class="far fa-clock" style="color: #D1D1D1"></i> 10 horas</p>
-              <h2 class="price text-dark">desde <strong>$150.00</strong></h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-container">
-          <i class="far fa-heart" id="card-heart"></i>
-          <img src="https://images.unsplash.com/photo-1619901702452-dd99cbf9e025?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80" alt="plant photo">
-          <div class="card-content">
-            <div>
-              <h2><a href="#" class="text-dark stretched-link">Montaña 7 Colores en un día</a></h2>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">276</span> </i>
-              <p><i class="far fa-clock" style="color: #D1D1D1"></i> 12 horas</p>
-              <h2 class="price text-dark">desde <strong>$85.00</strong></h2>
-            </div>
-          </div>
-        </div> %>
         <% @tours.sample(4).each do |e| %>
           <div class="card-container py-3">
             <i class="far fa-heart" id="card-heart"></i>
@@ -537,7 +469,7 @@
             <div class="card-content" style="height: 38%;">
               <div class="d-flex flex-column">
                 <div class="flex-grow-1">
-                  <h2 class="title"><a href="#" class="text-dark stretched-link"><%= e.title_tour %></a></h2>
+                  <h2 class="title"><a href="<%= tour_path(e) %>" class="text-dark stretched-link"><%= e.title_tour %></a></h2>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
