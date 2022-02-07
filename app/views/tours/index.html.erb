@@ -22,6 +22,7 @@
         <p><%=tour.description%>  </p>
         <p>Duración: <%=tour.duration %> </p>
         <p>Brindado por: <%=tour.agency.name%> </p>
+        <p>geocoding: <%=tour.agency.latitude%> </p>
 
       </div>
       <div class="col-3 pt-5 align-items-center" style="text-align:center;">
@@ -31,3 +32,12 @@
     </div>
   <% end %>
 </div>
+
+
+<%= stylesheet_pack_tag 'application' %>
+
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>

@@ -1,6 +1,17 @@
 class ToursController < ApplicationController
 
   def index
+
+    @tours = Tour.all
+
+    @markers = Agency.geocoded.map do |agency|
+      {
+        lat: agency.latitude,
+        lng: agency.longitude
+      }
+    end
+
+
     if params[:query].present?
       sql_query = "\
       tours.title_tour ILIKE :query\
@@ -12,6 +23,7 @@ class ToursController < ApplicationController
     else
       @tours = Tour.all
     end
+
   end
 
   def show
