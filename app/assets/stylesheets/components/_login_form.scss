@@ -1,0 +1,29 @@
+// Log In Form
+
+.form-login {
+  background: white;
+  padding: 10px 20px;
+  margin-top: 50px;
+  border-radius: 15px;
+  border: 1px solid grey;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  a {
+    color: black;
+    margin-top: 0px;
+  }
+}
