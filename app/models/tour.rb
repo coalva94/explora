@@ -3,7 +3,8 @@ class Tour < ApplicationRecord
   has_many :bookings
   has_many :comments
   has_many_attached :photos
-  validates :title_tour, presence: true, length: { minimum: 50, maximum: 500 }
+
+  validates :title_tour, presence: true
   validates :destination, presence: true
   validates :description, presence: true
   validates :price, presence: true

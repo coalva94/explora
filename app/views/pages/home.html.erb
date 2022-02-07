@@ -85,7 +85,10 @@
     <% @tours_near.each do |tour|%>
     <div class="card-near col-6 col-md-4 ml-3">
       <a href="<%= tour_path(tour)%>" class="d-block w-100">
-        <%= cl_image_tag tour.photos.first.key,:style => "width:100%;", :class => "d-block mt-3 w-100"%>
+        <% tour.photos.each do |photo|%>
+         <%= cl_image_tag photo.key,:style => "width:100%; height:15rem", :class => "d-block mt-3 w-100 rounded mx-auto"%>
+         <%break%>
+        <%end%>
         <%# <img src="https://media.tacdn.com/media/attractions-splice-spp-360x240/0a/56/b4/34.jpg" class="d-block mt-3 w-100"> %>
         <i class="fas fa-map-marked-alt"> <%= tour.destination%> </i>
         <p class="title-card-recomend" style="font-size:1.5rem; font-weight: 500; display:block;"><%= tour.title_tour%></p>
