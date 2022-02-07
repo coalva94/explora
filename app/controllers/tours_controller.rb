@@ -80,6 +80,12 @@ class ToursController < ApplicationController
       :title_tour,
       :description,
       :duration,
+      :services,
+      :departure,
+      :expectation,
+      :additional_info,
+      :cancellation,
+      :faq,
       photos: []
     )
   end

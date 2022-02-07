@@ -16,7 +16,7 @@
 
 
         <!-- Large modal -->
-        <a href="#" class="product-user-review-count visible text-dark" data-toggle="modal" data-target=".bd-example-modal-lg">100 Reseñas"</a>
+        <a href="#" class="product-user-review-count visible text-dark" data-toggle="modal" data-target=".bd-example-modal-lg">100 Reseñas</a>
 
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
@@ -138,7 +138,7 @@
             <div>
               <h2>Descripción</h2>
               <div>
-              <p>Pase un día explorando la ciudadela inca de Machu Picchu durante este viaje de un día con todo incluido desde Cusco. Descubra este famoso sitio Inca en la cima de la montaña con una guía, y aprenda sobre su construcción, historia y cómo era la vida cotidiana de sus residentes. El ritmo relajado y no extenuante del viaje es una excelente opción para los visitantes primerizos, las familias y los que viajan solos por igual, y cuenta con tres opciones diferentes de viaje en tren. El viaje también incluye transporte de ida y vuelta al hotel, traslado desde Cusco a Machu Picchu (en tren y autobús), y la tarifa de entrada al sitio.</p>
+              <p> <%= @tour.description %> </p>
               </div>
             </div>
 
@@ -146,14 +146,21 @@
               <div class="card">
                 <div class="card-header" id="headingOne">
                   <h2 class="mb-0">
-                    <button class="btn btn-link btn-outline-light text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      <h2>Servicios incluidos</h2>
+                    <button class="btn-accordion btn-link text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Servicios incluidos</h2>
                     </button>
                   </h2>
                 </div>
 
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body">
+                    <div>
+
+                      <%# @tour.services.each do |service| %>
+                        <i class="fas fa-check d-inline"></i>
+                        <p class="d-inline"><%= @tour.services %></p>
+                      <%# end %>
+                    </div>
                     <div>
                       <i class="fas fa-check d-inline"></i>
                       <p class="d-inline">Tour guiado en español.</p>
@@ -180,77 +187,77 @@
               <div class="card">
                 <div class="card-header" id="headingTwo">
                   <h2 class="mb-0">
-                    <button class="btn btn-link btn-outline-none collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      <h2>Salida y regreso</h2>
+                    <button class="btn-accordion btn-link btn-outline-none collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Salida y regreso
                     </button>
                   </h2>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="card-body">
-                    <strong>Punto de partida:</strong>
-                    <p>Se incluye la recogida de los viajeros
-                    Esta actividad incluye el traslado de ida y vuelta desde su hotel, apartamento o su casa.</p>
+                    <p> <%= @tour.departure %> </p>
                   </div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" id="headingThree">
                   <h2 class="mb-0">
-                    <button class="btn btn-link btn-outline-light collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      <h2>Qué esperar</h2>
+                    <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Qué esperar
                     </button>
                   </h2>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                   <%= @tour.expectation %>
                   </div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" id="headingFour">
                   <h2 class="mb-0">
-                    <button class="btn btn-link btn-outline-light collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      <h2>Información adicional</h2>
+                    <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Información adicional
                     </button>
                   </h2>
                 </div>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                   <div class="card-body">
-                    <ul>
+                    <%= @tour.additional_info %>
+                    <%# <ul>
                       <li>La confirmación se recibirá cuando se realice la reserva.</li>
                       <li>No está adaptado para personas en silla de ruedas.</li>
                       <li>No es adecuado para viajeros con afecciones cardíacas u otros problemas médicos graves.</li>
                       <li>La mayoría de viajeros pueden participar en la experiencia.</li>
-                    </ul>
+                    </ul> %>
                   </div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" id="headingFive">
                   <h2 class="mb-0">
-                    <button class="btn btn-link btn-outline-light collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                      <h2>Política de cancelación</h2>
+                    <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Política de cancelación
                     </button>
                   </h2>
                 </div>
                 <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
                   <div class="card-body">
-                    Esta experiencia <strong>NO</strong> es reembolsable y no se puede cambiar por ningún motivo. Si la cancela o pide una modificación, no se le devolverá el importe abonado. Obtenga <a href="#" class=" text-dark">más información</a> sobre las cancelaciones.
+                    <%= @tour.cancellation %> Obtenga <a href="#" class=" text-dark">más información</a> sobre las cancelaciones.
                   </div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" id="headingSix">
                   <h2 class="mb-0">
-                    <button class="btn btn-link btn-outline-light collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                      <h2>Preguntas frecuentes</h2>
-                    </button>
+                    <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      Preguntas frecuentes
+                    </button></h2>
                   </h2>
                 </div>
                 <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
                   <div class="card-body">
-                    <div class="faq">
+                    <p><%= @tour.faq %></p>
+                    <%# <div class="faq">
                       <p class="question"><strong>P:</strong>¿Dónde está el punto de encuentro?</p>
                       <p class="answer ml-3"><strong>R:</strong> El punto de encuentro para este tour es nuestra oficina central en Cusco ubicada en la Av. El Sol 817.</p>
                     </div>
@@ -263,21 +270,7 @@
                     <div class="faq">
                       <p class="question"><strong>P:</strong>¿Qué necesitan llevar los viajeros?</p>
                       <p class="answer ml-3"><strong>R:</strong> Se recomienda llevar una chaqueta para la lluvia, zapatos cómodos, sombrero y protector solar..</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingSeven">
-                  <h2 class="mb-0">
-                    <button class="btn btn-link btn-outline-light collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                      <h2>Fotos de los viajeros</h2>
-                    </button>
-                  </h2>
-                </div>
-                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
-                  <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div> %>
                   </div>
                 </div>
               </div>
@@ -448,7 +441,7 @@
         <% end %>
       </div>
       <div class="row mt-2 mb-5 d-flex justify-content-end">
-        <button class="btn btn-link">
+        <button class="btn-reviews btn-link">
           <span class="h6 text-dark"><strong>Mostrar todos (2,000+) &gt;</span></strong>
         </button>
       </div>
