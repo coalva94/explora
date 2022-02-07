@@ -1,10 +1,20 @@
 <div class="container tour-index">
+  <%= form_tag tours_path, method: :get do %>
+    <div class="d-flex">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control py-4 search-text-size-input",
+        placeholder: "Encuentra tu tour"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary rounded py-3 px-5 ml-1 search-text-size-boton" %>
+    </div>
+  <% end %>
   <% @tours.each do |tour| %>
     <div class="row card-tour mt-4 pt-5 pb-5">
       <div class="col-3 d-flex justify-content-center align-items-center ">
 
           <%# tour.photos.each do |photo| %>
-          <%= cl_image_tag tour.photos.first.key,:style => "width:100%;"
+          <%= cl_image_tag tour.photos.first.key,:style => "width:100%;" %>
           <%# end %>
 
       </div>
