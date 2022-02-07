@@ -7,7 +7,7 @@ class ToursController < ApplicationController
   def show
     @tour = Tour.find(params[:id])
     @booking = Booking.new
-    @tours = Tour.all
+    @tours = Tour.where.not(title_tour: @tour.title_tour)
   end
 
   def new
