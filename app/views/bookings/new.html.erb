@@ -65,13 +65,16 @@
         </div>
         <h4 class="mb-3">Datos requeridos:</h4>
 
-        <%= simple_form_for @booking ,url: tour_bookings_path, method: :post do |f| %>
-          <%= f.error_notification %>
-          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-            <%= f.input :start_date,label: 'Fecha a reservar', placeholder: '22/10/2010' %>
-            <%= f.input :quantity,label: 'Cantidad de reservas', placeholder: '1' %>
-            <%= f.button :submit ,'Reservar ahora', class: "btn btn-success p-3 w-100 rounded" %>
+        <%# acá va el form! %>
+
+        <%= simple_form_for [@tour, @booking] do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <%= f.input :start_date,label: 'Fecha a reservar', placeholder: '22/10/2010' %>
+        <%= f.input :quantity,label: 'Cantidad de reservas', placeholder: '1' %>
+        <%= f.button :submit ,'Reservar ahora', class: "btn btn-success p-3 w-100 rounded" %>
         <% end %>
+
 
         <%#  INICIO COMENTANDO INPUTS CON LOS ESTILO DE BOOTSTRAP %>
         <%# <form class="needs-validation" novalidate>

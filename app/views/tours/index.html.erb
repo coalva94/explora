@@ -2,10 +2,12 @@
   <% @tours.each do |tour| %>
     <div class="row card-tour mt-4 pt-5 pb-5">
       <div class="col-3 d-flex justify-content-center align-items-center ">
+
           <% tour.photos.each do |photo| %>
             <%= cl_image_tag photo.key,:style => "width:100%;"  %>
             <%break%>
           <% end %>
+
       </div>
       <div class="col-6">
         <h3><%=tour.title_tour%> </h3>
