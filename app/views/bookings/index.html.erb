@@ -1,13 +1,15 @@
-<div class="container">
-  <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark" style= "background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1528832095909-2f2436122ce6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=10)">
-    <div class="col-md-12 px-0 p-5">
-      <h1 class="display-4 font-italic">Mi lado viajero</h1>
-      <p class="lead my-3">"Un viaje se vive 3 veces: Cuando lo soñamos, cuando lo vivimos y cuando lo recordamos</p>
-      <p class="lead mb-0 text-white font-weight-bold ">Invertir en viajar es invertir en uno mismo...</p>
-    </div>
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark" style= "background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1528832095909-2f2436122ce6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=10)">
+  <div class="col-md-12 px-0 p-5">
+    <h1 class="display-4 font-italic">Mi lado viajero</h1>
+    <br>
+    <h2 class="lead my-3 text-white font-weight-bold">"Un viaje se vive 3 veces: Cuando lo soñamos, cuando lo vivimos y cuando lo recordamos"</h2>
+    <br>
+    <h3 class="lead mb-0 text-white font-weight-bold ">Invertir en viajar es invertir en uno mismo...</h3>
   </div>
+</div>
 
-  <div class="row p-4">
+
+<!--   <div class="row p-4">
     <% @bookings.each do |booking| %>
       <div class="card p-2 col-md-4" id="card-index">
         <div class = "card m-2 card-inside">
@@ -20,6 +22,49 @@
         </div>
       </div>
     <% end %>
-  </div>
+  </div> -->
 
+
+<div class="container">
+  <div class="wrapper d-flex justify-content-center mt-5">
+     <% @bookings.each do |booking| %>
+        <div class="booking-card-wrapper">
+          <div class="booking-card-image">
+              <img class="booking-card-image" src="https://images.unsplash.com/photo-1571492913849-fdc97148242d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" />
+          </div>
+          <div class="booking-card-content">
+              <div class="booking-card-description">
+              <%# ingresamos a la informacion de tour gracias al id que tenemos en booking %>
+                  <h1><%= booking.tour.title_tour %></h1>
+                  <p><%= booking.tour.description %></p>
+              </div>
+
+              <div class="booking-card-details">
+                  <div class="flex">
+                      <div>
+                          <p class="price"> Precio por persona: <strong>$<%= booking.tour.price %></strong></p>
+                          <p class="side-note">Experiencia para: <strong><%= booking.quantity %> persona(s)</strong></p>
+                          <p>Fecha del tour: <%= booking.start_date %></p>
+                          <div class="reviews">
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <span class="amount"> 28 reviews </span>
+                          </div>
+                      </div>
+                      <div class="col-3 d-flex flex-column right-align mr-5 mt-3">
+                          <button class="btn-primary mb-4"> Ver Reserva </button>
+                          <div class="edit-and-destroy d-flex justify-content-around">
+                            <a href="#" class="visible text-dark"><i class="fas fa-pencil-alt"></i> Editar</a>
+                            <a href="#" class="visible text-dark"><i class="fas fa-times"></i> Eliminar</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
 </div>

@@ -1,12 +1,12 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon pl-5 pr-5 pb-0">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon pl-5 pr-5 pb-0 mb-3">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://i.ibb.co/GpQP5Pn/Screen-Shot-2022-02-02-at-15-44-59.png" %>
   <% end %>
 
   <% if user_signed_in? %>
-    <h4> Hola,
+    <p style="font-size:2rem;"> Hola,
       <%= current_user.first_name.capitalize%>
-    </h4>
+    </p>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
             </li>
              <% else %>
             <li class="nav-item active">
-              <%= link_to "Afiliate a nosotros", '', class: "nav-link" %>
+              <%= link_to "Afiliate a nosotros", new_agency_path , class: "nav-link" %>
             </li>
           <% end %>
         <li class="nav-item dropdown">
