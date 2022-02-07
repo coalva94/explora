@@ -28,6 +28,7 @@ class AgenciesController < ApplicationController
       :tax_number,
       :address,
       :state,
+      :id,
       :latitude,
       :longitude
     )

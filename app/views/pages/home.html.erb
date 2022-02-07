@@ -24,27 +24,26 @@
           </div>
         </div>
         <div class="row">
-          <div class="col">
+          <div class="col-12">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-search-location" style="font-size:1.5rem;"></i></span>
               </div>
-              <input type="text" class="form-control" placeholder="Sal de Maras,Cuzco,Peru" aria-label="Username" aria-describedby="basic-addon1">
+              <%= form_tag tours_path, method: :get do %>
+                <div class="d-flex">
+                  <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control py-4 search-text-size-input input-group py-3",
+                    placeholder: "Encuentra tu tour"
+                  %>
+                  <%= submit_tag "Search", class: "btn btn-primary rounded py-3 px-5 ml-1 search-text-size-boton" %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-4">
-            <input placeholder="Selected date" id="FechaInicio" type="date" id="date-picker-example" class="form-control datepicker">
-          </div>
-          <div class="col-4">
-            <input placeholder="Selected date" id="FechaInicio" type="date" id="date-picker-example" class="form-control datepicker">
-          </div>
-          <div class="col-3">
-            <button type="button" class="btn btn-outline-success">Buscar</button>
-          </div>
-        </div>
       </div>
+
     </div>
   </div>
 
