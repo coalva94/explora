@@ -1,9 +1,8 @@
 <div class="container-fluid mt-5">
   <div class="container-border-bottom">
-    <h1 id="productTitle" class="font-weight-bold mb-0 pt-5"> <%= @tour.title_tour %> </h1>
-
-    <div class="row mb-4">
-      <div class="col-md-9 d-md-flex flex-md-wrap align-items-center">
+   <h1 id="productTitle" class="font-weight-bold mb-0 pt-5"> <%= @tour.title_tour %> </h1>
+    <div class="row mb-5 ml-4 d-flex align-items-center justify-content-center">
+      <div class="col-md-7 d-md-flex flex-md-wrap align-items-center">
         <div class="star-rating d-flex d-md-inline-flex align-items-center text-nowrap mr-md-4 pb-2">
           <%# @booking.rating.to_i.times do  %>
           <%# <span class="glyphicon glyphicon-star"></span>
@@ -82,58 +81,16 @@
                   </div>
                 </div>
               </div>
-
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Reseñas</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-
-                  <div class="card mb-3 border-0">
-                    <div class="ml-2 mt-3">
-                      <div class="d-flex">
-                          <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
-                          <div class="d-flex flex-column m-3">
-                              <h3 class="mt-0 mb-1"><strong>Alexis</strong></h3>
-                              <h4>Estados Unidos</h4>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="card-body pl-0 ml-3">
-                      <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
-                      <p class="card-text">Excelente experiencia! El guía estuvo excelente, muy amable y conocedor. Realmente ha valido la pena. Súper recomendado...</p>
-                    </div>
-                  </div>
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
             </div>
           </div>
         </div>
 
         <div class="d-none d-md-inline-block px-3"> | </div>
-        <div class="mr-md-4"> "Cusco, Peru" </div>
+        <div class="mr-md-4"> <%=@tour.destination%> </div>
       </div>
 
       <div class="col-md-3">
-        <div class="share-and-save list-inline">
+        <div class="share-and-save list-inline ml-5">
           <ul class="list-inline-item">
             <i class="far fa-share-square"></i>
             <li class="list-inline-item">Share</li>
@@ -170,6 +127,12 @@
 
       <div class="overview col-md-7 mt-3">
         <div class="row d-flex justify-content-end">
+
+          <div class="precio col-10 mb-3">
+            <h2>Precio por persona - $ <%= @tour.price %> </h2>
+          </div>
+          <br>
+          <br>
           <div class="description-container col-10">
             <div>
               <h2>Descripción</h2>
@@ -182,7 +145,7 @@
               <div class="card">
                 <div class="card-header" id="headingOne">
                   <h2 class="mb-0">
-                    <button class="btn btn-link text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="btn btn-link btn-outline-light text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                       <h2>Servicios incluidos</h2>
                     </button>
                   </h2>
@@ -216,7 +179,7 @@
               <div class="card">
                 <div class="card-header" id="headingTwo">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <button class="btn btn-link btn-outline-none collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                       <h2>Salida y regreso</h2>
                     </button>
                   </h2>
@@ -232,7 +195,7 @@
               <div class="card">
                 <div class="card-header" id="headingThree">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <button class="btn btn-link btn-outline-light collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                       <h2>Qué esperar</h2>
                     </button>
                   </h2>
@@ -246,7 +209,7 @@
               <div class="card">
                 <div class="card-header" id="headingFour">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <button class="btn btn-link btn-outline-light collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                       <h2>Información adicional</h2>
                     </button>
                   </h2>
@@ -265,7 +228,7 @@
               <div class="card">
                 <div class="card-header" id="headingFive">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <button class="btn btn-link btn-outline-light collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                       <h2>Política de cancelación</h2>
                     </button>
                   </h2>
@@ -279,7 +242,7 @@
               <div class="card">
                 <div class="card-header" id="headingSix">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    <button class="btn btn-link btn-outline-light collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                       <h2>Preguntas frecuentes</h2>
                     </button>
                   </h2>
@@ -306,7 +269,7 @@
               <div class="card">
                 <div class="card-header" id="headingSeven">
                   <h2 class="mb-0">
-                    <button class="btn btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    <button class="btn btn-link btn-outline-light collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                       <h2>Fotos de los viajeros</h2>
                     </button>
                   </h2>
@@ -340,9 +303,8 @@
                     <div class="row px-3">
                       <div class="col-sm-6 pl-1 br0">
                         <div class="form-group">
-                          <label class="mb-0 mt-3"exampleFormControlSelect1">ACOMPAÑANTES
-                          </label>
-                            <select class="form-control" ="exampleFormControlSelect1">
+                          <label class="mb-0 mt-3" for="exampleFormControlSelect1">ACOMPAÑANTES</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
                               <option>0</option>
                               <option>1</option>
                               <option>2</option>
@@ -366,7 +328,9 @@
                     </div>
                   </form>
 
-                  <a href="<%=new_tour_booking_path(@tour) %> " class="btn btn-danger p-3 w-100 rounded">Comprobar disponibilidad</a>
+                  <h4 class="mb-3">Precio por persona - $ <%= @tour.price %> </h4>
+
+                  <a href="<%=new_tour_booking_path(@tour) %> " class="btn btn-success p-3 w-100 rounded">Reservar</a>
               </div>
             </div>
           </div>
