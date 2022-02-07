@@ -3,9 +3,10 @@
     <div class="row card-tour mt-4 pt-5 pb-5">
       <div class="col-3 d-flex justify-content-center align-items-center ">
 
-          <%# tour.photos.each do |photo| %>
-          <%= cl_image_tag tour.photos.first.key,:style => "width:100%;"%>
-
+          <% tour.photos.each do |photo| %>
+            <%= cl_image_tag photo.key,:style => "width:100%;"  %>
+            <%break%>
+          <% end %>
 
       </div>
       <div class="col-6">
