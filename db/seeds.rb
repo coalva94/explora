@@ -42,6 +42,11 @@ tours = [{ price: 110.00, destination: "Nazca",
            haremos Cata de la variedad de Piscos y Vinos de la Región. Tour en el desierto de Ica a bordo de los
            Buggies y practicaremos el sandboarding por las dunas.", duration: "1 día", agency_id: 1 }]
 
+
+bookings = [{ start_date: "15/02/2022", end_date: "16/02/2022", quantity: 3, user_id: 1, tour_id: 1},
+            { start_date: "20/03/2022", end_date: "25/32/2022", quantity: 2, user_id: 1, tour_id: 1 }]
+
+
 puts '------------Users------------'
 
 users.each do |attributes|
@@ -63,5 +68,13 @@ tours.each do |attributes|
   tour = Tour.create!(attributes)
   puts "Created #{tour.destination} - #{tour.description}"
 end
+
+puts '------------Bookings------------'
+
+bookings.each do |attributes|
+  booking = Booking.create!(attributes)
+  puts "Created #{booking.start_date} - #{booking.end_date}"
+end
+
 
 puts 'Finished!'

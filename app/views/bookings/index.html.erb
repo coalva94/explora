@@ -8,6 +8,23 @@
   </div>
 </div>
 
+
+<!--   <div class="row p-4">
+    <% @bookings.each do |booking| %>
+      <div class="card p-2 col-md-4" id="card-index">
+        <div class = "card m-2 card-inside">
+          <img src="https://blogs.incarail.com/hubfs/Imported_Blog_Media/CuscoRainBlog-1.png" alt="">
+          <h4 class="m-3" style="height: 40px"><strong><%= booking.tour.title_tour %></strong></h4>
+          <p class = "text-justify mt-2 p-2"  style="height: 120px"><%= booking.tour.description %></p>
+          <p>Experiencia para: <%= booking.user_id %> persona(s)</p>
+          <p class="text-muted text-center"><%= booking.start_date %> <%= booking.end_date %></p>
+          <%= link_to "Ver Más", booking_path(booking), :class => "btn btn-lg" %>
+        </div>
+      </div>
+    <% end %>
+  </div> -->
+
+
 <div class="container">
   <div class="wrapper d-flex justify-content-center mt-5">
      <% @bookings.each do |booking| %>
