@@ -4,7 +4,7 @@ margin-left:3rem;
 }
 
 .container-fluid{
-  width: 100%;
+  width: 100% !important;
   padding: 0;
 }
 
@@ -36,7 +36,9 @@ a:hover{
 #card-footer {
     padding: 2% 7%;
     color: #646771;
-    background-color: #16151a
+    background-color: #16151a;
+  width: 100% !important;
+
 }
 
 ul {

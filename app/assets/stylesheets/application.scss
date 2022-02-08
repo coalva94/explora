@@ -18,13 +18,15 @@
 @import "tours/index";
 @import "tours/new";
 @import "bookings/index";
-
+@import "components/cardpayment";
 @import "../stylesheets/agencies/show";
 @import "components/footer";
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;300;500;700&family=Bellefair&family=Poppins:ital,wght@0,300;0,500;0,700;0,900;1,300;1,500;1,700&display=swap');
 
 //bookings
 @import "bookings/index";
+@import "bookings/new";
+
 
 html {
 	font-size: 62.5%;

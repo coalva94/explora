@@ -1,5 +1,5 @@
-<section class="py-5">
-  <div class="container px-4 px-lg-5 my-5">
+<section class="py-5 show-booking">
+  <div class="container px-4 px-lg-5 my-5 ">
       <div class="row gx-4 gx-lg-5 align-items-center">
           <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://blogs.incarail.com/hubfs/Imported_Blog_Media/CuscoRainBlog-1.png" alt="..." /></div>
           <div class="col-md-6">
@@ -20,121 +20,92 @@
               </div>
           </div>
       </div>
+
+  </div>
+   <div class="container ">
+    <%# <p style="font-size:2rem;">Tus Acompañantes:</p> %>
+    <%#cantidad =@bookings.quantity %>
+    <%# actual_companion = Companion.where(booking_id: @bookings.id).count %>
+    <%# actual_companion = 0 %>
+
+    <%#(cantidad-actual_companion ).times do%>
+    <%# <div class="container-fluid d-flex row mt-3"> %>
+      <%#= simple_form_for(@companion, url: booking_companions_path(@bookings)) do |f| %>
+            <%#= f.error_notification %>
+            <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+            <%#= f.input :first_name,label: 'Primer nombre', placeholder: 'Ana' %>
+            <%#= f.input :last_name,label: 'Segundo nombre', placeholder: 'Marcela' %>
+            <%#= f.input :age,label: 'edad', placeholder: '20' %>
+            <%#= f.input :document_number,label: 'Documento de Identidad', placeholder: '77414777' %>
+            <%#= f.button :submit ,"Confirmar acompañantes" %>
+            <%# end %>
+    <%# </div> %>
+    <%#end%>
+    <%# incio ACORDEON %>
+      <div class="accordion mt-4 " id="accordionExample">
+        <div class="card w-100">
+          <div class="card-header w-100" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <p style="font-size:2rem;">Tus Acompañantes:</p>
+              </button>
+            </h2>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <%cantidad =@bookings.quantity %>
+              <%# actual_companion = Companion.where(booking_id: @bookings.id).count %>
+              <% actual_companion = 0 %>
+
+              <%(cantidad-actual_companion ).times do%>
+              <div class="container-fluid d-flex row mt-3">
+                <%= simple_form_for(@companion, url: booking_companions_path(@bookings)) do |f| %>
+                      <%= f.error_notification %>
+                      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                      <%= f.input :first_name,label: 'Primer nombre', placeholder: 'Ana' %>
+                      <%= f.input :last_name,label: 'Segundo nombre', placeholder: 'Marcela' %>
+                      <%= f.input :age,label: 'edad', placeholder: '20' %>
+                      <%= f.input :document_number,label: 'Documento de Identidad', placeholder: '77414777' %>
+                      <%= f.button :submit ,"Confirmar acompañantes" %>
+                      <% end %>
+              </div>
+              <%end%>
+            </div>
+          </div>
+        </div>
+        <div class="card w-100">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <p style="font-size:2rem;">Tu review</p>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+               <div class="container-fluid d-flex row row mt-3">
+                <%= simple_form_for(@review, url: booking_reviews_path(@bookings)) do |f| %>
+                      <%= f.error_notification %>
+                      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                      <div class="col">
+                        <%= f.input :content,label: 'Comentario', placeholder: 'Una bonita experiencia, lo recomendaria' %>
+                      </div>
+                      <div class="col">
+                        <%= f.input :rating,label: 'Califacion ', placeholder: '1-5' %>
+                      </div>
+                       <%= f.input :photos,label: 'Fotos', as: :file, input_html: { multiple: true } %>
+                      <%= f.button :submit ,"Enviar Review" %>
+                      <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    <%# fin ACORDEON %>
+  </div>
+  <div class="container text-center">
+    <%= link_to 'Regresar', bookings_path, :class => "btn btn-lg text-center"%>
   </div>
 </section>
-
-<%= link_to 'Regresar', bookings_path, :class => "btn btn-lg"%>
-
-
-
-
-
-
-        <%# <!-- Related items section-->
-        <section class="py-5 bg-light">
-            <div class="container px-4 px-lg-5 mt-5">
-                <h2 class="fw-bolder mb-4">Related products</h2>
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Fancy Product</h5>
-                                    <!-- Product price-->
-                                    $40.00 - $80.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Special Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                    $18.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Sale Item</h5>
-                                    <!-- Product price-->
-                                    <span class="text-muted text-decoration-line-through">$50.00</span>
-                                    $25.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Popular Item</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
-                                    <!-- Product price-->
-                                    $40.00
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
- %>
