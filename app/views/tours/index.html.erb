@@ -1,62 +1,45 @@
-<<<<<<< HEAD
 <div class="row">
-  <div class="col-7">
+  <div class="col-md-7">
     <div class="container tour-index">
-    <% @tours.each do |tour| %>
-      <div class="row card-tour mt-4 pt-5 pb-5">
-        <div class="col-3 d-flex justify-content-center align-items-center ">
-
-            <% tour.photos.each do |photo| %>
-              <%= cl_image_tag photo.key,:style => "width:100%;"  %>
-              <%break%>
-            <% end %>
-
+      <%= form_tag tours_path, method: :get do %>
+        <div class="d-flex">
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control py-4 search-text-size-input",
+          placeholder: "Encuentra tu tour"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary rounded py-3 px-5 ml-1 search-text-size-boton" %>
         </div>
-        <div class="col-6">
-          <h3><%=tour.title_tour%> </h3>
-          <p><%=tour.description%>  </p>
-          <p>Duración: <%=tour.duration %> </p>
-          <p>Brindado por: <%=tour.agency.name%> </p>
-          <p>geocoding: <%=tour.agency.latitude%> - <%=tour.agency.longitude%></p>
-=======
-<div class="container tour-index">
-  <%= form_tag tours_path, method: :get do %>
-    <div class="d-flex">
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control py-4 search-text-size-input",
-        placeholder: "Encuentra tu tour"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary rounded py-3 px-5 ml-1 search-text-size-boton" %>
-    </div>
-  <% end %>
+      <% end %>
+
   <% @tours.each do |tour| %>
     <div class="row card-tour mt-4 pt-5 pb-5">
-      <div class="col-3 d-flex justify-content-center align-items-center ">
+      <div class="col-md-3 d-flex justify-content-center align-items-center ">
           <% tour.photos.each do |photo| %>
             <%= cl_image_tag photo.key,:style => "width:100%;"  %>
             <%break%>
-          <% end %>
+  <% end %>
       </div>
-      <div class="col-6">
-        <h3><%=tour.title_tour%> </h3>
-        <p><%=tour.description%>  </p>
-        <p>Duración: <%=tour.duration %> </p>
-        <p>Brindado por: <%=tour.agency.name%> </p>
-        <p>geocoding: <%=tour.agency.latitude%> </p>
->>>>>>> 23d4f9d4ed51c193bf4726cd8e39b34d6d402a75
 
-        </div>
-        <div class="col-3 pt-5 align-items-center" style="text-align:center;">
-          <p>Precio <span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
-            <%= link_to "Ver Más",tour_path(tour), :class => "btn btn-success "%>
-        </div>
+  <div class="col-md-6">
+   <h3 class = "text-center m-4"><%=tour.title_tour%> </h3>
+   <p><%=tour.description%>  </p>
+   <p>Duración: <%=tour.duration %> </p>
+   <p>Brindado por: <%=tour.agency.name%> </p>
+   <p>geocoding: <%=tour.agency.latitude%> </p>
+  </div>
+
+   <div class="col-md-3 pt-5 align-items-center" style="text-align:center;">
+     <p>Precio <span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
+       <%= link_to "Ver Más",tour_path(tour), :class => "btn btn-success "%>
+   </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-  </div>
-  <div class="col-5">
-<div id="map"
+
+  <div class="col-md-5">
+    <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
