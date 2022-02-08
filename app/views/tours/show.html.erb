@@ -274,14 +274,35 @@
                   </div>
                 </div>
               </div>
+              <div class="card">
+                <div class="card-header" id="headingSix">
+                  <h2 class="mb-0">
+                    <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      Fotos de viajeros
+                    </button></h2>
+                  </h2>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                  <div class="card-body row w-100" style="overflow-x:scroll;">
+                    <%@tour.reviews do|review|%>
+                        <%if review.photos.attached? %>
+                          <div class="col">
+                              <%= cl_image_tag review.photos.first.key, class: "w-100" %>
+                          </div>
+                        <%else %>
+                        <% end%>
+                    <%end%>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="form-container col-md-4">
-        <div class="row">
-          <div class="col-sm-10 mx-auto">
+      <div class="form-container col-md-5">
+        <div class="row d-block">
+          <div class="col-12 mx-auto">
             <div class="card- border-0 w-100 ml-0 mr-0">
               <div class="card-body">
                 <h1 class="h3 mb-3 text-center">Reserva tus tours con Explora</h1>
@@ -291,64 +312,37 @@
           </div>
           <div class="col-12 d-block">
             <div class="reviews container-fluid container py-3 mt-4 d-block">
-      <h2 class="h2 text-center" style="font-size:3rem">Opiniones de otros aventureros</h2>
-      <div class="row mt-4 d-block justify-content-around">
-
-        <div class="col-md-4">
-          <div class="card mb-3 border-0">
-            <div class="ml-2 mt-3">
-              <div class="d-flex">
-                  <img src="https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
-                  <div class="d-flex flex-column m-3">
-                      <h3 class="mt-0 mb-1"><strong>María</strong></h3>
-                      <h4>Perú</h4>
+              <h2 class="h2 text-center" style="font-size:2.5rem">Opiniones de otros aventureros</h2>
+              <div class="row mt-4 d-block scroll-review" style=" overflow-y: scroll; ">
+                <%@tour.reviews.each do |review|  %>
+                  <div class="col-md-10 mx-auto w-100 card-review">
+                    <div class="card mb-3 border-0 w-100">
+                      <div class="ml-2 mt-3">
+                        <div class="d-flex">
+                            <% if review.user.photo.attached?%>
+                            <%= cl_image_tag review.user.photo.key, class: "avatar dropdown-toggle mg-fluidX rounded-circle w-25 mb-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                            <% else%>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8JyScJ3XAm0g9mNMQ1Ws7EI6LoVgs7_HDXg&usqp=CAU" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
+                            <%end%>
+                            <div class="d-flex flex-column m-3">
+                                <h3 class="mt-0 mb-1"><strong><%=review.user.first_name%>, <%=review.user.last_name%> </strong></h3>
+                                <h4>Perú</h4>
+                                <h1 class="card-title text-info">
+                                  <%(review.rating.to_i).times do %> &#9733;
+                                  <%end%>
+                                </h1>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="card-body pl-0 ml-3">
+                        <p class="card-text"><%=review.content%> </p>
+                      </div>
+                    </div>
                   </div>
-              </div>
-            </div>
-            <div class="card-body pl-0 ml-3">
-              <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
-              <p class="card-text">Hice el tour de Machu Picchu con un grupo de amigos y fue la mejor experiencia de nuestras vidas. Regresaré pronto!...</p>
-            </div>
-          </div>
-        </div>
+                <%end%>
 
-        <div class="col-md-4">
-          <div class="card mb-3 border-0">
-            <div class="ml-2 mt-3">
-              <div class="d-flex">
-                  <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
-                  <div class="d-flex flex-column m-3">
-                      <h3 class="mt-0 mb-1"><strong>Carlos</strong></h3>
-                      <h4>España</h4>
-                  </div>
               </div>
-            </div>
-            <div class="card-body pl-0 ml-3">
-              <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
-              <p class="card-text">Excelente! La organización muy buena. Hacer la reserva por internet fue muy práctico. La agencia fue muy profesional...</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card mb-3 border-0">
-            <div class="ml-2 mt-3">
-              <div class="d-flex">
-                  <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
-                  <div class="d-flex flex-column m-3">
-                      <h3 class="mt-0 mb-1"><strong>Alexis</strong></h3>
-                      <h4>Estados Unidos</h4>
-                  </div>
-              </div>
-            </div>
-            <div class="card-body pl-0 ml-3">
-              <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
-              <p class="card-text">Excelente experiencia! El guía estuvo excelente, muy amable y conocedor. Realmente ha valido la pena. Súper recomendado...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
+           </div>
           </div>
 
         </div>
@@ -360,65 +354,6 @@
 
   <br>
 
-  <div class="reviews container-fluid container py-3 mt-4">
-      <h2 class="h2 text-center" style="font-size:3rem">Opiniones de otros aventureros</h2>
-      <div class="row mt-4 d-flex justify-content-around">
-
-        <div class="col-md-4">
-          <div class="card mb-3 border-0">
-            <div class="ml-2 mt-3">
-              <div class="d-flex">
-                  <img src="https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
-                  <div class="d-flex flex-column m-3">
-                      <h3 class="mt-0 mb-1"><strong>María</strong></h3>
-                      <h4>Perú</h4>
-                  </div>
-              </div>
-            </div>
-            <div class="card-body pl-0 ml-3">
-              <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
-              <p class="card-text">Hice el tour de Machu Picchu con un grupo de amigos y fue la mejor experiencia de nuestras vidas. Regresaré pronto!...</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card mb-3 border-0">
-            <div class="ml-2 mt-3">
-              <div class="d-flex">
-                  <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
-                  <div class="d-flex flex-column m-3">
-                      <h3 class="mt-0 mb-1"><strong>Carlos</strong></h3>
-                      <h4>España</h4>
-                  </div>
-              </div>
-            </div>
-            <div class="card-body pl-0 ml-3">
-              <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
-              <p class="card-text">Excelente! La organización muy buena. Hacer la reserva por internet fue muy práctico. La agencia fue muy profesional...</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card mb-3 border-0">
-            <div class="ml-2 mt-3">
-              <div class="d-flex">
-                  <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
-                  <div class="d-flex flex-column m-3">
-                      <h3 class="mt-0 mb-1"><strong>Alexis</strong></h3>
-                      <h4>Estados Unidos</h4>
-                  </div>
-              </div>
-            </div>
-            <div class="card-body pl-0 ml-3">
-              <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
-              <p class="card-text">Excelente experiencia! El guía estuvo excelente, muy amable y conocedor. Realmente ha valido la pena. Súper recomendado...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
 
   <br>
 
@@ -429,7 +364,7 @@
       </div>
 
       <div class="cards-container d-flex">
-        <% @tours.sample(4).each do |e| %>
+        <% @tours.sample(6).each do |e| %>
           <div class="card-container py-3">
             <i class="far fa-heart" id="card-heart"></i>
             <%= cl_image_tag e.photos.first.key, height: 300, width: 400, crop: :fill %>

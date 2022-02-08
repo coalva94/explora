@@ -25,6 +25,7 @@ class ToursController < ApplicationController
     @tour = Tour.find(params[:id])
     @booking = Booking.new
     @tours = Tour.where.not(title_tour: @tour.title_tour)
+
   end
 
   def new
