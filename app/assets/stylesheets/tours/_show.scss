@@ -204,3 +204,19 @@
 .btn-reviews {
   border: none;
 }
+
+//INICIO estilos para el scrool vertical de review
+.scroll-review{
+  height:70rem;
+  overflow-y: scroll;
+  width:100%
+}
+
+// FIN estilos para el scrool vertical de review
+.similar-experiences{
+  width:100%;
+  overflow-x: scroll;
+  .card-review{
+    max-height: 10rem;
+  }
+}

@@ -55,22 +55,37 @@
           <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
               <%cantidad =@bookings.quantity %>
-              <%# actual_companion = Companion.where(booking_id: @bookings.id).count %>
-              <% actual_companion = 0 %>
-
+              <% actual_companion = Companion.where(booking_id: @bookings.id).count %>
+              <%# INICIO formularios para CREAR acompañantes %>
               <%(cantidad-actual_companion ).times do%>
               <div class="container-fluid d-flex row mt-3">
                 <%= simple_form_for(@companion, url: booking_companions_path(@bookings)) do |f| %>
                       <%= f.error_notification %>
                       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
                       <%= f.input :first_name,label: 'Primer nombre', placeholder: 'Ana' %>
-                      <%= f.input :last_name,label: 'Segundo nombre', placeholder: 'Marcela' %>
+                      <%= f.input :last_name,label: 'Apelldio', placeholder: 'Marcela' %>
                       <%= f.input :age,label: 'edad', placeholder: '20' %>
                       <%= f.input :document_number,label: 'Documento de Identidad', placeholder: '77414777' %>
                       <%= f.button :submit ,"Confirmar acompañantes" %>
                       <% end %>
               </div>
               <%end%>
+              <%# FIIIN formularios para CREAR acompañantes %>
+
+              <%# formularios para VER acompañantes %>
+              <p style="font-size:1.5rem;">Acompañantes registrados:</p>
+              <% @companions.each do |acompanante|%>
+                <div class="container-fluid mt-3">
+                  <div class="d-flex justify-content-around">
+                    <div><label for="">Nombre</label><p> <%=acompanante.first_name%> </p></div>
+                    <div><label for="">Apellido</label><p> <%=acompanante.last_name%> </p></div>
+                    <div><label for="">edad</label><p> <%=acompanante.age%> </p></div>
+                    <div><label for="">DNI</label><p> <%=acompanante.document_number%> </p></div>
+                  </div>
+                </div>
+              <%end%>
+              <%# formularios para VER acompañantes %>
+
             </div>
           </div>
         </div>
