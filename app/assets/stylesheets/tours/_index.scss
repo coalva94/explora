@@ -2,13 +2,22 @@
   border:.2rem solid #e5e5e5;
   border-radius:1rem
 }
+
 .card-tour:hover {
 box-shadow: 2px 2px 2px 2px #e5e5e5;
 }
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
 .search-text-size-input{
   font-size: 20px;
   height: 100%;
 }
+
 .search-text-size-boton{
   font-size: 15px;
 }
