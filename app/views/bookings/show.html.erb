@@ -14,9 +14,9 @@
                   <h4 class="text-decoration-line-through">Acompañantes: <%= @bookings.quantity %> persona(s)</h4>
               </div>
               <p class="lead text-justify"><%= @bookings.tour.description %></p>
-              <div class="d-flex">
-                  <%= link_to 'Editar', edit_booking_path, :class => "btn btn-lg"%>
-                  <%= link_to 'Eliminar', booking_path(@bookings), :class => "btn btn-lg", method: :delete, data: {confirm: "Seguro?"}%>
+              <div class="d-flex justify-content-around">
+                  <%= link_to 'Editar', edit_booking_path, :class => "visible text-dark fas fa-pencil-alt"%>
+                  <%= link_to 'Eliminar', booking_path(@bookings), :class => "visible text-dark fas fa-times btn btn-primary", method: :delete, data: {confirm: "Seguro?"}%>
               </div>
           </div>
       </div>

@@ -3,6 +3,11 @@ font-size:2.2rem;
 margin-left:3rem;
 }
 
+.container-fluid{
+  width: 100%;
+  padding: 0;
+}
+
 a{
   color:#ffffff
 }
@@ -13,13 +18,71 @@ a:hover{
 
 .footer{
   background-color:#2a2d32;
-
 }
 
 .nav-link{
   font-size: 1.4rem;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap');
+
+// body {
+    // background-color: #f3f6fd;
+//     font-size: 11.5px;
+//     font-weight: bold;
+//     color: rgb(189, 196, 203)
+// }
+
+#card-footer {
+    padding: 2% 7%;
+    color: #646771;
+    background-color: #16151a
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+
+ul>li {
+    padding: 4px
+}
+
+ul>li:hover {
+    color: #186B6D;
+    cursor: pointer
+}
+
+hr {
+    border-width: 3px
+}
+
+.social>i {
+    padding: 1%;
+    font-size: 15px
+}
+
+.social>i:hover {
+    color: #186B6D;
+    cursor: pointer
+}
+
+.policy>div {
+    padding: 4px
+}
+
+.heading {
+    font-family: 'Titillium Web', sans-serif;
+    color: white
+}
+
+.divider {
+    border-top: 2px solid rgba(189, 196, 203, 0.5);
+}
+
 .link-footer{
   border-bottom: 1px solid #585c63;
 }
+
+// se arregló footer

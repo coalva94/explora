@@ -31,14 +31,18 @@ class BookingsController < ApplicationController
   end
 
   def edit
-
+    @booking = Booking.find(params[:id])
   end
 
   def update
-    @tour = Tour.update(find_params)
-    redirect_to @tour, notice: "El booking ha sido modificado"
+    @booking = Booking.find(params[:id])
+    @booking.update(find_params)
+    if @booking.save
+      redirect_to booking_path(@booking), notice: "El booking ha sido modificado"
+    else
+      render :edit
+    end
   end
-
 
   def destroy
     @bookings = Booking.find(params[:id])

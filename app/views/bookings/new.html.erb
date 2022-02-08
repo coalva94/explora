@@ -23,7 +23,7 @@
               <h6 class="my-0">Cantidad de Viajeros</h6>
               <small class="text-muted">Personas que viviran la experiencia</small>
             </div>
-            <span class="text-muted d-flex align-items-center"><%= cant = 3 %></span>
+            <span class="text-muted d-flex align-items-center cant-traveres"><%= cant = 3 %></span>
           </li>
           <li class="list-group-item d-flex justify-content-between bg-light">
             <div class="text-success">
@@ -47,33 +47,61 @@
         </form>
       </div>
 
+    <script>
+      let PrecioTotal = document.getElementById("PrecioTotal")
+      // PrecioTotal.innerHTML = "hola";
+      // document.addEventListener("click",CalcularDias)
+      const input_fechas  = document.querySelectorAll('.datepicker')
+      input_fechas.forEach((input) => {
+        input.addEventListener("change", (event) => {
+          let inicio = new Date(document.getElementById("FechaInicio").value)
+      let fin = new Date(document.getElementById("FechaFin").value)
+      let dif = (fin-inicio)/1000/60/60/24;
 
-      <div class="col-md-8 order-md-1">
-        <div class="card mb-3" style="max-width: 100%;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="https://blogs.incarail.com/hubfs/Imported_Blog_Media/CuscoRainBlog-1.png" class="img-thumbnail d-flex justify-content-center align-items-center " alt=". ..">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title text-center"><strong><%= @tour.title_tour %></strong></h5>
-                <p class="card-text"><%= @tour.description %></p>
-                <p class="card-text text-right"><small class="text-muted"><%= @tour.agency.name %></small></p>
-              </div>
+      PrecioTotal.innerHTML = `Precio Total: S/ ${ 10 + dif * <%=@car.price%> }`
+      // cuando dif es diferetne de naN multiplicas y muestras en pantalla
+      let difChange = document.getElementById("diftime")
+      difChange.innerHTML = `Dias de Alquiler: ${dif}`
+      console.log(inicio)
+      console.log(fin)
+      console.log(dif)
+      console.log(PrecioTotal)
+        })
+      })
+
+    </script>
+
+
+
+
+
+
+
+    <div class="col-md-8 order-md-1">
+      <div class="card mb-3" style="max-width: 100%;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="https://blogs.incarail.com/hubfs/Imported_Blog_Media/CuscoRainBlog-1.png" class="img-thumbnail d-flex justify-content-center align-items-center " alt=". ..">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title text-center"><strong><%= @tour.title_tour %></strong></h5>
+              <p class="card-text"><%= @tour.description %></p>
+              <p class="card-text text-right"><small class="text-muted"><%= @tour.agency.name %></small></p>
             </div>
           </div>
         </div>
-        <h4 class="mb-3">Datos requeridos:</h4>
-
-        <%= simple_form_for @booking ,url: tour_bookings_path, method: :post do |f| %>
-          <%= f.error_notification %>
-          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-            <%= f.input :start_date,label: 'Fecha a reservar', placeholder: '22/10/2010' %>
-            <%= f.input :quantity,label: 'Cantidad de reservas', placeholder: '1' %>
-            <%= f.button :submit ,'Reservar ahora', class: "btn btn-success p-3 w-100 rounded" %>
-        <% end %>
-
-        <%#  INICIO COMENTANDO INPUTS CON LOS ESTILO DE BOOTSTRAP %>
+      </div>
+      <h4 class="mb-3">Datos requeridos:</h4>
+     <%# acá va el form! %>
+     <%= simple_form_for [@tour, @booking] do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <%= f.input :start_date,label: 'Fecha a reservar', placeholder: '22/10/2010' %>
+      <%= f.input :quantity,label: 'Cantidad de reservas', placeholder: '1' %>
+      <%= f.button :submit ,'Reservar ahora', class: "btn btn-success p-3 w-100 rounded" %>
+      <% end %>
+       <%#  INICIO COMENTANDO INPUTS CON LOS ESTILO DE BOOTSTRAP %>
         <%# <form class="needs-validation" novalidate>
           <div class="row">
             <div class="col-md-6 mb-3">

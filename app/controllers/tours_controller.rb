@@ -1,13 +1,35 @@
 class ToursController < ApplicationController
 
   def index
+
     @tours = Tour.all
+
+    @markers = Agency.geocoded.map do |agency|
+      {
+        lat: agency.latitude,
+        lng: agency.longitude
+      }
+    end
+
+
+    if params[:query].present?
+      sql_query = "\
+      tours.title_tour ILIKE :query\
+      OR tours.description ILIKE :query\
+      OR tours.duration ILIKE :query\
+      OR agencies.name ILIKE :query\
+      "
+      @tours = Tour.joins(:agency).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @tours = Tour.all
+    end
+
   end
 
   def show
     @tour = Tour.find(params[:id])
     @booking = Booking.new
-    @tours = Tour.all
+    @tours = Tour.where.not(title_tour: @tour.title_tour)
   end
 
   def new
@@ -58,6 +80,12 @@ class ToursController < ApplicationController
       :title_tour,
       :description,
       :duration,
+      :services,
+      :departure,
+      :expectation,
+      :additional_info,
+      :cancellation,
+      :faq,
       photos: []
     )
   end
