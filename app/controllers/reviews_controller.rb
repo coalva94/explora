@@ -15,7 +15,8 @@ class ReviewsController < ApplicationController
   def find_params
     params.require(:review).permit(
       :content,
-      :rating
+      :rating,
+      :photos
     )
   end
 end

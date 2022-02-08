@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :reviews
   has_one :agency
-  has_many_attached :photos
+  has_one_attached :photo
 
   validates :email, presence: true, uniqueness: true
   validates :first_name, presence: true

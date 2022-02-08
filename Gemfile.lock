@@ -279,7 +279,6 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (~> 5.0)
-  rack (~> 2.0.8)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.4)
   sass-rails (>= 6)

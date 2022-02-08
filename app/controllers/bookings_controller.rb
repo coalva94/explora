@@ -31,6 +31,7 @@ class BookingsController < ApplicationController
     @bookings = Booking.find(params[:id])
     @companion = Companion.new
     @review = Review.new
+    @companions = Companion.where(booking_id: @bookings.id)
   end
 
   def edit
