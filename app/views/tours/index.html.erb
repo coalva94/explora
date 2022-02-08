@@ -18,21 +18,22 @@
            <% tour.photos.each do |photo| %>
             <%= cl_image_tag photo.key,:style => "width:100%;"  %>
             <%break%>
-           <% end %>
-        </div>
-        <div class="col-md-6">
-         <h3 class = "text-center p-2"><strong><%=tour.title_tour%></strong> </h3>
-         <p class="text-justify"><%=tour.description%>  </p>
-         <p>Destino: <%=tour.destination%> </p>
-         <p>Brindado por: <%=tour.agency.name%> </p>
-         <p>Duración: <%=tour.duration %> </p>
-        </div>
+  <% end %>
+      </div>
 
-      <div class="col-md-3 pt-5 align-items-center" style="text-align:center;">
-        <p><strong style="font-size:2rem; font-weight: 700;"> S/ <%= tour.price%></strong> </p>
-        <%= link_to "Ver Más",tour_path(tour), :class => "btn btn-success "%>
-        </div>
-        </div>
+  <div class="col-md-6">
+   <h3 class = "tours-card-title"><%=tour.title_tour%> </h3>
+   <p class="tours-card-content-p"><%=tour.description%>  </p>
+   <p class="tours-card-content"><i class="far fa-clock" style="color: #D1D1D1"></i> Duración: <%=tour.duration %> </p>
+   <p class="tours-card-content">Brindado por: <span class="tours-agency-name"> <%=tour.agency.name%> </span></p>
+   <%# <p>geocoding: <%=tour.agency.latitude%0 </p>%>
+  </div>
+
+   <div class="col-md-3 pt-5 align-items-center" style="text-align:center;">
+     <p><span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
+       <%= link_to "Ver más",tour_path(tour), :class => "btn btn-success py-3 px-5",:style => "font-size:16px;"%>
+   </div>
+      </div>
       <% end %>
     </div>
   </div>
