@@ -2,6 +2,13 @@ class AgenciesController < ApplicationController
   def show
     @agency = Agency.find(params[:id])
     @tours = Tour.where(agency_id: @agency.id)
+
+
+
+
+
+
+
   end
 
   def new

@@ -4,5 +4,10 @@
 }
 .card-tour:hover {
 box-shadow: 2px 2px 2px 2px #e5e5e5;
+}
 
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }

@@ -2,14 +2,12 @@ class ToursController < ApplicationController
 
   def index
     @tours = Tour.all
-
     @markers = Agency.geocoded.map do |agency|
       {
         lat: agency.latitude,
         lng: agency.longitude
       }
     end
-
   end
 
   def show
