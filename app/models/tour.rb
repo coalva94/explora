@@ -7,7 +7,6 @@ class Tour < ApplicationRecord
   validates :destination, presence: true
   validates :description, presence: true
   validates :price, presence: true
-  validates :address, presence: true
   geocoded_by :destination # Geocoding
   after_validation :geocode, if: :will_save_change_to_destination? # Geocoding
 end

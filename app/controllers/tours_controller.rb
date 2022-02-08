@@ -1,16 +1,5 @@
 class ToursController < ApplicationController
   def index
-    @tours = Tour.all
-
-    @markers = Tour.geocoded.map do |tour|
-      {
-        lat: tour.latitude,
-        lng: tour.longitude
-        # info_window: render_to_string(partial: "info_window",
-          # locals: { tour: tour } )
-      }
-    end
-
     if params[:query].present?
       sql_query = "\
       tours.title_tour ILIKE :query\
@@ -19,8 +8,23 @@ class ToursController < ApplicationController
       OR agencies.name ILIKE :query\
       "
       @tours = Tour.joins(:agency).where(sql_query, query: "%#{params[:query]}%")
+      @markers = Tour.near(params[:query]).map do |tour|
+        {
+          lat: tour.latitude,
+          lng: tour.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { tour: tour })
+        }
+      end
+
     else
       @tours = Tour.all
+      @markers = Tour.geocoded.map do |tour|
+        {
+          lat: tour.latitude,
+          lng: tour.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { tour: tour })
+        }
+      end
     end
   end
 

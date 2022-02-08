@@ -21,15 +21,15 @@
            <% end %>
         </div>
         <div class="col-md-6">
-         <h3 class = "text-center m-4"><%=tour.title_tour%> </h3>
-         <p><%=tour.description%>  </p>
-         <p>Duración: <%=tour.duration %> </p>
+         <h3 class = "text-center p-2"><strong><%=tour.title_tour%></strong> </h3>
+         <p class="text-justify"><%=tour.description%>  </p>
+         <p>Destino: <%=tour.destination%> </p>
          <p>Brindado por: <%=tour.agency.name%> </p>
-         <p>geocoding: <%=tour.latitude%> | <%=tour.longitude%> </p>
+         <p>Duración: <%=tour.duration %> </p>
         </div>
 
       <div class="col-md-3 pt-5 align-items-center" style="text-align:center;">
-        <p>Precio <span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
+        <p><strong style="font-size:2rem; font-weight: 700;"> S/ <%= tour.price%></strong> </p>
         <%= link_to "Ver Más",tour_path(tour), :class => "btn btn-success "%>
         </div>
         </div>
