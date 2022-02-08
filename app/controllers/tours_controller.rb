@@ -3,13 +3,14 @@ class ToursController < ApplicationController
   def index
 
     @tours = Tour.all
-
     @markers = Agency.geocoded.map do |agency|
       {
         lat: agency.latitude,
         lng: agency.longitude
       }
     end
+<<<<<<< HEAD
+=======
 
 
     if params[:query].present?
@@ -24,6 +25,7 @@ class ToursController < ApplicationController
       @tours = Tour.all
     end
 
+>>>>>>> 23d4f9d4ed51c193bf4726cd8e39b34d6d402a75
   end
 
   def show
