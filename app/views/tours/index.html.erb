@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row m-3">
   <div class="col-md-7">
     <div class="container tour-index">
       <%= form_tag tours_path, method: :get do %>
@@ -12,10 +12,10 @@
         </div>
       <% end %>
 
-  <% @tours.each do |tour| %>
-    <div class="row card-tour mt-4 pt-5 pb-5">
-      <div class="col-md-3 d-flex justify-content-center align-items-center ">
-          <% tour.photos.each do |photo| %>
+      <% @tours.each do |tour| %>
+        <div class="row card-tour mt-4 pt-5 pb-5">
+        <div class="col-md-3 d-flex justify-content-center align-items-center ">
+           <% tour.photos.each do |photo| %>
             <%= cl_image_tag photo.key,:style => "width:100%;"  %>
             <%break%>
   <% end %>
@@ -39,14 +39,10 @@
   </div>
 
   <div class="col-md-5">
+  <h2 class = "text-center"><strong>Lugares Recomendados</strong></h3>
     <div id="map"
-     style="width: 100%; height: 600px;"
+     style="width: 100%; height: 100vh;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>
-
-
-
-
-<%# Comentario de prueba %>

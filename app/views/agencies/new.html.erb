@@ -7,13 +7,13 @@
         <%= simple_form_for(@agency) do |f| %>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-          <%= f.input :name, placeholder: 'name' %>
+          <%= f.input :name, placeholder: 'Nombre' %>
           <%= f.input :email, placeholder: 'email' %>
-          <%= f.input :tax_number, placeholder: 'tax_number' %>
-          <%= f.input :address, placeholder: 'address' %>
-          <%= f.input :state, placeholder: 'state' %>
-          <%= f.input :latitude, placeholder: 'latitude' %>
-          <%= f.input :longitude, placeholder: 'longitude' %>
+          <%= f.input :tax_number, placeholder: 'R.U.C' %>
+          <%= f.input :address, placeholder: 'Dirección' %>
+          <%= f.input :state, placeholder: 'Provincia' %>
+          <%# <%= f.input :latitude, placeholder: 'latitude' %>
+          <%# <%= f.input :longitude, placeholder: 'longitude' %>
           <%= f.button :submit, class: "btn btn-success p-3 w-100 rounded" %>
         <% end %>
       </div>
