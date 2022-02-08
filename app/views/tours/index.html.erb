@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row m-3">
   <div class="col-md-7">
     <div class="container tour-index">
       <%= form_tag tours_path, method: :get do %>
@@ -12,41 +12,36 @@
         </div>
       <% end %>
 
-  <% @tours.each do |tour| %>
-    <div class="row card-tour mt-4 pt-5 pb-5">
-      <div class="col-md-3 d-flex justify-content-center align-items-center ">
-          <% tour.photos.each do |photo| %>
+      <% @tours.each do |tour| %>
+        <div class="row card-tour mt-4 pt-5 pb-5">
+        <div class="col-md-3 d-flex justify-content-center align-items-center ">
+           <% tour.photos.each do |photo| %>
             <%= cl_image_tag photo.key,:style => "width:100%;"  %>
             <%break%>
-  <% end %>
-      </div>
+           <% end %>
+        </div>
+        <div class="col-md-6">
+         <h3 class = "text-center p-2"><strong><%=tour.title_tour%></strong> </h3>
+         <p class="text-justify"><%=tour.description%>  </p>
+         <p>Destino: <%=tour.destination%> </p>
+         <p>Brindado por: <%=tour.agency.name%> </p>
+         <p>Duración: <%=tour.duration %> </p>
+        </div>
 
-  <div class="col-md-6">
-   <h3 class = "text-center m-4"><%=tour.title_tour%> </h3>
-   <p><%=tour.description%>  </p>
-   <p>Duración: <%=tour.duration %> </p>
-   <p>Brindado por: <%=tour.agency.name%> </p>
-   <p>geocoding: <%=tour.agency.latitude%> </p>
-  </div>
-
-   <div class="col-md-3 pt-5 align-items-center" style="text-align:center;">
-     <p>Precio <span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
-       <%= link_to "Ver Más",tour_path(tour), :class => "btn btn-success "%>
-   </div>
-      </div>
+      <div class="col-md-3 pt-5 align-items-center" style="text-align:center;">
+        <p><strong style="font-size:2rem; font-weight: 700;"> S/ <%= tour.price%></strong> </p>
+        <%= link_to "Ver Más",tour_path(tour), :class => "btn btn-success "%>
+        </div>
+        </div>
       <% end %>
     </div>
   </div>
 
   <div class="col-md-5">
+  <h2 class = "text-center"><strong>Lugares Recomendados</strong></h3>
     <div id="map"
-     style="width: 100%; height: 600px;"
+     style="width: 100%; height: 100vh;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>
-
-
-
-
-<%# Comentario de prueba %>
