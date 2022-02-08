@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
 
   def create
     # @tour = Tour.find(params[:tour_id])
+    @tour = Tour.find(params[:tour_id])
     @booking = Booking.new(find_params)
     @booking.user = current_user
     @booking.tour = Tour.find(params[:tour_id])
@@ -28,6 +29,8 @@ class BookingsController < ApplicationController
 
   def show
     @bookings = Booking.find(params[:id])
+    @companion = Companion.new
+    @review = Review.new
   end
 
   def edit

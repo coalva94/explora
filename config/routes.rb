@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   resources :tours do
     resources :bookings, only: %i[create new]
   end
-  resources :bookings, only: %i[index show edit destroy update]
+  resources :bookings, only: %i[index show edit destroy update] do
+    resources :companions, only: %i[create]
+    resources :reviews, only: %i[create]
+
+  end
   # get '/users/:id/bookings', to: 'bookings#mybookings', as: 'mybookings'
 
   resources :agencies do
