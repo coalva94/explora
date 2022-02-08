@@ -14,6 +14,7 @@ class ToursController < ApplicationController
       OR tours.description ILIKE :query\
       OR tours.duration ILIKE :query\
       OR agencies.name ILIKE :query\
+      OR tours.destination ILIKE :query\
       "
       @tours = Tour.joins(:agency).where(sql_query, query: "%#{params[:query]}%")
     else
