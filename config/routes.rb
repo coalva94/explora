@@ -14,5 +14,8 @@ Rails.application.routes.draw do
 
   resources :agencies do
     resources :tours
+    member do
+      get :my_tours
+    end
   end
 end

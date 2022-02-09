@@ -33,7 +33,6 @@ class ToursController < ApplicationController
     @tour = Tour.find(params[:id])
     @booking = Booking.new
     @tours = Tour.where.not(title_tour: @tour.title_tour)
-
   end
 
   def new
@@ -46,7 +45,7 @@ class ToursController < ApplicationController
     @tour.agency = current_user.agency
 
     if @tour.save
-      redirect_to tours_path
+      redirect_to my_tours_agency_path
     else
       render :new
     end
@@ -62,7 +61,7 @@ class ToursController < ApplicationController
     # authorize @car
     @tour.update(find_params)
     if @tour.save
-      redirect_to tours_path
+      redirect_to my_tours_agency_path
     else
       render :edit
     end
@@ -72,7 +71,7 @@ class ToursController < ApplicationController
     @tour = Tour.find(params[:id])
     # authorize @car
     @tour.destroy
-    redirect_to tours_path
+    redirect_to my_tours_agency_path
   end
 
   private

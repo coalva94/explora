@@ -1,0 +1,37 @@
+<div class="row m-3">
+  <div class="col-md-11">
+    <div class="container tour-index">
+      <div class="d-flex justify-content-between">
+        <h2 style="font-size:30px;">Mis tours ofrecidos</h2>
+        <%= link_to "Añadir tour",new_agency_tour_path(@agency), :class => "btn btn-success py-3 px-5",:style => "font-size:14px;"%>
+      </div>
+      <% @tours.each do |tour| %>
+        <div class="row card-tour mt-4 pt-5 pb-5">
+          <div class="col-md-3 d-flex justify-content-center align-items-center ">
+            <% tour.photos.each do |photo| %>
+              <%= cl_image_tag photo.key,:style => "width:100%;"  %>
+              <%break%>
+            <% end %>
+          </div>
+
+          <div class="col-md-4">
+          <h3 class = "tours-card-title"><%=tour.title_tour%> </h3>
+          <p class="tours-card-content-p"><%=tour.description%>  </p>
+          <p class="tours-card-content"><i class="far fa-clock" style="color: #D1D1D1"></i> Duración: <%=tour.duration %> </p>
+          <p class="tours-card-content">Brindado por: <span class="tours-agency-name"> <%=tour.agency.name%> </span></p>
+          <%# <p>geocoding: <%=tour.agency.latitude%0 </p>%>
+          </div>
+
+          <div class="col-md-4 pt-5 align-items-center" style="text-align:center;">
+            <p><span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
+            <div class="d-flex justify-content-between">
+              <%= link_to "Ver más",tour_path(tour), :class => "btn btn-success py-3 px-5",:style => "font-size:14px;"%>
+              <%= link_to "Editar",edit_agency_tour_path(tour), :class => "btn btn-success py-3 px-5",:style => "font-size:14px;"%>
+              <%= link_to "Eliminar",tour_path(tour),method: :delete,data: { confirm: "Estas seguro?" }, :class => "btn btn-success py-3 px-5",:style => "font-size:14px;"%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
