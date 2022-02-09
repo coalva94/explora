@@ -32,7 +32,15 @@ class BookingsController < ApplicationController
     @companion = Companion.new
     @review = Review.new
     @companions = Companion.where(booking_id: @bookings.id)
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Post id: #{@bookings.id}", template: "bookings/show.html.erb"   # Excluding ".pdf" extension.
+      end
+    end
   end
+
 
   def edit
     @booking = Booking.find(params[:id])
