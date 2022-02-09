@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(
       :content,
       :rating,
-      :photos
+      photos: []
     )
   end
 end

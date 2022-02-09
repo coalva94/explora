@@ -2,6 +2,8 @@
   margin-left: 140px;
 }
 
+// ---------- GALLERY (PHOTOS)-----------------
+
 .gallery-container {
   width: 80%;
   margin: 2rem auto;
@@ -27,10 +29,6 @@
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-
-  /** Alternative Syntax **/
-  /* grid-column: 1 / span 2;  */
-  /* grid-row: 1 / span 2; */
 }
 
 .gallery__item--1 > img {
@@ -42,10 +40,6 @@
   grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 3;
-
-  /** Alternative Syntax **/
-  /* grid-column: 3 / span 2;  */
-  /* grid-row: 1 / span 2; */
 }
 
 .gallery__item--3 {
@@ -53,10 +47,6 @@
   grid-column-end: 9;
   grid-row-start: 1;
   grid-row-end: 5;
-
-  /** Alternative Syntax **/
-  /* grid-column: 5 / span 4;
-  grid-row: 1 / span 5; */
 }
 
 .gallery__item--3 > img {
@@ -69,10 +59,6 @@
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 5;
-
-  /** Alternative Syntax **/
-  /* grid-column: 1 / span 4;  */
-  /* grid-row: 3 / span 3; */
 }
 
 .gallery__item--4 > img {
@@ -84,10 +70,6 @@
   grid-column-end: 5;
   grid-row-start: 3;
   grid-row-end: 5;
-
-  /** Alternative Syntax **/
-  /* grid-column: 1 / span 4; */
-  /* grid-row: 6 / span 3; */
 }
 
 .gallery__item--6 {
@@ -95,16 +77,224 @@
   grid-column-end: 9;
   grid-row-start: 6;
   grid-row-end: 9;
-
-  /** Alternative Syntax **/
-  /* grid-column: 5 / span 4; */
-  /* grid-row: 6 / span 3; */
 }
 
-.card-header {
+//---------BOTON RESERVAR------------
+.reservar-btn {
+  border:2px solid rgb(243, 242, 242);
+}
+
+
+// ---------------PRECIO--------------
+.price-container {
+  background-color: white;
+  margin-bottom: 4px;
+  margin: 0px auto;
+  padding: 10px 0px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+  h2{
+    text-align: left;
+    padding: 10px 32px;
+  }
+}
+
+
+//---------------DESCRIPCION----------
+.description-container {
+  background-color: white;
+  margin-bottom: 4px;
+  margin: 0px auto;
+  padding: 10px 32px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+
+// ---------------ACCORDION-----------
+.accordion-container {
+  background-color: white;
+  margin: 0px auto;
+  padding: 10px 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.accordion-card {
+  margin: 10px 0px;
+  padding: 10px 0px;
+}
+
+.accordion-card-header {
   background-color: white;
 }
 
+.btn-accordion {
+  background-color: white;
+  border: none;
+  color: black;
+  text-decoration: none;
+}
+
+.card-header:hover {
+  background-color: rgb(243, 242, 242);
+  border: none;
+
+  .card-button {
+  background-color: rgb(243, 242, 242);
+  border: none;
+  }
+
+  .btn-accordion {
+    background-color: rgb(243, 242, 242);
+    border: none;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+
+//--------- CUADRO RATING + REVIEWS -------------
+// a {
+//     text-decoration: none !important;
+//     color: inherit
+// }
+
+// a:hover {
+//     color: #455A64
+// }
+
+.card-rating {
+    border-radius: 5px;
+    background-color: #fff;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.rating-box {
+    width: 130px;
+    height: 130px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #FBC02D;
+    color: #fff
+}
+
+.rating-label {
+    font-weight: bold
+}
+
+.rating-bar {
+    width: 300px;
+    padding: 8px;
+    border-radius: 5px
+}
+
+.bar-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 5px
+}
+
+.bar-5 {
+    width: 70%;
+    height: 13px;
+    background-color: #FBC02D;
+    border-radius: 20px
+}
+
+.bar-4 {
+    width: 30%;
+    height: 13px;
+    background-color: #FBC02D;
+    border-radius: 20px
+}
+
+.bar-3 {
+    width: 20%;
+    height: 13px;
+    background-color: #FBC02D;
+    border-radius: 20px
+}
+
+.bar-2 {
+    width: 10%;
+    height: 13px;
+    background-color: #FBC02D;
+    border-radius: 20px
+}
+
+.bar-1 {
+    width: 0%;
+    height: 13px;
+    background-color: #FBC02D;
+    border-radius: 20px
+}
+
+td {
+    padding-bottom: 10px
+}
+
+.star-active {
+    color: #FBC02D;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.star-active:hover {
+    color: #F9A825;
+    cursor: pointer
+}
+
+.star-inactive {
+    color: #CFD8DC;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.blue-text {
+    color: #0091EA
+}
+
+.content {
+    font-size: 18px
+}
+
+.profile-pic {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    margin-right: 30px
+}
+
+.pic {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px
+
+}
+
+.vote {
+    cursor: pointer
+}
+
+.stars {
+  color: #FFAB39;
+  font-size: 16px;
+}
+
+
+//-------------EXPERIENCIAS SIMILARES CARDS------------
 .cards-container {
   margin: 0 auto;
 }
@@ -177,33 +367,10 @@
   color: #FFAB39;
 }
 
-.btn-accordion {
-  background-color: white;
-  border: none;
-  color: black;
-  text-decoration: none;
-}
-
-.card-header:hover {
-  background-color: rgb(243, 242, 242);
-  border: none;
-
-  .card-button {
-  background-color: rgb(243, 242, 242);
-  border: none;
-  }
-
-  .btn-accordion {
-    background-color: rgb(243, 242, 242);
-    border: none;
-    text-decoration: none;
-    color: black;
-  }
-}
-
-.btn-reviews {
+.btn-similaries {
   border: none;
 }
+
 
 //INICIO estilos para el scrool vertical de review
 .scroll-review{
