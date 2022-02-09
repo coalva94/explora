@@ -24,7 +24,7 @@
                 <h6 class="my-0">Cantidad de Viajeros</h6>
                 <small class="text-muted">Personas que viviran la experiencia</small>
               </div>
-              <span class="text-muted d-flex align-items-center cant-traveres"><%= cant = 3 %></span>
+              <span class="text-muted d-flex align-items-center cant-traveres"><%= cant = 1 %></span>
             </li>
             <li class="list-group-item d-flex justify-content-between bg-light">
               <div class="text-success">
@@ -48,31 +48,6 @@ aa            <li class="list-group-item d-flex justify-content-between">
             <% end %>
         <h5>(*)Recuerda que tienes que completar la informacion de tus acompañantes</h5>
       </div>
-
-    <script>
-      let PrecioTotal = document.getElementById("PrecioTotal")
-      // PrecioTotal.innerHTML = "hola";
-      // document.addEventListener("click",CalcularDias)
-      const input_fechas  = document.querySelectorAll('.datepicker')
-      input_fechas.forEach((input) => {
-        input.addEventListener("change", (event) => {
-          let inicio = new Date(document.getElementById("FechaInicio").value)
-      let fin = new Date(document.getElementById("FechaFin").value)
-      let dif = (fin-inicio)/1000/60/60/24;
-
-      // PrecioTotal.innerHTML = `Precio Total: S/ ${ 10 + dif * <@car.price%> }`
-      // cuando dif es diferetne de naN multiplicas y muestras en pantalla
-      let difChange = document.getElementById("diftime")
-      difChange.innerHTML = `Dias de Alquiler: ${dif}`
-      console.log(inicio)
-      console.log(fin)
-      console.log(dif)
-      console.log(PrecioTotal)
-        })
-      })
-
-    </script>
-
 
     <div class="col-md-8 order-md-1">
       <div class="card mb-3" style="max-width: 100%;">
