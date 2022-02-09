@@ -43,9 +43,8 @@ class ToursController < ApplicationController
   def create
     @tour = Tour.new(find_params)
     @tour.agency = current_user.agency
-
     if @tour.save
-      redirect_to my_tours_agency_path
+      redirect_to my_tours_agency_path(@tour.agency)
     else
       render :new
     end
@@ -69,9 +68,14 @@ class ToursController < ApplicationController
 
   def destroy
     @tour = Tour.find(params[:id])
+    @agency = @tour.agency
     # authorize @car
-    @tour.destroy
-    redirect_to my_tours_agency_path
+    if @tour.bookings.empty?
+      @tour.destroy
+      redirect_to my_tours_agency_path(@agency)
+    else
+      redirect_to my_tours_agency_path(@agency), notice: "No se puede eliminar el tour porque ya tiene reservas"
+    end
   end
 
   private
