@@ -63,7 +63,7 @@
                       <%= f.error_notification %>
                       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
                       <%= f.input :first_name,label: 'Primer nombre', placeholder: 'Ana' %>
-                      <%= f.input :last_name,label: 'Apelldio', placeholder: 'Marcela' %>
+                      <%= f.input :last_name,label: 'Apellido', placeholder: 'Marcela' %>
                       <%= f.input :age,label: 'edad', placeholder: '20' %>
                       <%= f.input :document_number,label: 'Documento de Identidad', placeholder: '77414777' %>
                       <%= f.button :submit ,"Confirmar acompañantes" %>
@@ -122,5 +122,6 @@
   </div>
   <div class="container text-center">
     <%= link_to 'Regresar', bookings_path, :class => "btn btn-lg text-center"%>
+    <%= link_to "Imprimir", booking_path(@bookings, format: :pdf), :class => "btn btn-lg text-center" %>
   </div>
 </section>

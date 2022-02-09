@@ -124,131 +124,115 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row d-flex justify-content-center">
 
-      <div class="overview col-md-7 mt-3">
-        <div class="row d-flex justify-content-end">
 
-          <div class="precio col-10 mb-3">
-            <h2>Precio por persona - $ <%= @tour.price %> </h2>
+        <%# ----BOTON RESERVAR------ %>
+      <div class="col-sm-10 mx-auto">
+        <div class="card- border-0 w-100 ml-0 mr-0">
+          <div class="card-body">
+            <h1 class="h3 mb-3 text-center">Reserva tus tours con Explora</h1>
+            <a href="<%=new_tour_booking_path(@tour) %> " class="btn btn-success p-3 w-100 rounded reservar-btn" style="font-size:3rem">Reservar</a>
           </div>
-          <br>
-          <br>
-          <div class="description-container col-10">
-            <div>
-              <h2>Descripción</h2>
+        </div>
+      </div>
+
+      <div class="col-12 mx-auto mt-3">
+            <%# ---DESCRIPCION-----%>
+        <div class="description-container col-10 mb-3">
+          <h2>Descripción</h2>
+          <div>
+          <p> <%= @tour.description %> </p>
+          </div>
+        </div>
+
+        <%# -----PRECIO------ %>
+       <div class="price-container col-10 mb-3">
+         <h2>Precio por persona: S/ <%= @tour.price %> </h2>
+       </div>
+      </div>
+    </div>
+
+
+    <%# -----------ACCORDION---------------------- %>
+    <div class="accordion-container col-10" id="accordionExample">
+        <div class="accordion-card">
+          <div class="accordion-card-header" id="headingOne">
+            <h2 class="mb-0 border-bottom">
+              <button class="btn-accordion btn-link text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Servicios incluidos</h2>
+              </button>
+            </h2>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
               <div>
-              <p> <%= @tour.description %> </p>
+                  <i class="fas fa-check d-inline"></i>
+                  <p class="d-inline"><%= @tour.services %></p>
               </div>
             </div>
-
-            <div class="accordion" id="accordionExample">
-              <div class="card">
-                <div class="card-header" id="headingOne">
-                  <h2 class="mb-0">
-                    <button class="btn-accordion btn-link text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Servicios incluidos</h2>
-                    </button>
-                  </h2>
-                </div>
-
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                  <div class="card-body">
-                    <div>
-
-                      <%# @tour.services.each do |service| %>
-                        <i class="fas fa-check d-inline"></i>
-                        <p class="d-inline"><%= @tour.services %></p>
-                      <%# end %>
-                    </div>
-                    <div>
-                      <i class="fas fa-check d-inline"></i>
-                      <p class="d-inline">Tour guiado en español.</p>
-                    </div>
-                    <div>
-                      <i class="fas fa-check d-inline"></i>
-                      <p class="d-inline">Recogida y regreso al hotel. </p>
-                    </div>
-                    <div>
-                      <i class="fas fa-check d-inline"></i>
-                      <p class="d-inline">Boleto de tren de ida y vuelta seleccionado.</p>
-                    </div>
-                    <div>
-                      <i class="fas fa-times d-inline"></i>
-                      <p class="d-inline">Almuerzo</p>
-                    </div>
-                    <div>
-                      <i class="fas fa-times d-inline"></i>
-                      <p class="d-inline">Propinas</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingTwo">
-                  <h2 class="mb-0">
-                    <button class="btn-accordion btn-link btn-outline-none collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Salida y regreso
-                    </button>
-                  </h2>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                  <div class="card-body">
-                    <p> <%= @tour.departure %> </p>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingThree">
-                  <h2 class="mb-0">
-                    <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Qué esperar
-                    </button>
-                  </h2>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                  <div class="card-body">
-                   <%= @tour.expectation %>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingFour">
-                  <h2 class="mb-0">
-                    <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      Información adicional
-                    </button>
-                  </h2>
-                </div>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                  <div class="card-body">
-                    <%= @tour.additional_info %>
-                    <%# <ul>
-                      <li>La confirmación se recibirá cuando se realice la reserva.</li>
-                      <li>No está adaptado para personas en silla de ruedas.</li>
-                      <li>No es adecuado para viajeros con afecciones cardíacas u otros problemas médicos graves.</li>
-                      <li>La mayoría de viajeros pueden participar en la experiencia.</li>
-                    </ul> %>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingFive">
-                  <h2 class="mb-0">
-                    <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                      Política de cancelación
-                    </button>
-                  </h2>
-                </div>
-                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                  <div class="card-body">
-                    <%= @tour.cancellation %> Obtenga <a href="#" class=" text-dark">más información</a> sobre las cancelaciones.
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingSix">
-                  <h2 class="mb-0">
+          </div>
+        </div>
+        <div class="accordion-card">
+          <div class="accordion-card-header" id="headingTwo">
+            <h2 class="mb-0 border-bottom">
+              <button class="btn-accordion btn-link btn-outline-none collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Salida y regreso
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              <p> <%= @tour.departure %> </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-card">
+          <div class="accordion-card-header" id="headingThree">
+            <h2 class="mb-0 border-bottom">
+              <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Qué esperar
+              </button>
+            </h2>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+             <%= @tour.expectation %>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-card">
+          <div class="accordion-card-header" id="headingFour">
+            <h2 class="mb-0 border-bottom">
+              <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Información adicional
+              </button>
+            </h2>
+          </div>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body">
+              <%= @tour.additional_info %>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-card">
+          <div class="accordion-card-header" id="headingFive">
+            <h2 class="mb-0 border-bottom">
+              <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Política de cancelación
+              </button>
+            </h2>
+          </div>
+          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+            <div class="card-body">
+              <%= @tour.cancellation %> Obtenga <a href="#" class=" text-dark">más información</a> sobre las cancelaciones.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-card">
+                <div class="accordion-card-header" id="headingSix">
+                  <h2 class="mb-0 border-bottom">
                     <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                       Preguntas frecuentes
                     </button></h2>
@@ -257,140 +241,189 @@
                 <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
                   <div class="card-body">
                     <p><%= @tour.faq %></p>
-                    <%# <div class="faq">
-                      <p class="question"><strong>P:</strong>¿Dónde está el punto de encuentro?</p>
-                      <p class="answer ml-3"><strong>R:</strong> El punto de encuentro para este tour es nuestra oficina central en Cusco ubicada en la Av. El Sol 817.</p>
-                    </div>
-                    <br>
-                    <div class="faq">
-                      <p class="question"><strong>P:</strong>¿Se necesita equipo de montaña?</p>
-                      <p class="answer ml-3"><strong>R:</strong> No es necesario. El tour es apto para viajeros comúnes.</p>
-                    </div>
-                    <br>
-                    <div class="faq">
-                      <p class="question"><strong>P:</strong>¿Qué necesitan llevar los viajeros?</p>
-                      <p class="answer ml-3"><strong>R:</strong> Se recomienda llevar una chaqueta para la lluvia, zapatos cómodos, sombrero y protector solar..</p>
-                    </div> %>
                   </div>
                 </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingSix">
-                  <h2 class="mb-0">
-                    <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+        </div>
+                <div class="accordion-card">
+                <div class="accordion-card-header" id="headingSeven">
+                  <h2 class="mb-0 border-bottom">
+                    <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                       Fotos de viajeros
                     </button></h2>
                   </h2>
                 </div>
-                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
                   <div class="card-body row w-100" style="overflow-x:scroll;">
-                    <%@tour.reviews do|review|%>
+                    <%@tour.reviews.each do|review|%>
                         <%if review.photos.attached? %>
-                          <div class="col">
-                              <%= cl_image_tag review.photos.first.key, class: "w-100" %>
+                          <div class="">
+                              <%= cl_image_tag review.photos.first.key, class: "pic" %>
                           </div>
                         <%else %>
                         <% end%>
                     <%end%>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-
-      <div class="form-container col-md-5">
-        <div class="row d-block">
-          <div class="col-12 mx-auto">
-            <div class="card- border-0 w-100 ml-0 mr-0">
-              <div class="card-body">
-                <h1 class="h3 mb-3 text-center">Reserva tus tours con Explora</h1>
-                  <a href="<%=new_tour_booking_path(@tour) %> " class="btn btn-success p-3 w-100 rounded">Reservar</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 d-block">
-            <div class="reviews container-fluid container py-3 mt-4 d-block">
-              <h2 class="h2 text-center" style="font-size:2.5rem">Opiniones de otros aventureros</h2>
-              <div class="row mt-4 d-block scroll-review" style=" overflow-y: scroll; ">
-                <%@tour.reviews.each do |review|  %>
-                  <div class="col-md-10 mx-auto w-100 card-review">
-                    <div class="card mb-3 border-0 w-100">
-                      <div class="ml-2 mt-3">
-                        <div class="d-flex">
-                            <% if review.user.photo.attached?%>
-                            <%= cl_image_tag review.user.photo.key, class: "avatar dropdown-toggle mg-fluidX rounded-circle w-25 mb-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                            <% else%>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8JyScJ3XAm0g9mNMQ1Ws7EI6LoVgs7_HDXg&usqp=CAU" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-2" alt="...">
-                            <%end%>
-                            <div class="d-flex flex-column m-3">
-                                <h3 class="mt-0 mb-1"><strong><%=review.user.first_name%>, <%=review.user.last_name%> </strong></h3>
-                                <h4>Perú</h4>
-                                <h1 class="card-title text-info">
-                                  <%(review.rating.to_i).times do %> &#9733;
-                                  <%end%>
-                                </h1>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="card-body pl-0 ml-3">
-                        <p class="card-text"><%=review.content%> </p>
-                      </div>
-                    </div>
-                  </div>
-                <%end%>
-
-              </div>
-           </div>
-          </div>
-
-        </div>
-      </div>
-
     </div>
 
+<br>
+    <%# -----------CUADRO RATING + REVIEWS ---------------------- %>
+  <div class="container-fluid px-1 py-5 mx-auto">
+      <div class="row justify-content-center">
+      <h2 class="h2 text-center" style="font-size:3rem">Opiniones de otros aventureros</h2>
+          <div class="col-10 text-center mb-5">
+              <div class="card-rating">
+                  <div class="row justify-content-left d-flex">
+                      <div class="col-md-4 d-flex flex-column">
+                          <div class="rating-box">
+                              <h1 class="pt-4">4.0</h1>
+                              <p class="">de 5</p>
+                          </div>
+                          <div> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-inactive mx-1"></span> </div>
+                      </div>
+                      <div class="col-md-8">
+                          <div class="rating-bar0 justify-content-center">
+                              <table class="text-left mx-auto">
+                                  <tr>
+                                      <td class="rating-label">Excelente</td>
+                                      <td class="rating-bar">
+                                          <div class="bar-container">
+                                              <div class="bar-5"></div>
+                                          </div>
+                                      </td>
+                                      <td class="text-right">123</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="rating-label">Bueno</td>
+                                      <td class="rating-bar">
+                                          <div class="bar-container">
+                                              <div class="bar-4"></div>
+                                          </div>
+                                      </td>
+                                      <td class="text-right">23</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="rating-label">Promedio</td>
+                                      <td class="rating-bar">
+                                          <div class="bar-container">
+                                              <div class="bar-3"></div>
+                                          </div>
+                                      </td>
+                                      <td class="text-right">10</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="rating-label">Malo</td>
+                                      <td class="rating-bar">
+                                          <div class="bar-container">
+                                              <div class="bar-2"></div>
+                                          </div>
+                                      </td>
+                                      <td class="text-right">3</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="rating-label">Terrible</td>
+                                      <td class="rating-bar">
+                                          <div class="bar-container">
+                                              <div class="bar-1"></div>
+                                          </div>
+                                      </td>
+                                      <td class="text-right">0</td>
+                                  </tr>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+
+              <div class="row mt-4 ml-2 d-flex scroll-review d-flex justify-content-around" style=" overflow-y: scroll; ">
+              <% @tour.reviews.each do |review|  %>
+              <div class="card-rating col-md-5">
+                  <div class="row d-flex align-items-center">
+                      <div class="profile-pic">
+                        <% if review.user.photo.attached?%>
+                          <%= cl_image_tag review.user.photo.key, class: "profile-pic", id:"navbarDropdown", data: { toggle: "dropdown" },'aria-haspopup': true, 'aria-expanded': false %>
+                        <%else%>
+                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8JyScJ3XAm0g9mNMQ1Ws7EI6LoVgs7_HDXg&usqp=CAU" class="ml-0 mr-2 profile-pic" alt="..">
+                        <%end%>
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h3 class="mt-2 mb-0"><%=review.user.first_name%></h3>
+                        <div>
+                            <p class="text-left"><span class="text-muted"><%=(review.rating)%></span> <span class="stars ml-3"><%(review.rating.to_i).times do %> &#9733;
+                                 <%end%></span>
+                            </span>
+            </div>
+                      </div>
+                    <div class="ml-auto">
+                      <p class="text-muted pt-5 pt-sm-3">09-02-22</p>
+                    </div>
+                  </div>
+                  <div class="row text-left">
+                      <p class="content mt-3"><%=review.content%></p>
+                  </div>
+                  <div class="row text-left">
+                    <div class="card-body row w-100">
+                      <%@tour.reviews.each do|review|%>
+                          <% if review.photos.attached? %>
+                            <div class="pic">
+                                <%= cl_image_tag review.photos.first.key, class: "pic" %>
+                            </div>
+                          <% end %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="row text-left">
+                      <div class="like mr-3 vote"> <img src="https://i.imgur.com/mHSQOaX.png"></div>
+                      <div class="unlike vote"> <img src="https://i.imgur.com/bFBO3J7.png"></div>
+                  </div>
+              </div>
+             <%end%>
+            </div>
+
+          </div>
+      </div>
   </div>
 
   <br>
+    <%# -----------EXPERIENCIAS SIMILARES--------------------- %>
+    <div class="similar-experiences row mt-lg-4 d-flex justify-content-center">
+      <div class="cards-title-container">
+        <div class="title text-center">
+          <h2 style="font-size:3rem">Experiencias similares</h2>
+        </div>
 
-
-  <br>
-
-  <div class="similar-experiences row mt-lg-4 d-flex justify-content-center">
-    <div class="cards-title-container">
-      <div class="title text-center">
-        <h2 style="font-size:3rem">Experiencias similares</h2>
-      </div>
-
-      <div class="cards-container d-flex">
-        <% @tours.sample(6).each do |e| %>
-          <div class="card-container py-3">
-            <i class="far fa-heart" id="card-heart"></i>
-            <%= cl_image_tag e.photos.first.key, height: 300, width: 400, crop: :fill %>
-            <div class="card-content" style="height: 38%;">
-              <div class="d-flex flex-column">
-                <div class="flex-grow-1">
-                  <h2 class="title"><a href="<%= tour_path(e) %>" class="text-dark stretched-link"><%= e.title_tour %></a></h2>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">37</span> </i>
-                  <p><i class="far fa-clock" style="color: #D1D1D1"></i> <%= e.duration %> </p>
-                  <h2 class="price text-dark">desde <strong>S/<%= e.price %></strong></h2>
+        <div class="cards-container d-flex">
+          <% @tours.sample(4).each do |e| %>
+            <div class="card-container py-3">
+              <i class="far fa-heart" id="card-heart"></i>
+              <%= cl_image_tag e.photos.first.key, height: 300, width: 400, crop: :fill %>
+              <div class="card-content" style="height: 38%;">
+                <div class="d-flex flex-column">
+                  <div class="flex-grow-1">
+                    <h2 class="title"><a href="<%= tour_path(e) %>" class="text-dark stretched-link"><%= e.title_tour %></a></h2>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">37</span> </i>
+                    <p><i class="far fa-clock" style="color: #D1D1D1"></i> <%= e.duration %> </p>
+                    <h2 class="price text-dark">desde <strong>$ <%= e.price %></strong></h2>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        <% end %>
-      </div>
-      <div class="row mt-2 mb-5 d-flex justify-content-end">
-        <button class="btn-reviews btn-link">
-          <span class="h6 text-dark"><strong>Mostrar todos (2,000+) &gt;</span></strong>
-        </button>
+          <% end %>
+        </div>
+        <div class="row mt-2 mb-5 d-flex justify-content-end">
+          <button class="btn-similaries btn-link">
+            <span class="h6 text-dark"><strong>Mostrar todos (2,000+) &gt;</span></strong>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
+
+  </div>
 </div>
