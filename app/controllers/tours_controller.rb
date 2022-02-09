@@ -9,7 +9,7 @@ class ToursController < ApplicationController
       OR tours.destination ILIKE :query\
       "
       @tours = Tour.joins(:agency).where(sql_query, query: "%#{params[:query]}%")
-      @markers = Tour.near(params[:query]).map do |tour|
+      @markers = @tours.geocoded.map do |tour|
         {
           lat: tour.latitude,
           lng: tour.longitude,
@@ -60,7 +60,7 @@ class ToursController < ApplicationController
     # authorize @car
     @tour.update(find_params)
     if @tour.save
-      redirect_to my_tours_agency_path
+      redirect_to my_tours_agency_path(@tour.agency)
     else
       render :edit
     end
