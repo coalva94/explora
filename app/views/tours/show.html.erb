@@ -365,10 +365,10 @@
                   </div>
                   <div class="row text-left">
                     <div class="card-body row w-100">
-                      <%@tour.reviews.each do|review|%>
-                          <% if review.photos.attached? %>
+                      <%review.photos.each do |photos|%>
+                          <% if photos.present? %>
                             <div class="pic">
-                                <%= cl_image_tag review.photos.first.key, class: "pic" %>
+                                <%= cl_image_tag photos.key, class: "pic" %>
                             </div>
                           <% end %>
                       <% end %>
