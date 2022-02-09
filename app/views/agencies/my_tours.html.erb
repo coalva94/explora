@@ -27,7 +27,7 @@
             <p><span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
             <div class="d-flex justify-content-between">
               <%= link_to "Ver más",tour_path(tour), :class => "btn btn-success py-3 px-5",:style => "font-size:14px;"%>
-              <%= link_to "Editar",edit_agency_tour_path(tour), :class => "btn btn-success py-3 px-5",:style => "font-size:14px;"%>
+              <%= link_to "Editar",edit_agency_tour_path(agency_id:tour.agency.id,id:tour.id), :class => "btn btn-success py-3 px-5",:style => "font-size:14px;"%>
               <%= link_to "Eliminar",tour_path(tour),method: :delete, data: { confirm: "Estas seguro?" }, :class => "btn btn-success py-3 px-5",:style => "font-size:14px;" %>
               <%# <%= link_to 'Eliminar', tour_path(tour), method: :delete, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary btn-lg'}
               <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
