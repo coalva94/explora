@@ -20,6 +20,27 @@ class AgenciesController < ApplicationController
     end
   end
 
+  def edit
+    @agency = Agency.find(params[:id])
+    # authorize @car
+  end
+
+  def update
+    @agency = Agency.find(params[:id])
+    # authorize @car
+    @agency.update(find_params)
+    if @agency.save
+      redirect_to agency_path(@agency)
+    else
+      render :edit
+    end
+  end
+
+  def my_tours
+    @agency = Agency.find(params[:id])
+    @tours = Tour.where(agency_id: @agency.id)
+  end
+
   private
 
   def find_params
