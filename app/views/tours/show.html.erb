@@ -140,15 +140,15 @@
       <div class="col-12 mx-auto mt-3">
             <%# ---DESCRIPCION-----%>
         <div class="description-container col-10 mb-3">
-          <h2>Descripción</h2>
+          <h2 class="font-weight-bold">Descripción</h2>
           <div>
-          <p> <%= @tour.description %> </p>
+          <p style="font-size: 16px;"> <%= @tour.description %> </p>
           </div>
         </div>
 
         <%# -----PRECIO------ %>
        <div class="price-container col-10 mb-3">
-         <h2>Precio por persona: S/ <%= @tour.price %> </h2>
+         <h2 class="text-left font-weight-bold" style="font-size: 18px;">Precio por persona: S/ <%= @tour.price %> </h2>
        </div>
       </div>
     </div>
@@ -158,9 +158,9 @@
     <div class="accordion-container col-10" id="accordionExample">
         <div class="accordion-card">
           <div class="accordion-card-header" id="headingOne">
-            <h2 class="mb-0 border-bottom">
+            <h2 class="mb-0 border-bottom" style="font-size: 24px;">
               <button class="btn-accordion btn-link text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Servicios incluidos</h2>
+                Servicios incluidos </h2>
               </button>
             </h2>
           </div>
@@ -168,15 +168,14 @@
           <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
               <div>
-                  <i class="fas fa-check d-inline"></i>
-                  <p class="d-inline"><%= @tour.services %></p>
+                  <p style="font-size: 16px;"><%= @tour.services %></p>
               </div>
             </div>
           </div>
         </div>
         <div class="accordion-card">
           <div class="accordion-card-header" id="headingTwo">
-            <h2 class="mb-0 border-bottom">
+            <h2 class="mb-0 border-bottom" style="font-size: 24px;">
               <button class="btn-accordion btn-link btn-outline-none collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 Salida y regreso
               </button>
@@ -184,13 +183,13 @@
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
             <div class="card-body">
-              <p> <%= @tour.departure %> </p>
+              <p style="font-size: 16px;"> <%= @tour.departure %> </p>
             </div>
           </div>
         </div>
         <div class="accordion-card">
           <div class="accordion-card-header" id="headingThree">
-            <h2 class="mb-0 border-bottom">
+            <h2 class="mb-0 border-bottom" style="font-size: 24px;">
               <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 Qué esperar
               </button>
@@ -198,13 +197,13 @@
           </div>
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
             <div class="card-body">
-             <%= @tour.expectation %>
+             <p style="font-size: 16px;"> <%= @tour.expectation %> </p>
             </div>
           </div>
         </div>
         <div class="accordion-card">
           <div class="accordion-card-header" id="headingFour">
-            <h2 class="mb-0 border-bottom">
+            <h2 class="mb-0 border-bottom" style="font-size: 24px;">
               <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                 Información adicional
               </button>
@@ -212,13 +211,13 @@
           </div>
           <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
             <div class="card-body">
-              <%= @tour.additional_info %>
+              <p style="font-size: 16px;"> <%= @tour.additional_info %> </p>
             </div>
           </div>
         </div>
         <div class="accordion-card">
           <div class="accordion-card-header" id="headingFive">
-            <h2 class="mb-0 border-bottom">
+            <h2 class="mb-0 border-bottom" style="font-size: 24px;">
               <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                 Política de cancelación
               </button>
@@ -226,27 +225,27 @@
           </div>
           <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
             <div class="card-body">
-              <%= @tour.cancellation %> Obtenga <a href="#" class=" text-dark">más información</a> sobre las cancelaciones.
+              <p style="font-size: 16px;"><%= @tour.cancellation %> </p>
             </div>
           </div>
         </div>
         <div class="accordion-card">
-                <div class="accordion-card-header" id="headingSix">
-                  <h2 class="mb-0 border-bottom">
-                    <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                      Preguntas frecuentes
-                    </button></h2>
-                  </h2>
-                </div>
-                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
-                  <div class="card-body">
-                    <p><%= @tour.faq %></p>
-                  </div>
-                </div>
+          <div class="accordion-card-header" id="headingSix">
+            <h2 class="mb-0 border-bottom" style="font-size: 24px;">
+              <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                Preguntas frecuentes
+              </button></h2>
+            </h2>
+          </div>
+          <div id="collapseSix" class="collapse" aria-labelledby="headingSix"data-parent="#accordionExample">
+            <div class="card-body">
+              <p style="font-size: 16px;"><%= @tour.faq %></p>
+            </div>
+          </div>
         </div>
                 <div class="accordion-card">
                 <div class="accordion-card-header" id="headingSeven">
-                  <h2 class="mb-0 border-bottom">
+                  <h2 class="mb-0 border-bottom" style="font-size: 24px;">
                     <button class="btn-accordion btn-link collapsed text-decoration-none w-100 text-left" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                       Fotos de viajeros
                     </button></h2>
@@ -361,7 +360,7 @@
                     </div>
                   </div>
                   <div class="row text-left">
-                      <p class="content mt-3"><%=review.content%></p>
+                      <p class="content mt-3" style="font-size: 14px;"><%=review.content%></p>
                   </div>
                   <div class="row text-left">
                     <div class="card-body row w-100">
@@ -409,7 +408,7 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">37</span> </i>
                     <p><i class="far fa-clock" style="color: #D1D1D1"></i> <%= e.duration %> </p>
-                    <h2 class="price text-dark">desde <strong>$ <%= e.price %></strong></h2>
+                    <h2 class="price text-dark">desde <strong>S/ <%= e.price %></strong></h2>
                   </div>
                 </div>
               </div>
