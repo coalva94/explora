@@ -10,15 +10,18 @@
       <%= link_to "Ver mis tours", my_tours_agency_path , class: "btn btn-secondary py-3 px-5 ml-2",style:"font-size:15px;" %>
     </div>
   </div>
+
+  <br>
+
   <div class="d-flex justify-content-between" style="background-color: #f2f2f2;">
-    <div class="col mt-5 p-3 d-flex flex-column">
+    <div class="col mt-5 p-3 d-flex flex-column align-items-center">
       <h2 style="font-size: 28px;">Datos de la empresa: </h2>
       <div><h2>Direccion: <%=@agency.address%></h2></div>
       <div><h2>Correo: <%=@agency.email%></h2></div>
       <div><h2>Localidad: <%=@agency.state%></h2></div>
       <div><h2>RUC: <%=@agency.tax_number%></h2></div>
     </div>
-    <div class="col"><img src="https://www.golden-expeditions.com/slider1/baner2.jpg" style="width:100%;" alt=""></div>
+    <div class="col"><img class="agency-img" src="https://www.golden-expeditions.com/slider1/baner2.jpg" style="width:100%;" alt=""></div>
   </div>
   <div class="create-tour-card mt-2" style="background-color: #f2f2f2; ">
     <div class="row justify-content-center p-3">
@@ -37,7 +40,7 @@
         </p>
       </div>
       <div class="col-2 d-flex align-items-center justify-content-center">
-      <%= link_to "Crear Tour", new_agency_tour_path(@agency), class: "btn btn-dark",style:"font-size:15px;"%>
+      <%= link_to "Crear Tour", new_agency_tour_path(@agency), class: "btn btn-success",style:"font-size:15px;"%>
       </div>
     </div>
     <div class="row pt-4 pb-4">
