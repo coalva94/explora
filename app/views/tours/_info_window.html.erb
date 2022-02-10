@@ -1,6 +1,6 @@
 <div class="container text-center">
-<h3><%= tour.title_tour %></h2>
-<p><%= tour.agency.name %></p>
+<p><%= tour.title_tour %></p>
+<%= link_to "Ver más",tour_path(tour), :class => "btn btn-success py-2 px-3",:style => "font-size:12px;"%>
 </div>
 
 <%# Implementar Argolia gem %>
