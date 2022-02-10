@@ -1,9 +1,9 @@
 <section class="py-5 show-booking">
   <div class="container px-4 px-lg-5 my-5 ">
-      <div class="row gx-4 gx-lg-5 align-items-center">
+      <div class="row gx-4 gx-lg-5 align-items-center data ">
           <div class="col-md-6"><%= cl_image_tag @bookings.tour.photos.first.key, height: 280, width: 400, crop: :fill,class:"img-fluid" %></div>
           <div class="col-md-6">
-              <h1 class="mb-4" style="font-size:30px;"><%= @bookings.tour.title_tour %></h1>
+              <h1 class="mb-4 text-center title" style="font-size:30px;"><%= @bookings.tour.title_tour %></h1>
               <div class="fs-5 mb-4">
                   <h4 class="text-decoration-line-through" style="font-size:18px;">Precio: S/<%= @bookings.tour.price %></h4>
               </div>
@@ -19,7 +19,7 @@
                   <h4 class="text-decoration-line-through" style="font-size:18px;">Acompañantes: <%= @bookings.quantity %> persona(s)</h4>
               </div>
               <%# <p class="lead text-justify"><%= @bookings.tour.description %>
-              <div class="d-flex justify-content-around">
+              <div class="d-flex justify-content-around link-path">
                   <%= link_to 'Editar', edit_booking_path, class: "btn btn-secondary py-3 px-5",style:"font-size:15px;"%>
                   <%= link_to 'Eliminar', booking_path(@bookings), class: "btn btn-secondary py-3 px-5",style:"font-size:15px;", method: :delete, data: {confirm: "Seguro?"}%>
               </div>
@@ -47,7 +47,7 @@
     <%# </div> %>
     <%#end%>
     <%# incio ACORDEON %>
-      <div class="accordion mt-4 " id="accordionExample">
+      <div class="accordion mt-4 data" id="accordionExample">
         <div class="card w-100">
           <div class="card-header w-100" id="headingOne">
             <h2 class="mb-0">
@@ -93,8 +93,7 @@
             </div>
           </div>
         </div>
-
-        <div class="card w-100">
+        <div class="card w-100 link-path">
           <div class="card-header" id="headingTwo">
             <h2 class="mb-0">
               <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -125,7 +124,7 @@
       </div>
     <%# fin ACORDEON %>
   </div>
-  <div class="container text-center">
+  <div class="container text-center link-path">
     <%= link_to 'Regresar', bookings_path, :class => "btn btn-secondary py-3 px-5 mt-3",style:"font-size:15px;" %>
     <%= link_to "Imprimir", booking_path(@bookings, format: :pdf), :class => "btn btn-secondary py-3 px-5 mt-3",style:"font-size:15px;" %>
   </div>
