@@ -4,7 +4,7 @@
   <% end %>
 
   <% if user_signed_in? %>
-    <p style="font-size:2rem;"> Hola,
+    <p class="mb-0" style="font-size:2rem;"> Hola,
       <%= current_user.first_name.capitalize%>
     </p>
   <% end %>
@@ -16,9 +16,6 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <%= link_to "Reserva Ahora!", tours_path, class: "nav-link booking-noow", style: "background-color:#186B6D; color: #fff !important; border-radius:4px;" ,id:"booking-now" %>
-      </li>
-      <li>
-      <a href="" class="nav-link"> <i class="fa fa-question-circle-o" aria-hidden="true"></i> Centro de Ayuda</a>
       </li>
     <%# Agregarun if que verifique que scurrent_user existe current_user.present? %>
       <% if user_signed_in? %>

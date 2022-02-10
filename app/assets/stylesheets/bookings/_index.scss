@@ -10,14 +10,8 @@
   text-align: center;
 }
 
-// .btn { el culpable
-//   background-color: #186B6D;
-//   color: white;
-// }
-
 .card-booking {
   box-shadow: 2px 4px 6px 2px hsla(0, 0%, 0%, 0.308);
-  display: flex;
   border:hsl(0, 0%, 45%);
 }
 
@@ -29,4 +23,9 @@
 
 .contenedor-booking{
   min-height:calc(100vh-353px);
+  margin: 0 auto;
+}
+
+.fas {
+  color:#FBC02D
 }

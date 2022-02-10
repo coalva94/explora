@@ -394,7 +394,7 @@
         </div>
 
         <div class="cards-container d-flex">
-          <% @tours.sample(1).each do |e| %>
+          <% @tours.sample(4).each do |e| %>
             <div class="card-container py-3">
               <i class="far fa-heart" id="card-heart"></i>
               <%= cl_image_tag e.photos.first.key, height: 300, width: 400, crop: :fill %>

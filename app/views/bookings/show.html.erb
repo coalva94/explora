@@ -40,7 +40,7 @@
             <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
             <%#= f.input :first_name,label: 'Primer nombre', placeholder: 'Ana' %>
             <%#= f.input :last_name,label: 'Segundo nombre', placeholder: 'Marcela' %>
-            <%#= f.input :age,label: 'edad', placeholder: '20' %>
+            <%#= f.input :age,label: 'Edad', placeholder: '20' %>
             <%#= f.input :document_number,label: 'Documento de Identidad', placeholder: '77414777' %>
             <%#= f.button :submit ,"Confirmar acompañantes" %>
             <%# end %>
@@ -69,9 +69,9 @@
                       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
                       <%= f.input :first_name,label: 'Primer nombre', placeholder: 'Ana' %>
                       <%= f.input :last_name,label: 'Apellido', placeholder: 'Marcela' %>
-                      <%= f.input :age,label: 'edad', placeholder: '20' %>
+                      <%= f.input :age,label: 'Edad', placeholder: '20' %>
                       <%= f.input :document_number,label: 'Documento de Identidad', placeholder: '77414777' %>
-                      <%= f.button :submit ,"Confirmar acompañante",class:"ml-1", style:"font-size:15px;" %>
+                      <%= f.button :submit ,"Confirmar",class:"btn-success ml-1", style:"font-size:15px;" %>
                       <% end %>
               </div>
               <%end%>
@@ -84,16 +84,16 @@
                   <div class="d-flex justify-content-around">
                     <div style="font-size:17px"><label for="">Nombre</label><p> <%=acompanante.first_name%> </p></div>
                     <div style="font-size:17px"><label for="">Apellido</label><p> <%=acompanante.last_name%> </p></div>
-                    <div style="font-size:17px"><label for="">edad</label><p> <%=acompanante.age%> </p></div>
+                    <div style="font-size:17px"><label for="">Edad</label><p> <%=acompanante.age%> </p></div>
                     <div style="font-size:17px"><label for="">DNI</label><p> <%=acompanante.document_number%> </p></div>
                   </div>
                 </div>
               <%end%>
               <%# formularios para VER acompañantes %>
-
             </div>
           </div>
         </div>
+
         <div class="card w-100">
           <div class="card-header" id="headingTwo">
             <h2 class="mb-0">
@@ -112,10 +112,10 @@
                         <%= f.input :content,label: 'Comentario', placeholder: 'Una bonita experiencia, lo recomendaria' %>
                       </div>
                       <div class="col">
-                        <%= f.input :rating,label: 'Califacion ', placeholder: '1-5' %>
+                        <%= f.input :rating,label: 'Calificación ', placeholder: '1-5' %>
                       </div>
                        <%= f.input :photos,label: 'Fotos', as: :file, input_html: { multiple: true } %>
-                      <%= f.button :submit ,"Enviar Review",style:"font-size:15px;" %>
+                      <%= f.button :submit ,"Enviar Review", class: "btn-success ml-4", style:"font-size:15px;" %>
                       <% end %>
               </div>
             </div>
