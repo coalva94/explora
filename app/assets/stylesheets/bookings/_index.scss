@@ -18,11 +18,14 @@
 .card-booking {
   box-shadow: 2px 4px 6px 2px hsla(0, 0%, 0%, 0.308);
   display: flex;
-  border:hsl(0, 0%, 45%)
+  border:hsl(0, 0%, 45%);
 }
 
 
 .card-booking:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+}
+.prueba{
+  background-color: red;
 }
