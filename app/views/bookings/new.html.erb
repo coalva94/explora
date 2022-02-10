@@ -37,14 +37,14 @@
                 <h6 class="my-0">Costo Unitario:</h6>
                 <small class="text-muted">Precio del tour por persona</small>
               </div>
-              <span class="text-muted d-flex align-items-center"><%= @tour.price %></span>
+              <span class="text-muted d-flex align-items-center" id="PrecioUnitario"><%= @tour.price %></span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <h6 class="my-0">Cantidad de Viajeros</h6>
-                <small class="text-muted">Personas que viviran la experiencia</small>
+                <small class="text-muted" >Personas que viviran la experiencia</small>
               </div>
-              <span class="text-muted d-flex align-items-center cant-traveres"><%= cant = 3 %></span>
+              <span class="text-muted d-flex align-items-center cant-traveres" id="Cantidad-Personas"> </span>
             </li>
             <li class="list-group-item d-flex justify-content-between bg-light" >
               <div class="text-success">
@@ -55,7 +55,7 @@
             </li>
             <li class="list-group-item d-flex justify-content-between mt-2">
               <span>Total S/</span>
-              <strong><%= (@tour.price * cant) - desc %></strong>
+              <strong id="Totalbooking"></strong>
             </li>
           </ul>
         </div>
@@ -98,26 +98,20 @@
     </div>
 
     <script>
-      let PrecioTotal = document.getElementById("PrecioTotal")
+      const cantidadPersonas = document.getElementById("Cantidad-Personas")
       // PrecioTotal.innerHTML = "hola";
       // document.addEventListener("click",CalcularDias)
-      const input_fechas  = document.querySelectorAll('.datepicker')
-      input_fechas.forEach((input) => {
-        input.addEventListener("change", (event) => {
-          let inicio = new Date(document.getElementById("FechaInicio").value)
-      let fin = new Date(document.getElementById("FechaFin").value)
-      let dif = (fin-inicio)/1000/60/60/24;
+      const inputPersonas  = document.getElementById('booking_quantity')
+      const Total = document.getElementById('Totalbooking')
+      let precio = document.getElementById('PrecioUnitario')
+          inputPersonas.addEventListener("change", (event) => {
+          const cantidad = inputPersonas.value;
+          cantidadPersonas.innerHTML =`${cantidad} `
+          console.log(cantidad)
+          Total.innerHTML= cantidad*precio.innerText - 10;
 
-      // PrecioTotal.innerHTML = `Precio Total: S/ ${ 10 + dif * <@car.price%> }`
-      // cuando dif es diferetne de naN multiplicas y muestras en pantalla
-      let difChange = document.getElementById("diftime")
-      difChange.innerHTML = `Dias de Alquiler: ${dif}`
-      console.log(inicio)
-      console.log(fin)
-      console.log(dif)
-      console.log(PrecioTotal)
         })
-      })
+
 
     </script>
 
