@@ -1,10 +1,11 @@
 <section class="py-5 show-booking">
-  <div class="container px-4 px-lg-5 my-5 ">
+  <div class="container">
       <div class="row gx-4 gx-lg-5 align-items-center">
-          <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://blogs.incarail.com/hubfs/Imported_Blog_Media/CuscoRainBlog-1.png" alt="..." /></div>
-          <div class="col-md-6">
-              <h1 class=""><%= @bookings.tour.title_tour %></h1>
-              <div class="fs-5 mb-4">
+          <div class="col-md-5"><img class="card-img-top" src="https://images.unsplash.com/photo-1571492913849-fdc97148242d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="..." />
+          </div>
+          <div class="col-md-7 data">
+              <h1 class="text-center title"><%= @bookings.tour.title_tour.upcase %></h1>
+              <div class="fs-5 my-4">
                   <h4 class="text-decoration-line-through">Precio: S/<%= @bookings.tour.price %></h4>
               </div>
               <div class="fs-5 mb-4">
@@ -14,15 +15,17 @@
                   <h4 class="text-decoration-line-through">Acompañantes: <%= @bookings.quantity %> persona(s)</h4>
               </div>
               <p class="lead text-justify"><%= @bookings.tour.description %></p>
-              <div class="d-flex justify-content-around">
-                  <%= link_to 'Editar', edit_booking_path, :class => "visible text-dark fas fa-pencil-alt"%>
-                  <%= link_to 'Eliminar', booking_path(@bookings), :class => "visible text-dark fas fa-times btn btn-primary", method: :delete, data: {confirm: "Seguro?"}%>
+              <p class="lead text-justify"><%= @bookings.tour.services %></p>
+              <div class="d-flex justify-content-around link-path my-5">
+                  <%= link_to ' Editar', edit_booking_path, :class => "visible text-dark fas fa-pencil-alt my-2 btn btn-outline-success"%>
+                  <%= link_to ' Eliminar', booking_path(@bookings), :class => "visible text-dark fas fa-times my-2 btn btn-outline-success", method: :delete, data: {confirm: "Seguro?"}%>
+                  <%= link_to ' Imprimir', booking_path(@bookings, format: :pdf), :class => "visible text-dark fas fa-print my-2 btn btn-outline-success" %>
               </div>
           </div>
       </div>
-
   </div>
-   <div class="container ">
+
+  <div class="container">
     <%# <p style="font-size:2rem;">Tus Acompañantes:</p> %>
     <%#cantidad =@bookings.quantity %>
     <%# actual_companion = Companion.where(booking_id: @bookings.id).count %>
@@ -52,7 +55,7 @@
             </h2>
           </div>
 
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div id="collapseOne companions-create" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
               <%cantidad =@bookings.quantity %>
               <% actual_companion = Companion.where(booking_id: @bookings.id).count %>
@@ -73,14 +76,14 @@
               <%# FIIIN formularios para CREAR acompañantes %>
 
               <%# formularios para VER acompañantes %>
-              <p style="font-size:1.5rem;">Acompañantes registrados:</p>
+              <p class="companion-pdf" style="font-size:1.5rem;">Acompañantes registrados:</p>
               <% @companions.each do |acompanante|%>
                 <div class="container-fluid mt-3">
-                  <div class="d-flex justify-content-around">
-                    <div><label for="">Nombre</label><p> <%=acompanante.first_name%> </p></div>
-                    <div><label for="">Apellido</label><p> <%=acompanante.last_name%> </p></div>
-                    <div><label for="">edad</label><p> <%=acompanante.age%> </p></div>
-                    <div><label for="">DNI</label><p> <%=acompanante.document_number%> </p></div>
+                  <div class="d-flex justify-content-around companion-pdf">
+                    <div style=""><label for="">Nombre:</label><p> <%=acompanante.first_name%></p></div>
+                    <div><label for="">Apellido:</label><p> <%=acompanante.last_name%></p></div>
+                    <div><label for="">edad:</label><p> <%=acompanante.age%> </p></div>
+                    <div><label for="">DNI:</label><p> <%=acompanante.document_number%></p></div>
                   </div>
                 </div>
               <%end%>
@@ -89,7 +92,7 @@
             </div>
           </div>
         </div>
-        <div class="card w-100">
+        <div class="card w-100 review">
           <div class="card-header" id="headingTwo">
             <h2 class="mb-0">
               <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -120,8 +123,8 @@
       </div>
     <%# fin ACORDEON %>
   </div>
-  <div class="container text-center">
-    <%= link_to 'Regresar', bookings_path, :class => "btn btn-lg text-center"%>
-    <%= link_to "Imprimir", booking_path(@bookings, format: :pdf), :class => "btn btn-lg text-center" %>
+  <div class="container text-center link-path">
+    <%= link_to 'Regresar', bookings_path, :class => "visible text-dark my-2 btn btn-outline-success mt-5"%>
+
   </div>
 </section>

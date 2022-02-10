@@ -91,8 +91,6 @@
             <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
             <%= f.input :start_date,label: 'Fecha a reservar', placeholder: '22/10/2010' %>
             <%= f.input :quantity,label: 'Cantidad de reservas', placeholder: '1' %>
-
-
             <%= f.button :submit ,'Reservar ahora', class: "btn btn-success p-3 w-100 rounded", style:"font-size:3rem;" %>
           <% end %>
         <h5>(*)Recuerda que tienes que completar la informacion de tus acompañantes</h5>
@@ -101,3 +99,6 @@
 
   </div>
 </body>
+
+
+
