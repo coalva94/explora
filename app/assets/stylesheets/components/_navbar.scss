@@ -13,9 +13,16 @@
 .navbar-lewagon{
   .nav-link{
     color:#186b6d !important;
-  }
-  .nav-link:hover{
-    border-bottom: 4px solid #186b6d;
-  }
 
+    &:hover{
+      border-bottom: 4px solid #186b6d;
+    }
+  }
+}
+.booking-noow:hover{
+            transform: scale(1.2);
+
+}
+.booking-noow{
+  transition-duration:   2500ms;
 }

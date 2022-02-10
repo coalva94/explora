@@ -31,6 +31,7 @@ class ToursController < ApplicationController
 
   def show
     @tour = Tour.find(params[:id])
+    @title_page = "#{@tour.title_tour} - Explora"
     @booking = Booking.new
     @tours = Tour.where.not(title_tour: @tour.title_tour)
   end
