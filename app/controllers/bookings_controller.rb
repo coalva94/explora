@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "Post id: #{@bookings.id}", template: "bookings/show.html.erb"   # Excluding ".pdf" extension.
+        render pdf: "Post id: #{@bookings.id}", template: "bookings/show.html.erb", layout: "pdf"   # Excluding ".pdf" extension.
       end
     end
   end
