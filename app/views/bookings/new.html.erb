@@ -1,12 +1,32 @@
 <%# aca tiene que ir las reservacion a realizar! %>
 <body class="bg-light">
   <div class="container">
+  <br>
     <div class="py-2 text-center">
       <h2>FORMULARIO DE PAGO</h2>
     </div>
 
+<br>
+
     <div class="row">
-      <div class="col-md-4 order-md-2 mb-4">
+        <div class="card mb-3 col-12">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <%= cl_image_tag @tour.photos[0].key, height: 300, width: 400, crop: :fill,class: 'gallery__img',alt: "Gallery image 1" %>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-center"><strong><%= @tour.title_tour %></strong></h5>
+                <p class="card-text ml-2" style="font-size: 14px;"><%= @tour.description %></p>
+                <p class="card-text ml-2 text-left text-muted" style="font-size: 14px;">Empresa: <%= @tour.agency.name %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 order-md-2 mb-4">
         <div class="tucartera">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="card-text text-center text-muted">Tu cartera</span>
@@ -33,63 +53,51 @@
               </div>
               <span class="text-success d-flex align-items-center">-<%= desc = 10.00 %></span>
             </li>
-aa            <li class="list-group-item d-flex justify-content-between">
+            <li class="list-group-item d-flex justify-content-between mt-2">
               <span>Total S/</span>
               <strong><%= (@tour.price * cant) - desc %></strong>
             </li>
           </ul>
         </div>
+
+
+          <div class="card-payment-booking col-12 border p-3">
+            <form> <span id="card-header">Saved cards:</span>
+              <div class="row row-1">
+                  <div class="col-2"><img class="img-fluid" src="https://img.icons8.com/color/48/000000/visa.png" /></div>
+                  <div class="col-7"> <input type="text" placeholder="**** **** **** 4296"> </div>
+                  <div class="col-3 d-flex justify-content-center"> <a href="#">Remove card</a> </div>
+              </div>
+              <span id="card-header">Add new card:</span>
+              <div class="row-2 ml-4 mt-3">
+                  <div class="row row-2"> <span id="card-inner">Card holder name</span> </div>
+                  <div class="row row-2"> <input type="text" placeholder="Bojan Viner"> </div>
+              </div>
+              <div class="row three">
+                  <div class="col-7">
+                      <div class="row-1 ml-5">
+                          <div class="row row-2"> <span id="card-inner">Card number</span> </div>
+                          <div class="row row-2"> <input type="text" placeholder="5134-5264-4"> </div>
+                      </div>
+                  </div>
+                  <div class="col-2"> <input type="text" placeholder="Exp. date"> </div>
+                  <div class="col-2"> <input type="text" placeholder="CVV"> </div>
+              </div>
+            </form>
+          </div>
+
           <%= simple_form_for [@tour, @booking] do |f| %>
             <%= f.error_notification %>
             <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
             <%= f.input :start_date,label: 'Fecha a reservar', placeholder: '22/10/2010' %>
             <%= f.input :quantity,label: 'Cantidad de reservas', placeholder: '1' %>
-            <%= f.button :submit ,'Reservar ahora', class: "btn btn-success p-3 w-100 rounded" %>
-            <% end %>
+
+
+            <%= f.button :submit ,'Reservar ahora', class: "btn btn-success p-3 w-100 rounded", style:"font-size:3rem;" %>
+          <% end %>
         <h5>(*)Recuerda que tienes que completar la informacion de tus acompañantes</h5>
       </div>
+   </div>
 
-    <div class="col-md-8 order-md-1">
-      <div class="card mb-3" style="max-width: 100%;">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="https://blogs.incarail.com/hubfs/Imported_Blog_Media/CuscoRainBlog-1.png" class="img-thumbnail d-flex justify-content-center align-items-center " alt=". ..">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title text-center"><strong><%= @tour.title_tour %></strong></h5>
-              <p class="card-text"><%= @tour.description %></p>
-              <p class="card-text text-right"><small class="text-muted"><%= @tour.agency.name %></small></p>
-            </div>
-          </div>
-        </div>
-      </div>
-     <%# acá va el form! %>
-      <div class="card-payment-booking">
-        <form> <span id="card-header">Saved cards:</span>
-            <div class="row row-1">
-                <div class="col-2"><img class="img-fluid" src="https://img.icons8.com/color/48/000000/visa.png" /></div>
-                <div class="col-7"> <input type="text" placeholder="**** **** **** 4296"> </div>
-                <div class="col-3 d-flex justify-content-center"> <a href="#">Remove card</a> </div>
-            </div> <span id="card-header">Add new card:</span>
-            <div class="row-1">
-                <div class="row row-2"> <span id="card-inner">Card holder name</span> </div>
-                <div class="row row-2"> <input type="text" placeholder="Bojan Viner"> </div>
-            </div>
-            <div class="row three">
-                <div class="col-7">
-                    <div class="row-1">
-                        <div class="row row-2"> <span id="card-inner">Card number</span> </div>
-                        <div class="row row-2"> <input type="text" placeholder="5134-5264-4"> </div>
-                    </div>
-                </div>
-                <div class="col-2"> <input type="text" placeholder="Exp. date"> </div>
-                <div class="col-2"> <input type="text" placeholder="CVV"> </div>
-            </div>
-        </form>
-      </div>
-
-      </div>
-    </div>
   </div>
 </body>
