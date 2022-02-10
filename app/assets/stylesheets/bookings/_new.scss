@@ -14,20 +14,38 @@
   span{
     font-size:1.4rem;
   }
-
 }
-.new_companion{
+
+.new_companion {
   display:flex;
   width:100%;
   justify-content:space-between;
 }
-.new_review{
+
+.new_review {
   display:flex;
   width:100%;
 }
 
 .card-payment-booking {
   margin: 0 auto;
+  background-color: #ffffff;
+}
+
+#savedCards {
+  background-color: #ffffff;
+}
+
+#cardNumber {
+  background-color: #ffffff;
+}
+
+#expDate {
+  background-color: #ffffff;
+}
+
+#cvv {
+  background-color: #ffffff;
 }
 
 .btn-outline-success {

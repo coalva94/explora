@@ -17,6 +17,7 @@
 @import "tours/show";
 @import "tours/index";
 @import "tours/new";
+@import "agencies/my_tours";
 @import "components/cardpayment";
 @import "../stylesheets/agencies/show";
 @import "components/footer";
@@ -32,7 +33,7 @@ html {
 }
 
 body{
-  background-color: #ffffff;
+  background-color: #f2f2f2;
   font-family: 'Poppins', sans-serif;
 }
 
