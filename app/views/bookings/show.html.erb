@@ -18,35 +18,15 @@
               <div class="fs-5 mb-4">
                   <h4 class="text-decoration-line-through" style="font-size:18px;">Acompañantes: <%= @bookings.quantity %> persona(s)</h4>
               </div>
-              <%# <p class="lead text-justify"><%= @bookings.tour.description %>
               <div class="d-flex justify-content-around link-path">
                   <%= link_to 'Editar', edit_booking_path, class: "btn btn-secondary py-3 px-5",style:"font-size:15px;"%>
                   <%= link_to 'Eliminar', booking_path(@bookings), class: "btn btn-secondary py-3 px-5",style:"font-size:15px;", method: :delete, data: {confirm: "Seguro?"}%>
               </div>
           </div>
       </div>
-
   </div>
-   <div class="container ">
-    <%# <p style="font-size:2rem;">Tus Acompañantes:</p> %>
-    <%#cantidad =@bookings.quantity %>
-    <%# actual_companion = Companion.where(booking_id: @bookings.id).count %>
-    <%# actual_companion = 0 %>
 
-    <%#(cantidad-actual_companion ).times do%>
-    <%# <div class="container-fluid d-flex row mt-3"> %>
-      <%#= simple_form_for(@companion, url: booking_companions_path(@bookings)) do |f| %>
-            <%#= f.error_notification %>
-            <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-            <%#= f.input :first_name,label: 'Primer nombre', placeholder: 'Ana' %>
-            <%#= f.input :last_name,label: 'Segundo nombre', placeholder: 'Marcela' %>
-            <%#= f.input :age,label: 'Edad', placeholder: '20' %>
-            <%#= f.input :document_number,label: 'Documento de Identidad', placeholder: '77414777' %>
-            <%#= f.button :submit ,"Confirmar acompañantes" %>
-            <%# end %>
-    <%# </div> %>
-    <%#end%>
-    <%# incio ACORDEON %>
+  <div class="container ">
       <div class="accordion mt-4 data" id="accordionExample">
         <div class="card w-100">
           <div class="card-header w-100" id="headingOne">
@@ -63,19 +43,19 @@
               <% actual_companion = Companion.where(booking_id: @bookings.id).count %>
               <%# INICIO formularios para CREAR acompañantes %>
               <%(cantidad-actual_companion ).times do%>
-              <div class="container-fluid d-flex row mt-3">
+              <div class="container-fluid d-flex row mt-3 companions-create">
                 <%= simple_form_for(@companion, url: booking_companions_path(@bookings)) do |f| %>
-                      <%= f.error_notification %>
-                      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-                      <%= f.input :first_name,label: 'Primer nombre', placeholder: 'Ana' %>
-                      <%= f.input :last_name,label: 'Apellido', placeholder: 'Marcela' %>
-                      <%= f.input :age,label: 'Edad', placeholder: '20' %>
-                      <%= f.input :document_number,label: 'Documento de Identidad', placeholder: '77414777' %>
-                      <%= f.button :submit ,"Confirmar",class:"btn-success ml-1", style:"font-size:15px;" %>
-                      <% end %>
+                  <%= f.error_notification %>
+                  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                  <%= f.input :first_name,label: 'Primer nombre', placeholder: 'Ana' %>
+                  <%= f.input :last_name,label: 'Apellido', placeholder: 'Marcela' %>
+                  <%= f.input :age,label: 'Edad', placeholder: '20' %>
+                  <%= f.input :document_number,label: 'Documento de Identidad', placeholder: '70321459' %>
+                  <%= f.button :submit ,"Confirmar",class:"btn-success ml-1 m-5", style:"font-size:15px;" %>
+                  <% end %>
               </div>
               <%end%>
-              <%# FIIIN formularios para CREAR acompañantes %>
+              <%# FIN formularios para CREAR acompañantes %>
 
               <%# formularios para VER acompañantes %>
               <p style="font-size:1.9rem;" class="mt-3">Acompañantes registrados:</p>
