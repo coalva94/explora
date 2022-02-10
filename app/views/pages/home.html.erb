@@ -81,23 +81,30 @@
 <%#  INICIO CERCA DE TU UBICACION %>
 <div class="container testimonial-group mt-4 mb-4">
   <p class="text-center" style="font-size:3rem" >Recomendados cerca de ti</p>
-  <div class="row flex-nowrap">
-    <% @tours_near.each do |tour|%>
-    <div class="card-near col-6 col-md-4 ml-3">
-      <a href="<%= tour_path(tour)%>" class="d-block w-100">
-        <% tour.photos.each do |photo|%>
-         <%= cl_image_tag photo.key,:style => "width:100%; height:15rem", :class => "d-block mt-3 w-100 rounded mx-auto"%>
-         <%break%>
-        <%end%>
-        <%# <img src="https://media.tacdn.com/media/attractions-splice-spp-360x240/0a/56/b4/34.jpg" class="d-block mt-3 w-100"> %>
-        <i class="fas fa-map-marked-alt"> <%= tour.destination%> </i>
-        <p class="title-card-recomend" style="font-size:1.5rem; font-weight: 500; display:block;"><%= tour.title_tour%></p>
-        <p>Precio <span style="font-size:1.5rem; font-weight: 700;"> S/ <%= tour.price%> </> </p>
-      </a>
-    </div>
-    <% end%>
+  <div class="cards-container d-flex justify-content-between">
+    <% @tours.sample(4).each do |e| %>
+      <div class="card-container py-3">
+        <i class="far fa-heart" id="card-heart"></i>
+        <%= cl_image_tag e.photos.first.key, height: 300, width: 400, crop: :fill %>
+        <div class="card-content" style="height: 38%;">
+          <div class="d-flex flex-column">
+            <div class="flex-grow-1">
+              <h2 class="title"><a href="<%= tour_path(e) %>" class="text-dark stretched-link"><%= e.title_tour %></a></h2>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"><span class="ml-2" style="color: rgba(0, 0, 0, 0.5);">37</span> </i>
+              <p><i class="far fa-clock" style="color: #D1D1D1"></i> <%= e.duration %> </p>
+              <h2 class="price text-dark">desde <strong>S/ <%= e.price %></strong></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
+
 <%#  FIN CERCA DE TU UBICACION %>
 
 
