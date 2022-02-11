@@ -16,7 +16,7 @@
 
 
         <!-- Large modal -->
-        <a href="#" class="product-user-review-count visible text-dark" data-toggle="modal" data-target=".bd-example-modal-lg">100 Reseñas</a>
+        <%# <a href="#" class="product-user-review-count visible text-dark" data-toggle="modal" data-target=".bd-example-modal-lg">100 Reseñas</a>
 
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
@@ -83,7 +83,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> %>
 
         <div class="d-none d-md-inline-block px-3"> | </div>
         <div class="mr-md-4"> <%=@tour.destination%> </div>
@@ -329,7 +329,7 @@
                                               <div class="bar-5"></div>
                                           </div>
                                       </td>
-                                      <td class="text-right">123</td>
+                                      <td class="text-right">20</td>
                                   </tr>
                                   <tr>
                                       <td class="rating-label">Bueno</td>
@@ -365,7 +365,7 @@
                                               <div class="bar-1"></div>
                                           </div>
                                       </td>
-                                      <td class="text-right">0</td>
+                                      <td class="text-right">1</td>
                                   </tr>
                               </table>
                           </div>
@@ -394,7 +394,7 @@
             </div>
                       </div>
                     <div class="ml-auto">
-                      <p class="text-muted pt-5 pt-sm-3">09-02-22</p>
+                      <p class="text-muted pt-5 pt-sm-3"><%= review.booking.start_date %></p>
                     </div>
                   </div>
                   <div class="row text-left">
